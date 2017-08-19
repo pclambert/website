@@ -1,6 +1,6 @@
 #baseurl = "https://example.com/"  # End your URL with a `/` trailing slash.
 title = "Paul C. Lambert"
-copyright = "&copy; 2016 Your Name"
+copyright = "&copy; 2017 Paul C Lambert"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -26,10 +26,10 @@ defaultContentLanguageInSubdir = false
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "PCL.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "paul.lambert@le.ac.uk"
-  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
+  address = "Biostatistics Research Group, Department of Health Sciences, University of Leicester, Centre for Medicine, University Road, LEICESTER LE1 7RH, UK"
+  #office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  phone = "+44 116 2297265"
+  skype = "paulclambert"
   telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
@@ -126,12 +126,12 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:test@example.org"
+    link = "mailto:paul.lambert@le.ac.uk"
 
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "//twitter.com/GeorgeCushen"
+    link = "//twitter.com/pclambert123"
 
   [[params.social]]
     icon = "google-scholar"
@@ -141,7 +141,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/gcushen"
+    link = "//github.com/pclambert"
 
 
 # Navigation Links
