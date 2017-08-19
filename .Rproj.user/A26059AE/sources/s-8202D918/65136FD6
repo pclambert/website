@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\ntitle = \"Recent & Upcoming Talks\"\ndate = \"2017-01-01T00:00:00Z\"\nmath = false\nhighlight = false\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"\"\ncaption = \"\"\n\n\n\n+++\n\n",
+    "created" : 1503083722208.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3516432232",
+    "id" : "65136FD6",
+    "lastKnownWriteTime" : 1503084346,
+    "last_content_update" : 1503084346580,
+    "path" : "C:/Website/content/talk/_index.md",
+    "project_path" : "content/talk/_index.md",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

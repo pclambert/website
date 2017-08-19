@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\ntitle = \"Publications\"\ndate = \"2017-01-01T00:00:00Z\"\nmath = false\nhighlight = false\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"\"\ncaption = \"\"\n\n+++\n",
+    "created" : 1503077117964.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "304573349",
+    "id" : "8ABAD430",
+    "lastKnownWriteTime" : 1503078054,
+    "last_content_update" : 1503078054212,
+    "path" : "C:/Website/content/publication/_index.md",
+    "project_path" : "content/publication/_index.md",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

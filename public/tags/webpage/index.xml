@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webpage on Paul C. Lambert</title>
+    <link>/tags/webpage/</link>
+    <description>Recent content in Webpage on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <lastBuildDate>Sat, 19 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/webpage/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A new webpage</title>
+      <link>/post/getting-started/</link>
+      <pubDate>Sat, 19 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getting-started/</guid>
+      <description>
+
+&lt;p&gt;I have had to move my webpage as the my university was closing down the server where the last one was hosted. I used this &amp;ldquo;opportunity&amp;rdquo; to create a new webpage using the excellent guide provided &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and some advice from &lt;a href=&#34;http://mjcrowther.co.uk&#34; target=&#34;_blank&#34;&gt;Michael Crowther&lt;/a&gt; who has recently started his new website.&lt;/p&gt;
+
+&lt;p&gt;This is my first ever blog and at the moment I am unsure how often I will do this.&lt;/p&gt;
+
+&lt;h2 id=&#34;software-questions&#34;&gt;Software Questions&lt;/h2&gt;
+
+&lt;p&gt;SOmetimes&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A new webpage</title>
+      <link>/post/newwebpage/</link>
+      <pubDate>Sat, 19 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/newwebpage/</guid>
+      <description>
+
+&lt;p&gt;I have had to move my webpage as the my university was closing down the server where the last one was hosted. I used this &amp;ldquo;opportunity&amp;rdquo; to create a new webpage using the excellent guide provided &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and some advice from &lt;a href=&#34;http://mjcrowther.co.uk&#34; target=&#34;_blank&#34;&gt;Michael Crowther&lt;/a&gt; who has recently started his new website.&lt;/p&gt;
+
+&lt;p&gt;This is my first ever blog and at the moment I am unsure how often I will do this.&lt;/p&gt;
+
+&lt;h2 id=&#34;software-questions&#34;&gt;Software Questions&lt;/h2&gt;
+
+&lt;p&gt;Sometimes&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# Recent Posts widget.\n# This widget displays recent posts from `content/post/`.\n\ndate = \"2016-04-20T00:00:00\"\ndraft = false\n\ntitle = \"Recent Posts\"\nsubtitle = \"\"\nwidget = \"posts\"\n\n# Order that this section will appear in.\nweight = 40\n\n# Show posts that contain the following tags. Default to any tags.\ntags = []\n\n# Number of posts to list.\ncount = 5\n\n+++\n\n",
+    "created" : 1503083901947.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3034075453",
+    "id" : "8818D544",
+    "lastKnownWriteTime" : 1503075374,
+    "last_content_update" : 1503075374,
+    "path" : "C:/Website/content/home/posts.md",
+    "project_path" : "content/home/posts.md",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
