@@ -45,7 +45,8 @@ This is a simple demonstration of the link between cause-specific hazards and ca
 
 This shows expected survival by deprivation quintile and sex. You can drag the age slide bar, so you can see the expected survival for someone of a given age. To open the graph in a new window click here(lifeexpectency/life_expectency.html).
 
-### [InterPret](http://interpret.le.ac.uk)
+### [InterPreT](http://interpret.le.ac.uk)
 
-This is a webpage developed by Sarwar Islam, a PhD student based in Leicester. 
+This is a webpage developed by Sarwar Islam, a PhD student based in Leicester. This is far more professional looking than my attempts. What we have done here is export the model parameters and details about knot locations etc from a flexible parametric model fitted in Stata using `stpm2`. Various predictions can then be made instantly as they are just transformations of model parameters. I particularly like the ability to drag the y-axis in order to get conditional estimates.
 
+  
