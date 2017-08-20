@@ -37,13 +37,13 @@ where $h(t)$ is the hazard function and the hazard ratio is $\exp(β)$. The user
 
 We have used the mixture Weibull distribution to simulate data when evaluating how well spline function approximate true, complex survival/hazard functions. For example see [Rutherford et al. (2014), Journal of Statistical Computation and Simulation](http://www.tandfonline.com/doi/abs/10.1080/00949655.2013.845890#.VDK1HPldWSo) or [Crowther and Lambert (2014), _Statistics in Medicine_](http://onlinelibrary.wiley.com/doi/10.1002/sim.6300/abstract). This graph allows the user to play around with the parameters of a mixture Weibull distribution and see the hazard/survival curves. The component distributions of the mixture Weibull can also be displayed. <span>To open the graph in a new window click [here](http://www.le.ac.uk/hs/pl4/mixture_weibull/mixture_weibull.html)
 
-### [Competing Risks](http://www.le.ac.uk/hs/pl4/competing_risks/competingrisks.html)</span>
+### [Competing Risks](http://www.le.ac.uk/hs/pl4/competing_risks/competingrisks.html)
 
 This is a simple demonstration of the link between cause-specific hazards and cause-specific cumulative incidence functions. Assuming exponential distributions, i.e. a constant hazard, the cause-specific hazards for cancer and for other causes can be defined for those unexposed and exposed to a risk factor. By changing the underlying mortality (hazard) rate and/or the hazard ratio between the exposed and unexposed it is possible to see the impact on the cause-specific cumulative incidence function for both cancer and other causes. Performance is not so good in FireFox for some reason. <span>To open the graph in a new window click [here](http://www.le.ac.uk/hs/pl4/competing_risks/competingrisks.html).
 
 ### [Expected Survival](lifeexpectency/life_expectency.html)
 
-This shows expected survival by deprivation quintile and sex. You can drag the age slide bar, so you can see the expected survival for someone of a given age. To open the graph in a new window click (lifeexpectency/life_expectency.html).
+This shows expected survival by deprivation quintile and sex. You can drag the age slide bar, so you can see the expected survival for someone of a given age. To open the graph in a new window click [here](lifeexpectency/life_expectency.html).
 
 ### [InterPret](http://interpret.le.ac.uk)
 
