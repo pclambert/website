@@ -11,10 +11,10 @@ tags = ["software", "stpm2"]
 I have added some examples and aim to add to these.
 
 ## Proportional hazards models
-- comparison with a Cox model
+- [Comparison with a Cox model]({{< ref "software/stpm2/comparewithcox.md" >}})
 - simple simulation study to show agreement with Cox model.
 - predicting hazard and survival functions (use of the `timevar()` option)
-- sensitvity analsis for the number of knots.
+- [sensitvity analsis for the number of knots]({{< ref "software/stpm2/sensitivity_analysis.md" >}}).
 
 ## Time-dependent effects (non proportional hazards)
 - non-proportional hazards

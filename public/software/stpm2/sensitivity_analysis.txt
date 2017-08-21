@@ -1,0 +1,33 @@
++++
+date = "2017-08-06"
+title = "Sensitivity analysis to number of knots (proporitonal hazards)"
+summary = "stpm2"
+tags = ["stpm2","survival","software","Stata","proportional hazards"]
+external_link = "" 
+math = true
+[header]
+image = ""
+caption = ""
++++
+
+# Sensitivity Analysis
+
+We first load the example breast cancer data data using `webuse` and then use `stset` to declare the survival time and event indicator.
+
+```stata
+<<dd_do>>
+webuse brcancer, clear
+stset rectime, f(censrec==1) scale(365.24)
+<</dd_do>>
+```
+
+```stata
+<<dd_do>>
+forvalues i = 1/6 {
+	quietly stpm2 hormon, df(`i') scale(hazard)
+	estimates store df`i'
+}
+estimates table df*, keep(hormon) b(%5.4f) se(%5.4f)
+<</dd_do>>
+```
+
