@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Paul C. Lambert</title>
+    <link>/tags/software/</link>
+    <description>Recent content in Software on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/software/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>stpm2</title>
+      <link>/software/stpm2/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2/</guid>
+      <description>
+
+&lt;p&gt;&lt;code&gt;stpm2&lt;/code&gt; fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the  $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.&lt;/p&gt;
+
+&lt;p&gt;I have added some examples and aim to add to these.&lt;/p&gt;
+
+&lt;h2 id=&#34;proportional-hazards-models&#34;&gt;Proportional hazards models&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;comparison with a Cox model&lt;/li&gt;
+&lt;li&gt;simple simulation study to show agreement with Cox model.&lt;/li&gt;
+&lt;li&gt;predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
+&lt;li&gt;sensitvity analsis for the number of knots.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;non-proportional hazards&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;relative-survival&#34;&gt;Relative survival&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a simple relative survival model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;alternative-link-functions&#34;&gt;Alternative link functions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the logistic, probit and Aranda-Ordaz link functions.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

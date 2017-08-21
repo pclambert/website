@@ -1,4 +1,4 @@
-baseurl = "http://pclambert.netlify.com/"  # End your URL with a `/` trailing slash.
+#baseurl = "http://pclambert.netlify.com/"  # End your URL with a `/` trailing slash.
 title = "Paul C. Lambert"
 copyright = "&copy; 2017 Paul C Lambert"
 theme = "hugo-academic"
@@ -28,7 +28,7 @@ defaultContentLanguageInSubdir = false
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "PCL.png"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "paul.lambert@le.ac.uk"
-  address = "Biostatistics Research Group, Department of Health Sciences, University of Leicester, Centre for Medicine, University Road, LEICESTER LE1 7RH, UK"
+  address = "Biostatistics Research Group, Department of Health Sciences, University of Leicester, Centre for Medicine, University Road, Leicester, LE1 7RH, UK"
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "+44 116 2297265"
   skype = "paulclambert"
@@ -170,28 +170,34 @@ defaultContentLanguageInSubdir = false
   name = "Teaching"
   url = "#teaching"
   weight = 4
+  
+[[menu.main]]
+  name = "Software"
+  url = "#software"
+  weight = 5  
+  
 
 [[menu.main]]
   name = "Interactive Graphs"
   url = "interactivegraphs"
-  weight = 5
+  weight = 6
 
 
 [[menu.main]]
   name = "Posts"
   url = "#posts"
-  weight = 4
+  weight = 7
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 5
+#[[menu.main]]
+#  name = "Projects"
+#  url = "#projects"
+#  weight = 8
 
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 7
+  weight = 9
 
 # Taxonomies.
 [taxonomies]

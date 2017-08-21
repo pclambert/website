@@ -15,6 +15,9 @@ I have written some programs in JavaScript using the excellent [D3 library](http
 
 The graphs do not work in older versions of Internet Explorer, but appear OK in newer versions (I am currently using IE11) or using Microsoft Edge. However, the best perforamce appears to be in Chrome and Firefox.
 
+## Splines
+
+
 ### [The number and location of knots](http://www.le.ac.uk/hs/pl4/spline_eg/spline_eg.html)
 
 The first graph fits a non-linear function using splines within a linear regression model. The user is allowed to move, add and remove knots. Follow the instructions below the graph. The user can also select different spline functions, including linear, quadratic, cubic and restricted cubic splines. The fitted  regression line is updated in real time. To open the graph in a new window click [here](http://www.le.ac.uk/hs/pl4/spline_eg/spline_eg.html).
@@ -23,7 +26,7 @@ The first graph fits a non-linear function using splines within a linear regress
 
 A spline function <span>of degree</span> _n_ is a piecewise polynomial function whose function values and first _n_-1 derivatives agree at the knots, i.e. the function is constrained to be continuous and continuously differentiable up to order _n_-1\. The continuity restrictions graph allows the user to investigate the impact of different continuity restrictions from piecewise polynomials with no restrictions to the function being continuously differentiable up to order  _n_-1. To open the graph in a new window click [here](http://www.le.ac.uk/hs/pl4/spline_continuity/spline_continuity.html). Note that the continuity restriction menu sometimes disappears when using Internet Explorer. I am not sure why this is, and suggest you use an alternative browser where this problem does not occur (I have tested in Chrome and Firefox).
 
-## <span>Survival Analysis</span>
+## Survival Analysis
 
 ### [Weibull proportional hazards model](http://www.le.ac.uk/hs/pl4/survival_weibull/survival_weibull.html)
 

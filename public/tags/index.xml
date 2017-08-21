@@ -48,29 +48,29 @@
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Multistate</title>
       <link>/tags/multistate/</link>
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/multistate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>/tags/software/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stpm2</title>
+      <link>/tags/stpm2/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/stpm2/</guid>
       <description></description>
     </item>
     
