@@ -19,4 +19,4 @@ detailed_list = false
 
 +++
 
-Here is a more detailed list of talks
+A full list of talks can be found [here](alltalks/)

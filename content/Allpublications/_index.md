@@ -11,15 +11,16 @@ caption = ""
 
 +++
 
+
 **2017**
 
-Bower H., Andersson T.M-L., <span>Crowther M.J., Dickman P.W., Lambe M.,</span> **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2017 (in press).
+Bower H., Andersson T.M-L., Crowther M.J., Dickman P.W., Lambe M., **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2017 (in press).
 
 Syriopoulou E., Bower H., Andersson T.M-L., **Lambert P.C.**, Rutherford M.J. Estimating the impact of a cancer diagnosis on life expectancy by socioeconomic group for a range of cancer types in England. _British Journal of Cancer_ 2017 (in press)
 
 Crowther M.J., **Lambert P.C.** Parametric multi-state survival models: flexible modelling allowing transition-specific distributions with application to estimating clinically useful measures of effect differences. _Statistics in Medicine (in press)._
 
-Mozumder S.I., Rutherford M.J.,  stpm<span>2cr: A flexible parametric competing risks model using a direct likelihood approach for the cause-specific cumulative incidence function.</span> _The Stata Journal_ <span>2017:**17**:462-489.</span>
+Mozumder S.I., Rutherford M.J.,  `stpm2cr`: A flexible parametric competing risks model using a direct likelihood approach for the cause-specific cumulative incidence function. _The Stata Journal_ 2017:**17**:462-489.
 
 Peters T.L., Weibull C.E, Fang F., Sandler D.P., **Lambert P.C.**, Ye W., Kamel F. Association of Fractures with the Incidence of Amyotrophic Lateral Sclerosis. _Amyotrophic Lateral Sclerosis and Frontotemporal Degeneration_ 2017:**18**:419-425.
 
@@ -27,7 +28,7 @@ Peters T.L., Weibull C.E, Fang F., Sandler D.P., **Lambert P.C.**, Ye W., Kamel 
 
 **Lambert P.C.** The estimation and modeling of cause-specific cumulative incidence functions using time-dependent weights. _The Stata Journal_ 2017:**17**;181-207.
 
-<span>**2016**</span>
+**2016**
 
 <span></span><span>Bower H.,</span>**Lambert** <span>P.C., Crowther M.J.</span> <span></span> <span>strcs: A command for fitting flexible parametric</span> <span>survival models on the log-hazard scale.</span> _The Stata Journal__;**16**:989-1012._
 

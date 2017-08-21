@@ -14,6 +14,24 @@
     
     <url>
     
+      <loc>/teaching/apccourse/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/teaching/multistatecourse/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/newwebpage/</loc>
       <lastmod>2017-08-19T00:00:00+00:00</lastmod>
     </url>
@@ -142,7 +160,36 @@
     
     <url>
     
+      <loc>/tags/apc-models/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/course/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/courses/</loc>
       <priority>0</priority>
     </url>
     
@@ -163,6 +210,24 @@
     
       <loc>/tags/demo/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/alltalks/</loc>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/multistate/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -211,8 +276,36 @@
     
     <url>
     
+      <loc>/tags/talks/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/teaching/</loc>
+      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/webpage/</loc>
       <lastmod>2017-08-19T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/workshops/</loc>
       <priority>0</priority>
     </url>
     

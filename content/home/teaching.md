@@ -2,26 +2,29 @@
 # An example of using the custom widget to create your own homepage section.
 # To create more sections, duplicate this file and edit the values below as desired.
 
-date = "2016-04-20T00:00:00"
+date = "2018-08-21"
 draft = false
 
 title = "Teaching"
 subtitle = ""
 widget = "custom"
-
+math = true
 # Order that this section will appear in.
 weight = 60
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
+My main teaching is on the [MSc Medical Statisics](https://le.ac.uk/courses/medical-statistics-msc) at the University of Leicester. I took this course in $1991 \backslash 1992$.
 
-I am a teaching instructor for the following courses at University X:
+I teach on the following teaching weeks,
 
-- CS101: An intro to computer science
-- CS102: An intro to computer science
-- CS103: An intro to computer science
-- CS104: An intro to computer science
-- CS105: An intro to computer science
-- CS106: An intro to computer science
-- CS107: An intro to computer science
+- Computationally Intensive Methods
+- Survival Analysis
+- Advanced Survival Analysis
+
+I also teach a number of short courses. These include,
+
+- [Statistical methods for population based cancer survival analysis (with Paul Dickman)](http://cansurv.net/)
+- Flexible parametric survival models in epidemiology
+- [Competing risks and multi-state models]({{< ref "teaching/multistatecourse.md" >}})
+- [Age Period Cohort (APC) Models]({{< ref "teaching/apccourse.md" >}})
