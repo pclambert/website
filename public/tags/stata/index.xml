@@ -137,7 +137,7 @@ Note: Estimates are transformed only in the first equation.
     </item>
     
     <item>
-      <title>Sensitivity analysis to number of knots (proporitonal hazards)</title>
+      <title>Sensitivity analysis to number of knots (proportional hazards)</title>
       <link>/software/stpm2/sensitivity_analysis/</link>
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -146,47 +146,104 @@ Note: Estimates are transformed only in the first equation.
 
 &lt;h1 id=&#34;sensitivity-analysis&#34;&gt;Sensitivity Analysis&lt;/h1&gt;
 
-&lt;p&gt;We first load the example breast cancer data data using &lt;code&gt;webuse&lt;/code&gt; and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time and event indicator.&lt;/p&gt;
+&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()&amp;rsquo; option.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. webuse brcancer, clear
-(German breast cancer data)
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use http://pclambert.netlify.com/data/rott2b, clear
+(Rotterdam breast cancer data (augmented with cause of death))
 
-. stset rectime, f(censrec==1) scale(365.24)
+. stset rf, f(rfi==1) scale(12) exit(time 60)
 
-     failure event:  censrec == 1
-obs. time interval:  (0, rectime]
- exit on or before:  failure
-    t for analysis:  time/365.24
+     failure event:  rfi == 1
+obs. time interval:  (0, rf]
+ exit on or before:  time 60
+    t for analysis:  time/12
 
 ------------------------------------------------------------------------------
-        686  total observations
+      2,982  total observations
           0  exclusions
 ------------------------------------------------------------------------------
-        686  observations remaining, representing
-        299  failures in single-record/single-failure data
-  2,112.036  total analysis time at risk and under observation
+      2,982  observations remaining, representing
+      1,181  failures in single-record/single-failure data
+ 11,130.825  total analysis time at risk and under observation
                                                 at risk from t =         0
                                      earliest observed entry t =         0
-                                          last observed exit t =  7.280145
+                                          last observed exit t =         5
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. forvalues i = 1/6 {
-  2.         quietly stpm2 hormon, df(`i&#39;) scale(hazard)
-  3.         estimates store df`i&#39;
-  4. }
+&lt;p&gt;I will use different degrees of freedom for the baseline. The easiest way to do this is in a loop. The following code fits between 1 and 6 df, predicts the baseline hazard and survival functions and stores each model (using &lt;code&gt;estimates store&lt;/code&gt;).  I use &lt;code&gt;quietly&lt;/code&gt; to suppress the output. I also generate a new time variable (&lt;code&gt;temptime&lt;/code&gt;) for the predictions, rather than use the default of &lt;code&gt;_t&lt;/code&gt;.&lt;/p&gt;
 
-. estimates table df*, keep(hormon) b(%5.4f) se(%5.4f)
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. range temptime 0 5 200
+(2,782 missing values generated)
+
+. forvalues i = 1/6 {
+  2.         quietly stpm2 hormon, df(`i&#39;) scale(hazard) 
+  3.         predict h0_df`i&#39;, hazard timevar(temptime) per(1000) zeros
+  4.         predict s0_df`i&#39;, survival timevar(temptime) zeros
+  5. }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can now compare the results from fitting the 6 different models.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. estimates table df*, keep(hormon) b(%6.5f) se(%6.5f) stats(AIC BIC) stfmt(%6.2f)
 
 --------------------------------------------------------------------------
     Variable |   df1       df2       df3       df4       df5       df6    
 -------------+------------------------------------------------------------
-      hormon | -0.3932   -0.3590   -0.3614   -0.3641   -0.3645   -0.3647  
-             |  0.1248    0.1248    0.1249    0.1249    0.1249    0.1249  
+      hormon | 0.23312   0.22044   0.22038   0.22023   0.22020   0.22007  
+             | 0.08642   0.08643   0.08643   0.08643   0.08643   0.08643  
+-------------+------------------------------------------------------------
+         AIC | 6362.72   6210.98   6212.43   6213.72   6213.75   6215.98  
+         BIC | 6377.94   6231.28   6237.80   6244.17   6249.27   6256.57  
 --------------------------------------------------------------------------
                                                               legend: b/se
 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The log hazard ratios are very similar between the different models, particularly from 2df and above (using 1 df is equivalent to fitting a Weibull model). The standard errors are also very similar.&lt;/p&gt;
+
+&lt;p&gt;The AIC and BIC can be used as an &lt;em&gt;informal&lt;/em&gt; guide (certainly not definitive) to the choice of model.  Both the AIC and BIC are lowest for the model with 2df.&lt;/p&gt;
+
+&lt;p&gt;One of the advantages of using parametric models is the simpicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.&lt;/p&gt;
+
+&lt;p&gt;First, the baseline hazard functions. Note I used the &lt;code&gt;per(1000)&lt;/code&gt; option when I predicted the hazard functions to give the rate per 1000 person years.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. twoway  (line h0_df* temptime), ///
+&amp;gt;                 ytitle(&amp;quot;hazard rate (per 1000 py)&amp;quot;) ///
+&amp;gt;                 xtitle(&amp;quot;Years from surgery&amp;quot;) ///
+&amp;gt;                 ylabel(,format(%2.0f) angle(h)) ///
+&amp;gt;                 legend(order(1 &amp;quot;1 df&amp;quot; 2 &amp;quot;2 df&amp;quot; 3 &amp;quot;3df&amp;quot; 4 &amp;quot;4df&amp;quot; 5 &amp;quot;5df&amp;quot; 6 &amp;quot;6df&amp;quot;) ///
+&amp;gt;                         ring(0) cols(1) pos(5))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The graph is shown below. The model with 1 df (equivalent to a Weill model) stands out. The hazard function for the Weibull model is monotonic and so can&amp;rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/statasvg/ph_sensitivity_hazard.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, using similar code we can plot the six baseline survival functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. twoway  (line s0_df* temptime), ///
+&amp;gt;                 ytitle(&amp;quot;Survival function - S(t)&amp;quot;) ///
+&amp;gt;                 xtitle(&amp;quot;Years from surgery&amp;quot;) ///
+&amp;gt;                 ylabel(,format(%3.1f) angle(h)) ///
+&amp;gt;                 legend(order(1 &amp;quot;1 df&amp;quot; 2 &amp;quot;2 df&amp;quot; 3 &amp;quot;3df&amp;quot; 4 &amp;quot;4df&amp;quot; 5 &amp;quot;5df&amp;quot; 6 &amp;quot;6df&amp;quot;) ///
+&amp;gt;                         ring(0) cols(1) pos(1))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This graph is shown below and again the model with 1 df stands out, which is not surprising given the hazard function. However, there is excellent agreement between the remaining 5 models. In general, one sees better agreement when comparing survival functions as it is a cumulative measure the small differences seen the hazard functions cancel out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/statasvg/ph_sensitivity_survival.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This has been a simple sensitivity analysis where I have assumed proportional hazards and only fitted a single covariate, but I hope that it shows how simple it is to try these things.&lt;/p&gt;
+
+&lt;p&gt;What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord &lt;em&gt;et al&lt;/em&gt; for a more detailed simulation study on the ability of these models to capture complex hazard functions.&lt;/p&gt;
+
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;Rutherford M.J., Crowther M.J., Lambert, P.C. The use of restricted cubic splines to approximate complex hazard functions in the analysis of time-to-event data: a simulation study. &lt;em&gt;Journal of Statistical Computation and Simulation&lt;/em&gt; 2015;&lt;strong&gt;4&lt;/strong&gt;:777–793&lt;/p&gt;
 </description>
     </item>
     
