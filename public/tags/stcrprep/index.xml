@@ -27,7 +27,7 @@
 &lt;h3 id=&#34;non-and-semi-parametric-methods&#34;&gt;Non and semi parametric methods&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Using &lt;code&gt;sts graph&lt;/code&gt; for cause-specific CIFs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stcrprep/nonparametriccif/&#34;&gt;Using sts graph for cause-specific CIFs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Schoenfeld residuals&lt;/li&gt;
 &lt;/ul&gt;

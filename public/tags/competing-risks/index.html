@@ -32,6 +32,19 @@
   
 
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-105116466-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
 
   <link rel="alternate" href="/tags/competing-risks/index.xml" type="application/rss+xml" title="Paul C. Lambert">
   <link rel="feed" href="/tags/competing-risks/index.xml" type="application/rss+xml" title="Paul C. Lambert">
@@ -190,6 +203,15 @@
     <div class="article-style">
       
       stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using stset it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using sts graph. In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using stcox. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/software/stcrprep/nonparametriccif/">stcrprep - non parametric cause-specific CIFs</a></h2>
+    <div class="article-style">
+      
+      stpm2
       
     </div>
   </div>

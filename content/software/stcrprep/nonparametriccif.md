@@ -1,67 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Competing Risks on Paul C. Lambert</title>
-    <link>/tags/competing-risks/</link>
-    <description>Recent content in Competing Risks on Paul C. Lambert</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
-    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/competing-risks/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>stcrprep</title>
-      <link>/software/stcrprep/</link>
-      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/software/stcrprep/</guid>
-      <description>
++++
+date = "2017-08-06"
+title = "stcrprep - non parametric cause-specific CIFs"
+summary = "stpm2"
+tags = ["survival","software","Stata","competing risks"]
+external_link = "" 
+math = true
+[header]
+image = ""
+caption = ""
++++
 
-&lt;p&gt;stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using &lt;code&gt;stset&lt;/code&gt; it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using &lt;code&gt;sts graph&lt;/code&gt;.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using &lt;code&gt;stcox&lt;/code&gt;. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).&lt;/p&gt;
-
-&lt;p&gt;Below are some simple examples of using &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;h3 id=&#34;non-and-semi-parametric-methods&#34;&gt;Non and semi parametric methods&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stcrprep/nonparametriccif/&#34;&gt;Using sts graph for cause-specific CIFs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Schoenfeld residuals&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;parametric-models&#34;&gt;Parametric models&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Using &lt;code&gt;stpm2&lt;/code&gt; to model the cause-specific CIF&lt;/li&gt;
-&lt;li&gt;Alternative link functions.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>stcrprep - non parametric cause-specific CIFs</title>
-      <link>/software/stcrprep/nonparametriccif/</link>
-      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/software/stcrprep/nonparametriccif/</guid>
-      <description>
-
-&lt;h1 id=&#34;non-parametric-estimates-of-the-cause-specific-cumulative-incidence-function&#34;&gt;Non-parametric estimates of the cause-specific cumulative incidence function.&lt;/h1&gt;
-
-&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt;.
+I will use the same data set I use in the _Stata Journal_ [article](http://www.stata-journal.com/article.html?article=st0471). 
 This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
 marrow transplantation. Time is measured in days from transplantation to either relapse
 or death. There is only one covariate of interest, the EBMT risk score, which has been
 categorized into 3 groups (low, medium and high risk). The data is available as part of
-the mstate R package (de Wreede et al. 2011).&lt;/p&gt;
+the mstate R package (de Wreede et al. 2011).
 
-&lt;p&gt;First I load the data,&lt;/p&gt;
+First I load the data,
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. //use http://pclambert.net/ebmt1_stata.dta
-. use &amp;quot;C:\website\static\data\ebmt1_stata&amp;quot;, clear
+```stata
+. //use http://pclambert.net/ebmt1_stata.dta
+. use "C:\website\static\data\ebmt1_stata", clear
 (Written by R.              )
 
 . stset time, failure(status==1,2) scale(365.25) id(patid)
@@ -84,11 +44,12 @@ obs. time interval:  (time[_n-1], time]
                                      earliest observed entry t =         0
                                           last observed exit t =  8.454483
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;p&gt;Explain `stset&amp;rsquo;&lt;/p&gt;
+Explain `stset`
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. list patid status _t0 _t _d if patid==17, noobs
+```stata
+. list patid status _t0 _t _d if patid==17, noobs
 
   +---------------------------------------+
   | patid   status   _t0          _t   _d |
@@ -96,24 +57,26 @@ obs. time interval:  (time[_n-1], time]
   |    17     died     0   2.2888433    1 |
   +---------------------------------------+
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;p&gt;Explain this&lt;/p&gt;
+Explain this
 
-&lt;p&gt;I will now use `stcrprep&amp;rsquo; to restructure the data. This will&amp;hellip;.&lt;/p&gt;
+I will now use `stcrprep` to restructure the data. This will....
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcrprep, events(status) keep(score) trans(1 2) byg(score)
+```stata
+. stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. format tstart %6.5f                                                                     
+```stata
+. format tstart %6.5f                                                                     
 
 . format tstop %6.5f
 
 . format weight_c %6.5f
 
 . list failcode patid status tstart tstop weight_c weight_t status if patid==17, ///
-&amp;gt;          sepby(failcode) noobs 
+>          sepby(failcode) noobs 
 
   +------------------------------------------------------------------------------+
   | failcode   patid   status    tstart     tstop   weight_c   weight_t   status |
@@ -144,15 +107,16 @@ obs. time interval:  (time[_n-1], time]
   |     died      17     died   0.00000   2.28884    1.00000          1     died |
   +------------------------------------------------------------------------------+
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;p&gt;Explain the expanded data&lt;/p&gt;
+Explain the expanded data
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen event = status == failcode
+```stata
+. gen event = status == failcode
 
 . stset tstop [iw=weight_c], failure(event) enter(tstart) noshow                                          // stset using weights
 
-     failure event:  event != 0 &amp;amp; event &amp;lt; .
+     failure event:  event != 0 & event < .
 obs. time interval:  (0, tstop]
  enter on or after:  time tstart
  exit on or before:  failure
@@ -169,21 +133,26 @@ obs. time interval:  (0, tstop]
                                      earliest observed entry t =         0
                                           last observed exit t =  8.454483
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;p&gt;We now estimate the cause-specific CIF for relapse.&lt;/p&gt;
+We now estimate the cause-specific CIF for relapse.
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts graph if failcode==1, by(score) failure ///
-&amp;gt;         ytitle(&amp;quot;Probability of Relapse&amp;quot;) ///
-&amp;gt;         xtitle(&amp;quot;Years since transplanation&amp;quot;) ///
-&amp;gt;         ylabel(0(0.1)0.5, angle(h) format(%3.1f)) ///
-&amp;gt;         legend(order(1 &amp;quot;Low Risk&amp;quot; 2 &amp;quot;Medium Risk&amp;quot; 3 &amp;quot;High Risk&amp;quot;) ///
-&amp;gt;         cols(1) ring(0) pos(5)) ///
-&amp;gt;         scheme(sj) name(cif_relapse, replace)
+```stata
+. sts graph if failcode==1, by(score) failure ///
+>         ytitle("Probability of Relapse") ///
+>         xtitle("Years since transplanation") ///
+>         ylabel(0(0.1)0.5, angle(h) format(%3.1f)) ///
+>         legend(order(1 "Low Risk" 2 "Medium Risk" 3 "High Risk") ///
+>         cols(1) ring(0) pos(5)) ///
+>         scheme(sj) name(cif_relapse, replace)
 
-&lt;/code&gt;&lt;/pre&gt;
+```
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts test score if failcode==1
+
+![](/statasvg/stcrprep_cif1.svg)
+
+```stata
+. sts test score if failcode==1
 
 
 Log-rank test for equality of survivor functions
@@ -198,7 +167,7 @@ High risk   |        49          32.04
 Total       |       456         456.00
 
                   chi2(2) =      13.37
-                  Pr&amp;gt;chi2 =     0.0012
+                  Pr>chi2 =     0.0012
 
 . sts list, at(1 5) failure by(failcode score)    
 
@@ -227,9 +196,5 @@ died High risk
 Note: Failure function is calculated over full data and evaluated at indicated
       times; it is not calculated from aggregates shown at left.
 
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+```
+

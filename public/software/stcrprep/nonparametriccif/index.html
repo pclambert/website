@@ -52,11 +52,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="/software/stpm2/comparewithcox/">
+  <link rel="canonical" href="/software/stcrprep/nonparametriccif/">
 
   
 
-  <title>Proportional hazards models in stpm2 | Paul C. Lambert</title>
+  <title>stcrprep - non parametric cause-specific CIFs | Paul C. Lambert</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -193,7 +193,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Proportional hazards models in stpm2</h1>
+    <h1 itemprop="name">stcrprep - non parametric cause-specific CIFs</h1>
     
 
 <div class="article-metadata">
@@ -212,9 +212,6 @@
   <span class="article-tags">
     <i class="fa fa-tags"></i>
     
-    <a href="/tags/stpm2">stpm2</a
-    >, 
-    
     <a href="/tags/survival">survival</a
     >, 
     
@@ -224,7 +221,7 @@
     <a href="/tags/stata">Stata</a
     >, 
     
-    <a href="/tags/proportional-hazards">proportional hazards</a
+    <a href="/tags/competing-risks">competing risks</a
     >
     
   </span>
@@ -237,35 +234,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2%2fcomparewithcox%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstcrprep%2fnonparametriccif%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Proportional%20hazards%20models%20in%20stpm2&amp;url=%2fsoftware%2fstpm2%2fcomparewithcox%2f"
+         href="https://twitter.com/intent/tweet?text=stcrprep%20-%20non%20parametric%20cause-specific%20CIFs&amp;url=%2fsoftware%2fstcrprep%2fnonparametriccif%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2%2fcomparewithcox%2f&amp;title=Proportional%20hazards%20models%20in%20stpm2"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstcrprep%2fnonparametriccif%2f&amp;title=stcrprep%20-%20non%20parametric%20cause-specific%20CIFs"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2%2fcomparewithcox%2f&amp;title=Proportional%20hazards%20models%20in%20stpm2"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstcrprep%2fnonparametriccif%2f&amp;title=stcrprep%20-%20non%20parametric%20cause-specific%20CIFs"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Proportional%20hazards%20models%20in%20stpm2&amp;body=%2fsoftware%2fstpm2%2fcomparewithcox%2f">
+         href="mailto:?subject=stcrprep%20-%20non%20parametric%20cause-specific%20CIFs&amp;body=%2fsoftware%2fstcrprep%2fnonparametriccif%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -280,121 +277,185 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<h1 id="proportional-hazards-model">Proportional hazards model</h1>
+<h1 id="non-parametric-estimates-of-the-cause-specific-cumulative-incidence-function">Non-parametric estimates of the cause-specific cumulative incidence function.</h1>
 
-<p>We first load the example breast cancer data data using <code>webuse</code> and then use <code>stset</code> to declare the survival time and event indicator.</p>
+<p>I will use the same data set I use in the <em>Stata Journal</em> <a href="http://www.stata-journal.com/article.html?article=st0471">article</a>.
+This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
+marrow transplantation. Time is measured in days from transplantation to either relapse
+or death. There is only one covariate of interest, the EBMT risk score, which has been
+categorized into 3 groups (low, medium and high risk). The data is available as part of
+the mstate R package (de Wreede et al. 2011).</p>
 
-<pre><code class="language-stata">. webuse brcancer, clear
-(German breast cancer data)
+<p>First I load the data,</p>
 
-. stset rectime, f(censrec==1) scale(365.24)
+<pre><code class="language-stata">. //use http://pclambert.net/ebmt1_stata.dta
+. use &quot;C:\website\static\data\ebmt1_stata&quot;, clear
+(Written by R.              )
 
-     failure event:  censrec == 1
-obs. time interval:  (0, rectime]
+. stset time, failure(status==1,2) scale(365.25) id(patid)
+
+                id:  patid
+     failure event:  status == 1 2
+obs. time interval:  (time[_n-1], time]
  exit on or before:  failure
-    t for analysis:  time/365.24
+    t for analysis:  time/365.25
 
 ------------------------------------------------------------------------------
-        686  total observations
+      1,977  total observations
           0  exclusions
 ------------------------------------------------------------------------------
-        686  observations remaining, representing
-        299  failures in single-record/single-failure data
-  2,112.036  total analysis time at risk and under observation
+      1,977  observations remaining, representing
+      1,977  subjects
+      1,141  failures in single-failure-per-subject data
+  3,796.057  total analysis time at risk and under observation
                                                 at risk from t =         0
                                      earliest observed entry t =         0
-                                          last observed exit t =  7.280145
+                                          last observed exit t =  8.454483
 
 </code></pre>
 
-<p>The <code>scale(365.25)</code> option converts the times recorded in days to years.</p>
+<p>Explain `stset&rsquo;</p>
 
-<p>A standard Cox proportional hazards model can be defined as follows,</p>
+<pre><code class="language-stata">. list patid status _t0 _t _d if patid==17, noobs
 
-<p>$$
-h_i(t|\mathbf{x}_i)=h_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
-$$</p>
-
-<p>A key point about the Cox model is that we do not estimate the baseline hazard, $h_0(t)$, as this cancels out in the partial likelihood, so we only estimate the relative effects, i.e. hazard ratios.</p>
-
-<p>We can now fit a Cox model in Stata with <code>hormon</code> as the only covariate.</p>
-
-<pre><code class="language-stata">. stcox hormon, 
-
-         failure _d:  censrec == 1
-   analysis time _t:  rectime/365.24
-
-Iteration 0:   log likelihood = -1788.1731
-Iteration 1:   log likelihood =  -1783.774
-Iteration 2:   log likelihood =  -1783.765
-Iteration 3:   log likelihood =  -1783.765
-Refining estimates:
-Iteration 0:   log likelihood =  -1783.765
-
-Cox regression -- Breslow method for ties
-
-No. of subjects =          686                  Number of obs    =         686
-No. of failures =          299
-Time at risk    =  2112.035922
-                                                LR chi2(1)       =        8.82
-Log likelihood  =    -1783.765                  Prob &gt; chi2      =      0.0030
-
-------------------------------------------------------------------------------
-          _t | Haz. Ratio   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-      hormon |   .6949616   .0869009    -2.91   0.004      .543905    .8879705
-------------------------------------------------------------------------------
+  +---------------------------------------+
+  | patid   status   _t0          _t   _d |
+  |---------------------------------------|
+  |    17     died     0   2.2888433    1 |
+  +---------------------------------------+
 
 </code></pre>
 
-<p>We will now fit a flexible parametric survival model. Here are model is on the log <em>cumulative</em> hazard scale, so our model is defined using uppercase H rather than lowercase h.</p>
+<p>Explain this</p>
 
-<p>$$
-H_i(t|\mathbf{x}_i)=H_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
-$$</p>
+<p>I will now use `stcrprep&rsquo; to restructure the data. This will&hellip;.</p>
 
-<p>Do we have to worry about the switch from hazard function to cumulative hazard function? Well, the answer is &ldquo;No&rdquo; as if we have proportional hazards we also have proportional cumulative hazards.</p>
-
-<p>In the flexible parametric survival model we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,</p>
-
-<p>$$
-\ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
-$$</p>
-
-<p>where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).</p>
-
-<p>We now fit this model in Stata using <code>stpm2</code>.</p>
-
-<pre><code class="language-stata">. stpm2 hormon, df(3) scale(hazard) eform
-
-Iteration 0:   log likelihood = -671.75275  
-Iteration 1:   log likelihood = -670.39949  
-Iteration 2:   log likelihood = -670.39239  
-Iteration 3:   log likelihood = -670.39239  
-
-Log likelihood = -670.39239                     Number of obs     =        686
-
-------------------------------------------------------------------------------
-             |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-xb           |
-      hormon |   .6966754   .0870015    -2.89   0.004     .5454206    .8898757
-       _rcs1 |   4.931928   .6329089    12.43   0.000     3.835156    6.342354
-       _rcs2 |   1.786812   .2092654     4.96   0.000     1.420329    2.247857
-       _rcs3 |   .9519031     .03275    -1.43   0.152     .8898306    1.018306
-       _cons |   .3032836   .0247012   -14.65   0.000     .2585366    .3557753
-------------------------------------------------------------------------------
-Note: Estimates are transformed only in the first equation.
+<pre><code class="language-stata">. stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
 </code></pre>
 
-<p>I have used three options. The <code>df(3)</code> option requests there to be 3 restricted cubic spline parameters (4 knots). These are at the default knot locations, which are at evenly spaced centiles of the uncensored event times. The <code>scale()</code> option defines the link function and <code>scale(hazard)</code> asks for a log(-log) link function, i.e. our linear predictor is on the log cumulative hazard scale. The <code>eform</code> option means that the coefficients will be exponentiated.</p>
+<pre><code class="language-stata">. format tstart %6.5f                                                                     
 
-<p>The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.</p>
+. format tstop %6.5f
 
-<p>A sensible question is, <em>if we get the same anwers, why not just fit a Cox model?</em>  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.</p>
+. format weight_c %6.5f
 
-<p>There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.</p>
+. list failcode patid status tstart tstop weight_c weight_t status if patid==17, ///
+&gt;          sepby(failcode) noobs 
+
+  +------------------------------------------------------------------------------+
+  | failcode   patid   status    tstart     tstop   weight_c   weight_t   status |
+  |------------------------------------------------------------------------------|
+  |  relapse      17     died   0.00000   2.28884    1.00000          1     died |
+  |  relapse      17     died   2.28884   2.31622    0.99000          1     died |
+  |  relapse      17     died   2.31622   2.32717    0.98497          1     died |
+  |  relapse      17     died   2.32717   2.36003    0.97992          1     died |
+  |  relapse      17     died   2.36003   2.55441    0.91392          1     died |
+  |  relapse      17     died   2.55441   2.65845    0.89843          1     died |
+  |  relapse      17     died   2.65845   2.89938    0.85142          1     died |
+  |  relapse      17     died   2.89938   3.02806    0.80937          1     died |
+  |  relapse      17     died   3.02806   3.18960    0.76176          1     died |
+  |  relapse      17     died   3.18960   3.26626    0.74578          1     died |
+  |  relapse      17     died   3.26626   3.62765    0.63847          1     died |
+  |  relapse      17     died   3.62765   3.89870    0.59519          1     died |
+  |  relapse      17     died   3.89870   3.97536    0.57881          1     died |
+  |  relapse      17     died   3.97536   4.10951    0.55124          1     died |
+  |  relapse      17     died   4.10951   4.39425    0.51163          1     died |
+  |  relapse      17     died   4.39425   4.50103    0.47714          1     died |
+  |  relapse      17     died   4.50103   4.69815    0.45968          1     died |
+  |  relapse      17     died   4.69815   5.08419    0.37101          1     died |
+  |  relapse      17     died   5.08419   5.22656    0.32235          1     died |
+  |  relapse      17     died   5.22656   5.33607    0.30995          1     died |
+  |  relapse      17     died   5.33607   5.97673    0.22772          1     died |
+  |  relapse      17     died   5.97673   6.27515    0.20170          1     died |
+  |------------------------------------------------------------------------------|
+  |     died      17     died   0.00000   2.28884    1.00000          1     died |
+  +------------------------------------------------------------------------------+
+
+</code></pre>
+
+<p>Explain the expanded data</p>
+
+<pre><code class="language-stata">. gen event = status == failcode
+
+. stset tstop [iw=weight_c], failure(event) enter(tstart) noshow                                          // stset using weights
+
+     failure event:  event != 0 &amp; event &lt; .
+obs. time interval:  (0, tstop]
+ enter on or after:  time tstart
+ exit on or before:  failure
+            weight:  [iweight=weight_c]
+
+------------------------------------------------------------------------------
+     70,262  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+     70,262  observations remaining, representing
+      1,141  failures in single-record/single-failure data
+ 13,820.402  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =  8.454483
+
+</code></pre>
+
+<p>We now estimate the cause-specific CIF for relapse.</p>
+
+<pre><code class="language-stata">. sts graph if failcode==1, by(score) failure ///
+&gt;         ytitle(&quot;Probability of Relapse&quot;) ///
+&gt;         xtitle(&quot;Years since transplanation&quot;) ///
+&gt;         ylabel(0(0.1)0.5, angle(h) format(%3.1f)) ///
+&gt;         legend(order(1 &quot;Low Risk&quot; 2 &quot;Medium Risk&quot; 3 &quot;High Risk&quot;) ///
+&gt;         cols(1) ring(0) pos(5)) ///
+&gt;         scheme(sj) name(cif_relapse, replace)
+
+</code></pre>
+
+<pre><code class="language-stata">. sts test score if failcode==1
+
+
+Log-rank test for equality of survivor functions
+
+            |   Events         Events
+score       |  observed       expected
+------------+-------------------------
+Low risk    |        79          99.64
+Medium risk |       328         324.33
+High risk   |        49          32.04
+------------+-------------------------
+Total       |       456         456.00
+
+                  chi2(2) =      13.37
+                  Pr&gt;chi2 =     0.0012
+
+. sts list, at(1 5) failure by(failcode score)    
+
+              Beg.                      Failure       Std.
+    Time     Total     Fail             Function     Error     [95% Conf. Int.]
+-------------------------------------------------------------------------------
+relapse Low risk 
+       1   348.001       38              0.0959    0.0148     0.0707    0.1295
+       5   94.7875       36              0.2268    0.0250     0.1821    0.2805
+relapse Medium risk 
+       1   1125.93      225              0.1636    0.0100     0.1451    0.1843
+       5   268.081      100              0.2594    0.0131     0.2347    0.2861
+relapse High risk 
+       1   116.387       39              0.2417    0.0338     0.1827    0.3156
+       5         6       10              0.3306    0.0410     0.2574    0.4181
+died Low risk 
+       1   306.828       81              0.2032    0.0202     0.1669    0.2462
+       5   94.9111       10              0.2368    0.0223     0.1964    0.2839
+died Medium risk 
+       1   915.771      441              0.3189    0.0126     0.2950    0.3442
+       5   209.617       70              0.3829    0.0137     0.3566    0.4104
+died High risk 
+       1   84.7723       73              0.4494    0.0392     0.3764    0.5296
+       5         6        7              0.5160    0.0452     0.4310    0.6071
+-------------------------------------------------------------------------------
+Note: Failure function is calculated over full data and evaluated at indicated
+      times; it is not calculated from aggregates shown at left.
+
+</code></pre>
 
     </div>
   </div>
@@ -405,12 +466,9 @@ Note: Estimates are transformed only in the first equation.
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="/software/stpm2/sensitivity_analysis/"><span
-      aria-hidden="true">&larr;</span> Sensitivity analysis to number of knots (proportional hazards)</a></li>
-    
 
     
-    <li class="next"><a href="/software/stpm2/">stpm2 <span
+    <li class="next"><a href="/software/stpm2/sensitivity_analysis/">Sensitivity analysis to number of knots (proportional hazards) <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

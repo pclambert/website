@@ -1,0 +1,93 @@
++++
+date = "2017-08-06"
+title = "stcrprep - non parametric cause-specific CIFs"
+summary = "stpm2"
+tags = ["survival","software","Stata","competing risks"]
+external_link = "" 
+math = true
+[header]
+image = ""
+caption = ""
++++
+
+I will use the same data set I use in the _Stata Journal_ [article](http://www.stata-journal.com/article.html?article=st0471). 
+This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
+marrow transplantation. Time is measured in days from transplantation to either relapse
+or death. There is only one covariate of interest, the EBMT risk score, which has been
+categorized into 3 groups (low, medium and high risk). The data is available as part of
+the mstate R package (de Wreede et al. 2011).
+
+First I load the data,
+
+```stata
+<<dd_do>>
+//use http://pclambert.net/ebmt1_stata.dta
+use "C:\website\static\data\ebmt1_stata", clear
+stset time, failure(status==1,2) scale(365.25) id(patid)
+<</dd_do>>
+```
+
+Explain `stset`
+
+```stata
+<<dd_do>>
+list patid status _t0 _t _d if patid==17, noobs
+<</dd_do>>
+```
+
+Explain this
+
+I will now use `stcrprep` to restructure the data. This will....
+
+```stata
+<<dd_do>>
+stcrprep, events(status) keep(score) trans(1 2)	byg(score)
+<</dd_do>>
+```
+
+```stata
+<<dd_do: >>
+format tstart %6.5f									
+format tstop %6.5f
+format weight_c %6.5f
+list failcode patid status tstart tstop weight_c weight_t status if patid==17, ///
+	 sepby(failcode) noobs 
+<</dd_do>>
+```
+
+Explain the expanded data
+
+```stata
+<<dd_do: >>
+gen event = status == failcode
+stset tstop [iw=weight_c], failure(event) enter(tstart) noshow						// stset using weights
+<</dd_do>>
+```
+
+We now estimate the cause-specific CIF for relapse.
+
+```stata
+<<dd_do >>
+sts graph if failcode==1, by(score) failure ///
+	ytitle("Probability of Relapse") ///
+	xtitle("Years since transplanation") ///
+	ylabel(0(0.1)0.5, angle(h) format(%3.1f)) ///
+	legend(order(1 "Low Risk" 2 "Medium Risk" 3 "High Risk") ///
+	cols(1) ring(0) pos(5)) ///
+	scheme(sj) name(cif_relapse, replace)
+<</dd_do>>
+```
+
+<<dd_do: quietly>>
+graph export c:/website/static/statasvg/stcrprep_cif1.svg, replace
+<</dd_do>>
+
+![](/statasvg/stcrprep_cif1.svg)
+
+```stata
+<<dd_do: >>
+sts test score if failcode==1
+sts list, at(1 5) failure by(failcode score)	
+<</dd_do>>
+```
+
