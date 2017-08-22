@@ -47,7 +47,9 @@
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/nonparametriccif/</guid>
-      <description>&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt;.
+      <description>
+
+&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt; on &lt;code&gt;stcrprep&lt;/code&gt;.
 This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
 marrow transplantation. Time is measured in days from transplantation to either relapse
 or death. There is only one covariate of interest, the EBMT risk score, which has been
@@ -56,11 +58,24 @@ the mstate R package (de Wreede et al. 2011).&lt;/p&gt;
 
 &lt;p&gt;First I load the data,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. //use http://pclambert.net/ebmt1_stata.dta
-. use &amp;quot;C:\website\static\data\ebmt1_stata&amp;quot;, clear
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use http://www.pclambert.net/data/ebmt1_stata.dta, clear
 (Written by R.              )
 
-. stset time, failure(status==1,2) scale(365.25) id(patid)
+. tab status
+
+     status |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   censored |        836       42.29       42.29
+    relapse |        456       23.07       65.35
+       died |        685       34.65      100.00
+------------+-----------------------------------
+      Total |      1,977      100.00
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The tabulation shows that of the 1,977 subjects, 836 were censored, 456 had a relapse and 686 had a death before relapse. Now we can &lt;code&gt;stset&lt;/code&gt; the data declaring both relapse and death as an event in the &lt;code&gt;failure()&lt;/code&gt; option.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stset time, failure(status==1,2) scale(365.25) id(patid)
 
                 id:  patid
      failure event:  status == 1 2
@@ -82,7 +97,7 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Explain &lt;code&gt;stset&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In order to show how &lt;code&gt;stcrprep&lt;/code&gt; expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using &lt;code&gt;stcrprep&#39;. The listing is for subject 17 (&lt;/code&gt;patid==17`).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. list patid status _t0 _t _d if patid==17, noobs
 
@@ -94,15 +109,16 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Explain this&lt;/p&gt;
+&lt;p&gt;This subject died after 2.29 years and in data set before using &lt;code&gt;stcrprep&lt;/code&gt; has just has one row of
+data.&lt;/p&gt;
 
-&lt;p&gt;I will now use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. This will&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;Next I use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. The events() option requires the variable defining all possible events and the censored value. The trans() option gives the transitions of the events of interest; here we
+are interested in the transitions to both relapse(status=1) and death (status=2); this is actually the default, but is shown here for clarity. The keep() option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The byg() option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
+non-parametric estimate of the cause-specific CIF in each group, the byg() option will estimate the censoring distribution separately in each group.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. format tstart %6.5f                                                                     
+. format tstart %6.5f                                                                     
 
 . format tstop %6.5f
 
@@ -142,7 +158,24 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Explain the expanded data&lt;/p&gt;
+&lt;p&gt;After using &lt;code&gt;stcrprep&lt;/code&gt; the number of rows has increased from 1977 to 70262. The rows have been divided based on the failure of the newly created variable &lt;code&gt;failcode&lt;/code&gt;. This variable will be used to fit different models depending on the event of interest. The variables &lt;code&gt;patid&lt;/code&gt; and &lt;code&gt;status&lt;/code&gt; are the same as in the non expanded data. The variables &lt;code&gt;tstart&lt;/code&gt; and &lt;code&gt;tstop&lt;/code&gt; give the times an individual starts and stops being at risk. They
+change within an individual when their weight, defined by variable &lt;code&gt;weight_c&lt;/code&gt;, changes value. The &lt;code&gt;weight_t&lt;/code&gt; gives the weights when there is left trunction. As there is no left truncation in this data, it takes the value 1 for all subjects at all times.&lt;/p&gt;
+
+&lt;p&gt;When &lt;code&gt;failcode==1&lt;/code&gt; this corresponds to when a relapse is the event of interest. As
+the subject with &lt;code&gt;patid==17&lt;/code&gt; died after 2.29 years (i.e. had a competing event), they
+are initially at risk until this time and they should receive a weight of 1 in the analysis.
+After their death they are still kept in the risk set, but their weight decreases. The
+decrease is based on the conditional probability of being censored which is estimated
+using a non-parametric (Kaplan-Meier) estimate of the censoring distribution. The
+weights only change at times when there is a failure for the event of interest and the
+value of censoring distribution has changed.&lt;/p&gt;
+
+&lt;p&gt;When &lt;code&gt;failcode==2&lt;/code&gt; this corresponds to when death is the event of interest. Since
+this patient experienced the event of interest (i.e. they died) rather than the competing event, they only require one row of data.&lt;/p&gt;
+
+&lt;p&gt;We can use &lt;code&gt;sts graph&lt;/code&gt; to give a plot of the cause-specific CIF. We first need to &lt;code&gt;stset&lt;/code&gt;
+the data utilizing the information on the weights contained in variable &lt;code&gt;weights_c&lt;/code&gt; by
+specifiying &lt;code&gt;iweights&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen event = status == failcode
 
@@ -167,7 +200,13 @@ obs. time interval:  (0, tstop]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We now estimate the cause-specific CIF for relapse.&lt;/p&gt;
+&lt;p&gt;We first create the variable, event. This is defined as 1 if the event of interest occurs
+and zero otherwise. As we have split time data, we need to give information on the start
+time (&lt;code&gt;tstart&lt;/code&gt;) and stop time (&lt;code&gt;tstop&lt;/code&gt;) of each row of data.
+We use &lt;code&gt;sts graph&lt;/code&gt; in the usual way, but use the failure option as we are interested
+in the probability of relapse as opposed to the probability of not having a relapse (which
+includes the probability of death). For example, the cause-specific CIF for relapse can
+be plotted as follows,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts graph if failcode==1, by(score) failure ///
 &amp;gt;         ytitle(&amp;quot;Probability of Relapse&amp;quot;) ///
@@ -181,24 +220,13 @@ obs. time interval:  (0, tstop]
 
 &lt;p&gt;&lt;img src=&#34;/statasvg/stcrprep_cif1.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts test score if failcode==1
+&lt;p&gt;Note that the lines are extended to the maximum censoring time in each group, rather than the maximum event time.
+Alternatively, &lt;code&gt;sts gen&lt;/code&gt; can be used to generate the cause-specific CIF and this can be
+plotted with appropriate if statements to control the maximum follow-up time for each line.&lt;/p&gt;
 
+&lt;p&gt;It is also possible to list the CIF at specific time points using &lt;code&gt;sts list&lt;/code&gt;.&lt;/p&gt;
 
-Log-rank test for equality of survivor functions
-
-            |   Events         Events
-score       |  observed       expected
-------------+-------------------------
-Low risk    |        79          99.64
-Medium risk |       328         324.33
-High risk   |        49          32.04
-------------+-------------------------
-Total       |       456         456.00
-
-                  chi2(2) =      13.37
-                  Pr&amp;gt;chi2 =     0.0012
-
-. sts list, at(1 5) failure by(failcode score)    
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts list, at(1 5) failure by(failcode score)    
 
               Beg.                      Failure       Std.
     Time     Total     Fail             Function     Error     [95% Conf. Int.]
@@ -226,6 +254,33 @@ Note: Failure function is calculated over full data and evaluated at indicated
       times; it is not calculated from aggregates shown at left.
 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, we can test for differences in the cause-specific CIF using &lt;code&gt;sts test&lt;/code&gt;. Note that is slightly different to the modified log rank test defined by Gray (1988).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts test score if failcode==1
+
+
+Log-rank test for equality of survivor functions
+
+            |   Events         Events
+score       |  observed       expected
+------------+-------------------------
+Low risk    |        79          99.64
+Medium risk |       328         324.33
+High risk   |        49          32.04
+------------+-------------------------
+Total       |       456         456.00
+
+                  chi2(2) =      13.37
+                  Pr&amp;gt;chi2 =     0.0012
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;de Wreede, L.; Fiocco, M. &amp;amp; Putter, H. &lt;code&gt;mstate&lt;/code&gt;: An R package for the analysis of competing risks and multi-state models. &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 2011;38.&lt;/p&gt;
+
+&lt;p&gt;Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. &lt;em&gt;The Annals of Statistics&lt;/em&gt; 1988;&lt;strong&gt;16&lt;/strong&gt;:1141-1154.&lt;/p&gt;
 </description>
     </item>
     

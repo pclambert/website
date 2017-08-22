@@ -15,9 +15,7 @@ I have written some programs in JavaScript using the excellent [D3 library](http
 
 The graphs do not work in older versions of Internet Explorer, but appear OK in newer versions (I am currently using IE11) or using Microsoft Edge. However, the best perforamce appears to be in Chrome and Firefox.
 
-<<<<<<< HEAD
-### [The number and location of knots](spline_eg/spline_eg.html)
-=======
+
 ## Splines
 
 

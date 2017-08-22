@@ -10,7 +10,7 @@ image = ""
 caption = ""
 +++
 
-I will use the same data set I use in the _Stata Journal_ [article](http://www.stata-journal.com/article.html?article=st0471). 
+I will use the same data set I use in the _Stata Journal_ [article](http://www.stata-journal.com/article.html?article=st0471) on `stcrprep`. 
 This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
 marrow transplantation. Time is measured in days from transplantation to either relapse
 or death. There is only one covariate of interest, the EBMT risk score, which has been
@@ -20,10 +20,23 @@ the mstate R package (de Wreede et al. 2011).
 First I load the data,
 
 ```stata
-. //use http://pclambert.net/ebmt1_stata.dta
-. use "C:\website\static\data\ebmt1_stata", clear
+. use http://www.pclambert.net/data/ebmt1_stata.dta, clear
 (Written by R.              )
 
+. tab status
+
+     status |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   censored |        836       42.29       42.29
+    relapse |        456       23.07       65.35
+       died |        685       34.65      100.00
+------------+-----------------------------------
+      Total |      1,977      100.00
+
+```
+The tabulation shows that of the 1,977 subjects, 836 were censored, 456 had a relapse and 686 had a death before relapse. Now we can `stset` the data declaring both relapse and death as an event in the `failure()` option.
+
+```stata
 . stset time, failure(status==1,2) scale(365.25) id(patid)
 
                 id:  patid
@@ -45,8 +58,8 @@ obs. time interval:  (time[_n-1], time]
                                           last observed exit t =  8.454483
 
 ```
+In order to show how `stcrprep` expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using `stcrprep'. The listing is for subject 17 (`patid==17`).
 
-Explain `stset`
 
 ```stata
 . list patid status _t0 _t _d if patid==17, noobs
@@ -59,16 +72,16 @@ Explain `stset`
 
 ```
 
-Explain this
+This subject died after 2.29 years and in data set before using `stcrprep` has just has one row of
+data.
 
-I will now use `stcrprep` to restructure the data. This will....
+Next I use `stcrprep` to restructure the data. The events() option requires the variable defining all possible events and the censored value. The trans() option gives the transitions of the events of interest; here we
+are interested in the transitions to both relapse(status=1) and death (status=2); this is actually the default, but is shown here for clarity. The keep() option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The byg() option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
+non-parametric estimate of the cause-specific CIF in each group, the byg() option will estimate the censoring distribution separately in each group. 
 
 ```stata
 . stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
-```
-
-```stata
 . format tstart %6.5f                                                                     
 
 . format tstop %6.5f
@@ -108,8 +121,24 @@ I will now use `stcrprep` to restructure the data. This will....
   +------------------------------------------------------------------------------+
 
 ```
+After using `stcrprep` the number of rows has increased from 1977 to 70262. The rows have been divided based on the failure of the newly created variable `failcode`. This variable will be used to fit different models depending on the event of interest. The variables `patid` and `status` are the same as in the non expanded data. The variables `tstart` and `tstop` give the times an individual starts and stops being at risk. They
+change within an individual when their weight, defined by variable `weight_c`, changes value. The `weight_t` gives the weights when there is left trunction. As there is no left truncation in this data, it takes the value 1 for all subjects at all times.
 
-Explain the expanded data
+When `failcode==1` this corresponds to when a relapse is the event of interest. As
+the subject with `patid==17` died after 2.29 years (i.e. had a competing event), they
+are initially at risk until this time and they should receive a weight of 1 in the analysis.
+After their death they are still kept in the risk set, but their weight decreases. The
+decrease is based on the conditional probability of being censored which is estimated
+using a non-parametric (Kaplan-Meier) estimate of the censoring distribution. The
+weights only change at times when there is a failure for the event of interest and the
+value of censoring distribution has changed.
+
+When `failcode==2` this corresponds to when death is the event of interest. Since
+this patient experienced the event of interest (i.e. they died) rather than the competing event, they only require one row of data.
+
+We can use `sts graph` to give a plot of the cause-specific CIF. We first need to `stset`
+the data utilizing the information on the weights contained in variable `weights_c` by
+specifiying `iweights`.
 
 ```stata
 . gen event = status == failcode
@@ -134,8 +163,13 @@ obs. time interval:  (0, tstop]
                                           last observed exit t =  8.454483
 
 ```
-
-We now estimate the cause-specific CIF for relapse.
+We first create the variable, event. This is defined as 1 if the event of interest occurs
+and zero otherwise. As we have split time data, we need to give information on the start
+time (`tstart`) and stop time (`tstop`) of each row of data.
+We use `sts graph` in the usual way, but use the failure option as we are interested
+in the probability of relapse as opposed to the probability of not having a relapse (which
+includes the probability of death). For example, the cause-specific CIF for relapse can
+be plotted as follows,
 
 ```stata
 . sts graph if failcode==1, by(score) failure ///
@@ -151,24 +185,14 @@ We now estimate the cause-specific CIF for relapse.
 
 ![](/statasvg/stcrprep_cif1.svg)
 
+
+Note that the lines are extended to the maximum censoring time in each group, rather than the maximum event time.
+Alternatively, `sts gen` can be used to generate the cause-specific CIF and this can be
+plotted with appropriate if statements to control the maximum follow-up time for each line.
+
+It is also possible to list the CIF at specific time points using `sts list`.
+
 ```stata
-. sts test score if failcode==1
-
-
-Log-rank test for equality of survivor functions
-
-            |   Events         Events
-score       |  observed       expected
-------------+-------------------------
-Low risk    |        79          99.64
-Medium risk |       328         324.33
-High risk   |        49          32.04
-------------+-------------------------
-Total       |       456         456.00
-
-                  chi2(2) =      13.37
-                  Pr>chi2 =     0.0012
-
 . sts list, at(1 5) failure by(failcode score)    
 
               Beg.                      Failure       Std.
@@ -198,3 +222,30 @@ Note: Failure function is calculated over full data and evaluated at indicated
 
 ```
 
+Now, we can test for differences in the cause-specific CIF using `sts test`. Note that is slightly different to the modified log rank test defined by Gray (1988). 
+
+```stata
+. sts test score if failcode==1
+
+
+Log-rank test for equality of survivor functions
+
+            |   Events         Events
+score       |  observed       expected
+------------+-------------------------
+Low risk    |        79          99.64
+Medium risk |       328         324.33
+High risk   |        49          32.04
+------------+-------------------------
+Total       |       456         456.00
+
+                  chi2(2) =      13.37
+                  Pr>chi2 =     0.0012
+
+```
+
+## References
+
+de Wreede, L.; Fiocco, M. & Putter, H. `mstate`: An R package for the analysis of competing risks and multi-state models. _Journal of Statistical Software_ 2011;38.
+
+Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. _The Annals of Statistics_ 1988;**16**:1141-1154.
