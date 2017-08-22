@@ -44,7 +44,7 @@ June 8-13, 2015, [Statistical methods for population-based cancer survival analy
 
 16-21 June 2014, [Statistical methods for population-based cancer survival analysis](http://cansurv.net/), Veneto, Italy.
 
-18 October 2013. The many ways to report differences in cancer survival. _International Agency for Research on Cancer (IARC)_. Lyon, France. 
+18 October 2013. The many ways to report differences in cancer survival. _International Agency for Research on Cancer (IARC)_. Lyon, France.
 
 13 September 2013. [Estimating and modelling cumulative incidence functions using time-dependent weights](http://www.stata.com/meeting/uk13/abstracts/materials/uk13_lambert.pdf). [UK Stata Users Group 2013](http://www.stata.com/meeting/uk13/), London UK.
 
