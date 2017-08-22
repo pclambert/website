@@ -1,29 +1,22 @@
 +++
-title = 'stpm2'
+title = 'stcrprep'
 date = '2017-08-21'
-tags = ["software", "stpm2"]
-
-  
+tags = ["software", "stcrprep","competing risks"]
 +++
 
-`stpm2` fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the  $\log\[-\log\[S(t)\]\]$ link function, which fits proportional hazards models.
+stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using `stset` it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using `sts graph`.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using `stcox`. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).
 
-I have added some examples and aim to add to these.
+Below are some simple examples of using `stcrprep`.
 
-## Proportional hazards models
-- [Comparison with a Cox model]({{< ref "software/stpm2/comparewithcox.md" >}})
-- simple simulation study to show agreement with Cox model.
-- predicting hazard and survival functions (use of the `timevar()` option)
-- [Sensitvity analsis for the number of knots]({{< ref "software/stpm2/sensitivity_analysis.md" >}}).
+## Examples
 
-## Time-dependent effects (non proportional hazards)
-- non-proportional hazards
- 
-## Relative survival
-- a simple relative survival model
+### Non and semi parametric methods
+- Using `sts graph` for cause-specific CIFs
+- Using `stcox` instead of `stcrreg`
+- Schoenfeld residuals
 
-## Alternative link functions
-- the logistic, probit and Aranda-Ordaz link functions.
-
+### Parametric models
+- Using `stpm2` to model the cause-specific CIF
+- Alternative link functions.
 
 
