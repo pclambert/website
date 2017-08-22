@@ -1,4 +1,4 @@
-#baseurl = "http://www.pclambert.net/"  # End your URL with a `/` trailing slash. 
+baseurl = "http://www.pclambert.net/"  # End your URL with a `/` trailing slash. 
 title = "Paul C. Lambert"
 copyright = "&copy; 2017 Paul C Lambert"
 theme = "hugo-academic"
