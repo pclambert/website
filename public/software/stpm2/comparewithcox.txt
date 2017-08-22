@@ -26,10 +26,10 @@ The `scale(365.25)` option converts the times recorded in days to years.
 A standard Cox proportional hazards model can be defined as follows,
 
 $$
-h_i(t|\mathbf{x}_i)=h_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
+h_i(t|\mathbf{x}\_i)=h_0(t)\exp\left(\mathbf{x}\_i\boldsymbol{\beta}\right)
 $$
 
- A key point about the Cox model is that we do not estimate the baseline hazard, $h_0(t)$, as this cancels out in the partial likelihood, so we only estimate the relative effects, i.e. hazard ratios.
+A key point about the Cox model is that we do not estimate the baseline hazard, $h\_0(t)$, as this cancels out in the partial likelihood, so we only estimate the relative effects, i.e. hazard ratios.
  
 We can now fit a Cox model in Stata with `hormon` as the only covariate.
 
@@ -42,15 +42,15 @@ stcox hormon,
 We will now fit a flexible parametric survival model. Here are model is on the log *cumulative* hazard scale, so our model is defined using uppercase H rather than lowercase h.
 
 $$
-H_i(t|\mathbf{x}_i)=H_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
+H_i(t|\mathbf{x}\_i)=H_0(t)\exp\left(\mathbf{x}\_i\boldsymbol{\beta}\right)
 $$
 
 Do we have to worry about the switch from hazard function to cumulative hazard function? Well, the answer is "No" as if we have proportional hazards we also have proportional cumulative hazards.
 
-In the flexile parametric survival we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,
+In the flexible parametric survival model we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,
 
 $$
-\ln[H(t|\mathbf{x}_i)] = \eta_i = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta} 
+\ln[H(t|\mathbf{x}\_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}\_{0}\right) + \mathbf{x}\_i \boldsymbol{\beta} 
 $$
 
 where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).  
