@@ -1,262 +1,0 @@
-[0m[0K]0;:/c/Website[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ d[0K[?25hi[0Kr[0K[?25l
-[0K[?25hWebsite.Rproj  archetypes  config.toml  content  data  index.Rmd  layouts  public  static  themes[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l$ cpin[0K[?25h[?25l$ cpi[0K[?25h[?25l$ cp[0K[?25h[?25l$ c[0K[?25h[?25l$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-bash: cpint: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ l[0K[?25hs[0K[?25l
-[0K[?25hWebsite.Rproj  config.toml  cpint.bat.txt  index.Rmd          layouts  static[0K[?25l
-archetypes     content      data           interactivegraphs  public   themes[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-bash: cpint: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ d[0K[?25hi[0Kr[0K[?25l
-Website.Rproj  config.toml  cpint.bat  index.Rmd          layouts  static[0K
-archetypes     content      data       interactivegraphs  public   themes[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ i[0K[?25h[?25l$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K.[0Kb[0Ka[0Kt[0K[?25l
-[0K[?25hbash: cpint.bat: command not found[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ b[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-[0K[?25hbash: bpint: command not found[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-[0K[?25hbash: cpint: command not found[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25ho[0Kp[0Kt[0K[?25l$ cop[0K[?25hy[0K[?25l
-bash: copy: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ s[0K[?25hh[0K[?25l$ s[0K[?25h[?25l$[0K[3G[?25h[?25l$ c[0K[?25hp[0K[?25l
-[0K[?25hcp: missing file operand[0K[?25l
-Try 'cp --help' for more information.[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0K[6G[?25l$ cp -[0K[?25h-[0Kh[0Ke[0Kl[0Kp[0K[?25l
-[0K[?25hUsage: cp [OPTION]... [-T] SOURCE DEST[0K[?25l
-  or:  cp [OPTION]... SOURCE... DIRECTORY[0K
-  or:  cp [OPTION]... -t DIRECTORY SOURCE...[0K
-Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.[0K
-[0K
-Mandatory arguments to long options are mandatory for short options too.[0K
-  -a, --archive                same as -dR --preserve=all[0K
-      --attributes-only        don't copy the file data, just the attributes[0K
-      --backup[=CONTROL]       make a backup of each existing destination file[0K
-  -b                           like --backup but does not accept an argument[0K
-      --copy-contents          copy contents of special files when recursive[0K
-  -d                           same as --no-dereference --preserve=links[0K
-  -f, --force                  if an existing destination file cannot be[0K
-                                 opened, remove it and try again (this option[0K
-                                 is ignored when the -n option is also used)[0K
-  -i, --interactive            prompt before overwrite (overrides a previous -n[0K
-                                  option)[0K
-  -H                           follow command-line symbolic links in SOURCE[0K
-  -l, --link                   hard link files instead of copying[0K
-  -L, --dereference            always follow symbolic links in SOURCE[0K
-  -n, --no-clobber             do not overwrite an existing file (overrides[0K
-                                 a previous -i option)[0K
-  -P, --no-dereference         never follow symbolic links in SOURCE[0K
-  -p                           same as --preserve=mode,ownership,timestamps[0K
-      --preserve[=ATTR_LIST]   preserve the specified attributes (default:[0K
-                                 mode,ownership,timestamps), if possible[0K
-                                 additional attributes: context, links, xattr,[0K
-                                 all[0K
-      --no-preserve=ATTR_LIST  don't preserve the specified attributes[0K
-      --parents                use full source file name under DIRECTORY[0K
-  -R, -r, --recursive          copy directories recursively[0K
-      --reflink[=WHEN]         control clone/CoW copies. See below[0K
-      --remove-destination     remove each existing destination file before[0K
-                                 attempting to open it (contrast with --force)[0K
-      --sparse=WHEN            control creation of sparse files. See below[0K
-      --strip-trailing-slashes  remove any trailing slashes from each SOURCE[0K
-                                 argument[0K
-  -s, --symbolic-link          make symbolic links instead of copying[0K
-  -S, --suffix=SUFFIX          override the usual backup suffix[0K
-  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY[0K
-  -T, --no-target-directory    treat DEST as a normal file[0K
-  -u, --update                 copy only when the SOURCE file is newer[0K
-                                 than the destination file or when the[0K
-                                 destination file is missing[0K
-  -v, --verbose                explain what is being done[0K
-  -x, --one-file-system        stay on this file system[0K
-  -Z                           set SELinux security context of destination[0K
-                                 file to default type[0K
-      --context[=CTX]          like -Z, or if CTX is specified then set the[0K
-                                 SELinux or SMACK security context to CTX[0K
-      --help     display this help and exit[0K
-      --version  output version information and exit[0K
-[0K
-By default, sparse SOURCE files are detected by a crude heuristic and the[0K
-corresponding DEST file is made sparse as well.  That is the behavior[0K
-selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST[0K
-file whenever the SOURCE file contains a long enough sequence of zero bytes.[0K
-Use --sparse=never to inhibit creation of sparse files.[0K
-[0K
-When --reflink[=always] is specified, perform a lightweight copy, where the[0K
-data blocks are copied only when modified.  If this is not possible the copy[0K
-fails, or if --reflink=auto is specified, fall back to a standard copy.[0K[?25h[?25l
-[0K
-The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.[0K
-The version control method may be selected via the --backup option or through[0K
-the VERSION_CONTROL environment variable.  Here are the values:[0K
-[0K
-  none, off       never make backups (even if --backup is given)[0K
-  numbered, t     make numbered backups[0K
-  existing, nil   numbered if numbered backups exist, simple otherwise[0K
-  simple, never   always make simple backups[0K
-[0K
-As a special case, cp makes a backup of SOURCE when the force and backup[0K
-options are given and SOURCE and DEST are the same name for an existing,[0K
-regular file.[0K
-[0K
-GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[0K
-Report cp translation bugs to <http://translationproject.org/team/>[0K
-Full documentation at: <http://www.gnu.org/software/coreutils/cp>[0K
-or available locally via: info '(coreutils) cp invocation'[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ cp --help[0K[?25h[?25l
-[0K[?25hUsage: cp [OPTION]... [-T] SOURCE DEST[0K[?25l
-  or:  cp [OPTION]... SOURCE... DIRECTORY[0K
-  or:  cp [OPTION]... -t DIRECTORY SOURCE...[0K
-Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.[0K
-[0K
-Mandatory arguments to long options are mandatory for short options too.[0K
-  -a, --archive                same as -dR --preserve=all[0K
-      --attributes-only        don't copy the file data, just the attributes[0K
-      --backup[=CONTROL]       make a backup of each existing destination file[0K
-  -b                           like --backup but does not accept an argument[0K
-      --copy-contents          copy contents of special files when recursive[0K
-  -d                           same as --no-dereference --preserve=links[0K
-  -f, --force                  if an existing destination file cannot be[0K
-                                 opened, remove it and try again (this option[0K
-                                 is ignored when the -n option is also used)[0K
-  -i, --interactive            prompt before overwrite (overrides a previous -n[0K
-                                  option)[0K
-  -H                           follow command-line symbolic links in SOURCE[0K
-  -l, --link                   hard link files instead of copying[0K
-  -L, --dereference            always follow symbolic links in SOURCE[0K
-  -n, --no-clobber             do not overwrite an existing file (overrides[0K
-                                 a previous -i option)[0K
-  -P, --no-dereference         never follow symbolic links in SOURCE[0K
-  -p                           same as --preserve=mode,ownership,timestamps[0K
-      --preserve[=ATTR_LIST]   preserve the specified attributes (default:[0K
-                                 mode,ownership,timestamps), if possible[0K
-                                 additional attributes: context, links, xattr,[0K
-                                 all[0K
-      --no-preserve=ATTR_LIST  don't preserve the specified attributes[0K
-      --parents                use full source file name under DIRECTORY[0K
-  -R, -r, --recursive          copy directories recursively[0K
-      --reflink[=WHEN]         control clone/CoW copies. See below[0K
-      --remove-destination     remove each existing destination file before[0K
-                                 attempting to open it (contrast with --force)[0K
-      --sparse=WHEN            control creation of sparse files. See below[0K
-      --strip-trailing-slashes  remove any trailing slashes from each SOURCE[0K
-                                 argument[0K
-  -s, --symbolic-link          make symbolic links instead of copying[0K
-  -S, --suffix=SUFFIX          override the usual backup suffix[0K
-  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY[0K
-  -T, --no-target-directory    treat DEST as a normal file[0K
-  -u, --update                 copy only when the SOURCE file is newer[0K
-                                 than the destination file or when the[0K
-                                 destination file is missing[0K
-  -v, --verbose                explain what is being done[0K
-  -x, --one-file-system        stay on this file system[0K
-  -Z                           set SELinux security context of destination[0K
-                                 file to default type[0K
-      --context[=CTX]          like -Z, or if CTX is specified then set the[0K
-                                 SELinux or SMACK security context to CTX[0K
-      --help     display this help and exit[0K
-      --version  output version information and exit[0K
-[0K
-By default, sparse SOURCE files are detected by a crude heuristic and the[0K
-corresponding DEST file is made sparse as well.  That is the behavior[0K[?25h[?25l
-selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST[0K
-file whenever the SOURCE file contains a long enough sequence of zero bytes.[0K
-Use --sparse=never to inhibit creation of sparse files.[0K
-[0K
-When --reflink[=always] is specified, perform a lightweight copy, where the[0K
-data blocks are copied only when modified.  If this is not possible the copy[0K
-fails, or if --reflink=auto is specified, fall back to a standard copy.[0K
-[0K
-The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.[0K
-The version control method may be selected via the --backup option or through[0K
-the VERSION_CONTROL environment variable.  Here are the values:[0K
-[0K
-  none, off       never make backups (even if --backup is given)[0K
-  numbered, t     make numbered backups[0K
-  existing, nil   numbered if numbered backups exist, simple otherwise[0K
-  simple, never   always make simple backups[0K
-[0K
-As a special case, cp makes a backup of SOURCE when the force and backup[0K
-options are given and SOURCE and DEST are the same name for an existing,[0K
-regular file.[0K
-[0K
-GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[0K
-Report cp translation bugs to <http://translationproject.org/team/>[0K
-Full documentation at: <http://www.gnu.org/software/coreutils/cp>[0K
-or available locally via: info '(coreutils) cp invocation'[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-bash: cpint: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ cpint[0K[?25h[?25l$ cp --help[0K[?25h[?25l$ cpint[0K[?25h[?25l$[0K[3G[?25h[?25l$ l[0K[?25hs[0K[?25l
-Website.Rproj  config.toml  cpint.sh  index.Rmd          layouts  static[0K
-archetypes     content      data      interactivegraphs  public   themes[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K.[0Ks[0Kh[0K[?25l
-bash: cpint.sh: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ ^V[0K[?25h[?25l$[0K[3G[?25h[?25l$ c[0K[?25hp[0K[6G[?25l$ cp i[0K[?25hn[0Kt[0Ke[0Kr[0Ka[0Kt[0Ki[0Kv[0Ke[0Kg[0Kr[0Ka[0Kp[0Kh[0Ks[0K[23G[?25l$ cp interativegraphs p[0K[?25hu[0Kb[0Kl[0Ki[0Kc[0K/[0K[?25l
-cp: cannot stat 'interativegraphs': No such file or directory[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ cp interativegraphs public/[0K[?25h[29G[28G[27G[26G[25G[24G[23G[22G[21G[20G[19G[18G[17G[16G[15G[14G[13G[12G[11G[?25l$ cp intercativegraphs public/[0K[12G[?25h[?25l
-[0K[?25hcp: cannot stat 'intercativegraphs': No such file or directory[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ cp intercativegraphs public/[0K[?25h[30G[29G[28G[27G[25G[24G[23G[22G[21G[19G[18G[17G[16G[15G[14G[13G[12G[11G[10G[9G[8G[9G[10G[11G[12G[?25l$ cp interativegraphs public/[0K[11G[?25h[12G[?25l$ cp interactivegraphs public/[0K[13G[?25h[?25l
-cp: -r not specified; omitting directory 'interactivegraphs'[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ cp interactivegraphs public/[0K[?25h[32G[?25l$ cp interactivegraphs public/ -[0K[?25hr[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ b[0K[?25ha[0Ks[0Kh[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ b[0K[?25ha[0Ks[0Kh[0K[8G[?25l$ bash c[0K[?25hp[0Ki[0Kn[0Kt[0K[?25l
-[0K[?25hbash: cpint: No such file or directory[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ bash cpint[0K[?25h.[0Ks[0Kh[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ c[0K[?25hp[0Ki[0Kn[0Kt[0K.[0Ks[0Kh[0K[?25l
-bash: cpint.sh: command not found[0K
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ b[0K[?25ha[0Ks[0Kh[0K[8G[?25l$ bash c[0K[?25hp[0Ki[0Kn[0Kt[0K.[0Ks[0Kh[0K[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-$[0K[3G[?25h[?25l$ bash cpint.sh[0K[?25h[?25l$[0K[3G[?25h[?25l$ bash cpint.sh[0K[?25h[?25l
-[0K[?25h[?25l
-[0;32mpaulam@L0361MEB [0;35m [0;33m/c/Website[0;36m (master)[0m[0K
-]0;:/c/website/website[?25l
-[0K[?25h[0;32mpaulam@L0361MEB [0;35m [0;33m/c/website/website[0;36m (master)[0m[0K[?25l
-$[0K[3G[?25h
