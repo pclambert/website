@@ -253,11 +253,7 @@ obs. time interval:  (0, rf]
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/nonparametriccif/</guid>
-      <description>
-
-&lt;h1 id=&#34;non-parametric-estimates-of-the-cause-specific-cumulative-incidence-function&#34;&gt;Non-parametric estimates of the cause-specific cumulative incidence function.&lt;/h1&gt;
-
-&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt;.
+      <description>&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt;.
 This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
 marrow transplantation. Time is measured in days from transplantation to either relapse
 or death. There is only one covariate of interest, the EBMT risk score, which has been
@@ -292,7 +288,7 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Explain `stset&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;Explain &lt;code&gt;stset&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. list patid status _t0 _t _d if patid==17, noobs
 
@@ -306,7 +302,7 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;p&gt;Explain this&lt;/p&gt;
 
-&lt;p&gt;I will now use `stcrprep&amp;rsquo; to restructure the data. This will&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;I will now use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. This will&amp;hellip;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
@@ -388,6 +384,8 @@ obs. time interval:  (0, tstop]
 &amp;gt;         scheme(sj) name(cif_relapse, replace)
 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;/statasvg/stcrprep_cif1.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts test score if failcode==1
 

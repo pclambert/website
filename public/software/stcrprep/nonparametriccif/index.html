@@ -275,11 +275,7 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h1 id="non-parametric-estimates-of-the-cause-specific-cumulative-incidence-function">Non-parametric estimates of the cause-specific cumulative incidence function.</h1>
-
-<p>I will use the same data set I use in the <em>Stata Journal</em> <a href="http://www.stata-journal.com/article.html?article=st0471">article</a>.
+      <p>I will use the same data set I use in the <em>Stata Journal</em> <a href="http://www.stata-journal.com/article.html?article=st0471">article</a>.
 This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
 marrow transplantation. Time is measured in days from transplantation to either relapse
 or death. There is only one covariate of interest, the EBMT risk score, which has been
@@ -314,7 +310,7 @@ obs. time interval:  (time[_n-1], time]
 
 </code></pre>
 
-<p>Explain `stset&rsquo;</p>
+<p>Explain <code>stset</code></p>
 
 <pre><code class="language-stata">. list patid status _t0 _t _d if patid==17, noobs
 
@@ -328,7 +324,7 @@ obs. time interval:  (time[_n-1], time]
 
 <p>Explain this</p>
 
-<p>I will now use `stcrprep&rsquo; to restructure the data. This will&hellip;.</p>
+<p>I will now use <code>stcrprep</code> to restructure the data. This will&hellip;.</p>
 
 <pre><code class="language-stata">. stcrprep, events(status) keep(score) trans(1 2) byg(score)
 
@@ -410,6 +406,8 @@ obs. time interval:  (0, tstop]
 &gt;         scheme(sj) name(cif_relapse, replace)
 
 </code></pre>
+
+<p><img src="/statasvg/stcrprep_cif1.svg" alt="" /></p>
 
 <pre><code class="language-stata">. sts test score if failcode==1
 

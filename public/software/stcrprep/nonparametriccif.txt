@@ -86,8 +86,12 @@ graph export c:/website/static/statasvg/stcrprep_cif1.svg, replace
 
 ```stata
 <<dd_do: >>
-sts test score if failcode==1
 sts list, at(1 5) failure by(failcode score)	
 <</dd_do>>
 ```
 
+```stata
+<<dd_do: >>
+sts test score if failcode==1
+<</dd_do>>
+```
