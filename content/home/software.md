@@ -20,7 +20,7 @@ I have developed a number of Stata commands. For some of these I will add some e
 - **rcsgen** - generate restricted cubic splines
 - **stpm2_standsurv** - standardized survival curves after fitting an `stpm2` model
 - **stpm2cif** - cause-specific cumulative incidence function after fitting a stpm2 competing risks model
-- **stcrprep**({{< ref "software/stcrprep.md" >}}) - data-preparation command to fit a range of competing risks models.
+- [**stcrprep**]({{< ref "software/stcrprep.md" >}}) - data-preparation command to fit a range of competing risks models.
 - **partpred** - partial predictions
 - **strcs** - flexible parametric model on log hazard scale
 
