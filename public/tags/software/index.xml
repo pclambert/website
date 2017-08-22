@@ -175,10 +175,10 @@ $$&lt;/p&gt;
 
 &lt;p&gt;Do we have to worry about the switch from hazard function to cumulative hazard function? Well, the answer is &amp;ldquo;No&amp;rdquo; as if we have proportional hazards we also have proportional cumulative hazards.&lt;/p&gt;
 
-&lt;p&gt;In the flexile parametric survival we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,&lt;/p&gt;
+&lt;p&gt;In the flexible parametric survival model we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,&lt;/p&gt;
 
 &lt;p&gt;$$
-\ln[H(t|\mathbf{x}_i)] = \eta&lt;em&gt;i = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}&lt;/em&gt;{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
+\ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
 $$&lt;/p&gt;
 
 &lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).&lt;/p&gt;
