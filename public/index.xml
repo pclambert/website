@@ -44,42 +44,32 @@
     </item>
     
     <item>
-      <title>stpm2</title>
+      <title>stcrprep</title>
       <link>/software/stcrprep/</link>
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/</guid>
       <description>
 
-&lt;p&gt;&lt;code&gt;stpm2&lt;/code&gt; fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the  $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.&lt;/p&gt;
+&lt;p&gt;stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using &lt;code&gt;stset&lt;/code&gt; it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using &lt;code&gt;sts graph&lt;/code&gt;.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using &lt;code&gt;stcox&lt;/code&gt;. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).&lt;/p&gt;
 
-&lt;p&gt;I have added some examples and aim to add to these.&lt;/p&gt;
+&lt;p&gt;Below are some simple examples of using &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;proportional-hazards-models&#34;&gt;Proportional hazards models&lt;/h2&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h3 id=&#34;non-and-semi-parametric-methods&#34;&gt;Non and semi parametric methods&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/comparewithcox/&#34;&gt;Comparison with a Cox model&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;simple simulation study to show agreement with Cox model.&lt;/li&gt;
-&lt;li&gt;predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitvity analsis for the number of knots&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;sts graph&lt;/code&gt; for cause-specific CIFs&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Schoenfeld residuals&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
+&lt;h3 id=&#34;parametric-models&#34;&gt;Parametric models&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;non-proportional hazards&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;relative-survival&#34;&gt;Relative survival&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;a simple relative survival model&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;alternative-link-functions&#34;&gt;Alternative link functions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the logistic, probit and Aranda-Ordaz link functions.&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;stpm2&lt;/code&gt; to model the cause-specific CIF&lt;/li&gt;
+&lt;li&gt;Alternative link functions.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -226,7 +216,7 @@ $$&lt;/p&gt;
 \ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
 $$&lt;/p&gt;
 
-&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).&lt;/p&gt;
+&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).&lt;/p&gt;
 
 &lt;p&gt;We now fit this model in Stata using &lt;code&gt;stpm2&lt;/code&gt;.&lt;/p&gt;
 
@@ -332,7 +322,7 @@ obs. time interval:  (0, rf]
 
 &lt;p&gt;The AIC and BIC can be used as an &lt;em&gt;informal&lt;/em&gt; guide (certainly not definitive) to the choice of model.  Both the AIC and BIC are lowest for the model with 2df.&lt;/p&gt;
 
-&lt;p&gt;One of the advantages of using parametric models is the simpicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.&lt;/p&gt;
+&lt;p&gt;One of the advantages of using parametric models is the simplicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.&lt;/p&gt;
 
 &lt;p&gt;First, the baseline hazard functions. Note I used the &lt;code&gt;per(1000)&lt;/code&gt; option when I predicted the hazard functions to give the rate per 1000 person years.&lt;/p&gt;
 
@@ -345,7 +335,7 @@ obs. time interval:  (0, rf]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The graph is shown below. The model with 1 df (equivalent to a Weill model) stands out. The hazard function for the Weibull model is monotonic and so can&amp;rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.&lt;/p&gt;
+&lt;p&gt;The graph is shown below. The model with 1 df (equivalent to a Weibull model) stands out. The hazard function for the Weibull model is monotonic and so can&amp;rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/statasvg/ph_sensitivity_hazard.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -366,7 +356,7 @@ obs. time interval:  (0, rf]
 
 &lt;p&gt;This has been a simple sensitivity analysis where I have assumed proportional hazards and only fitted a single covariate, but I hope that it shows how simple it is to try these things.&lt;/p&gt;
 
-&lt;p&gt;What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord &lt;em&gt;et al&lt;/em&gt; for a more detailed simulation study on the ability of these models to capture complex hazard functions.&lt;/p&gt;
+&lt;p&gt;What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord &lt;em&gt;et al.&lt;/em&gt; for a more detailed simulation study on the ability of these models to capture complex hazard functions.&lt;/p&gt;
 
 &lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 

@@ -53,7 +53,7 @@ $$
 \ln[H(t|\mathbf{x}\_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}\_{0}\right) + \mathbf{x}\_i \boldsymbol{\beta} 
 $$
 
-where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).  
+where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).  
 
 We now fit this model in Stata using `stpm2`.
 

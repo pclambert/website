@@ -43,7 +43,7 @@
 
   
 
-  <title>stpm2 | Paul C. Lambert</title>
+  <title>stcrprep | Paul C. Lambert</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -180,7 +180,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">stpm2</h1>
+    <h1 itemprop="name">stcrprep</h1>
     
 
 <div class="article-metadata">
@@ -202,7 +202,10 @@
     <a href="/tags/software">software</a
     >, 
     
-    <a href="/tags/stpm2">stpm2</a
+    <a href="/tags/stcrprep">stcrprep</a
+    >, 
+    
+    <a href="/tags/competing-risks">competing risks</a
     >
     
   </span>
@@ -222,28 +225,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=stpm2&amp;url=%2fsoftware%2fstcrprep%2f"
+         href="https://twitter.com/intent/tweet?text=stcrprep&amp;url=%2fsoftware%2fstcrprep%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstcrprep%2f&amp;title=stpm2"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstcrprep%2f&amp;title=stcrprep"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstcrprep%2f&amp;title=stpm2"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstcrprep%2f&amp;title=stcrprep"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=stpm2&amp;body=%2fsoftware%2fstcrprep%2f">
+         href="mailto:?subject=stcrprep&amp;body=%2fsoftware%2fstcrprep%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -258,35 +261,25 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p><code>stpm2</code> fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the  $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.</p>
+<p>stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using <code>stset</code> it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using <code>sts graph</code>.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using <code>stcox</code>. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).</p>
 
-<p>I have added some examples and aim to add to these.</p>
+<p>Below are some simple examples of using <code>stcrprep</code>.</p>
 
-<h2 id="proportional-hazards-models">Proportional hazards models</h2>
+<h2 id="examples">Examples</h2>
+
+<h3 id="non-and-semi-parametric-methods">Non and semi parametric methods</h3>
 
 <ul>
-<li><a href="/software/stpm2/comparewithcox/">Comparison with a Cox model</a></li>
-<li>simple simulation study to show agreement with Cox model.</li>
-<li>predicting hazard and survival functions (use of the <code>timevar()</code> option)</li>
-<li><a href="/software/stpm2/sensitivity_analysis/">Sensitvity analsis for the number of knots</a>.</li>
+<li>Using <code>sts graph</code> for cause-specific CIFs</li>
+<li>Using <code>stcox</code> instead of <code>stcrreg</code></li>
+<li>Schoenfeld residuals</li>
 </ul>
 
-<h2 id="time-dependent-effects-non-proportional-hazards">Time-dependent effects (non proportional hazards)</h2>
+<h3 id="parametric-models">Parametric models</h3>
 
 <ul>
-<li>non-proportional hazards</li>
-</ul>
-
-<h2 id="relative-survival">Relative survival</h2>
-
-<ul>
-<li>a simple relative survival model</li>
-</ul>
-
-<h2 id="alternative-link-functions">Alternative link functions</h2>
-
-<ul>
-<li>the logistic, probit and Aranda-Ordaz link functions.</li>
+<li>Using <code>stpm2</code> to model the cause-specific CIF</li>
+<li>Alternative link functions.</li>
 </ul>
 
     </div>

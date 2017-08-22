@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Competing Risks on Paul C. Lambert</title>
+    <link>/tags/competing-risks/</link>
+    <description>Recent content in Competing Risks on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/competing-risks/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>stcrprep</title>
+      <link>/software/stcrprep/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stcrprep/</guid>
+      <description>
+
+&lt;p&gt;stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using &lt;code&gt;stset&lt;/code&gt; it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using &lt;code&gt;sts graph&lt;/code&gt;.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using &lt;code&gt;stcox&lt;/code&gt;. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).&lt;/p&gt;
+
+&lt;p&gt;Below are some simple examples of using &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h3 id=&#34;non-and-semi-parametric-methods&#34;&gt;Non and semi parametric methods&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using &lt;code&gt;sts graph&lt;/code&gt; for cause-specific CIFs&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Schoenfeld residuals&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;parametric-models&#34;&gt;Parametric models&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using &lt;code&gt;stpm2&lt;/code&gt; to model the cause-specific CIF&lt;/li&gt;
+&lt;li&gt;Alternative link functions.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

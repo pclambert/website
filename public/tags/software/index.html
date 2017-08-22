@@ -186,12 +186,10 @@
   
   
   <div>
-    <h2><a href="/software/stcrprep/">stpm2</a></h2>
+    <h2><a href="/software/stcrprep/">stcrprep</a></h2>
     <div class="article-style">
       
-      stpm2 fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.
-I have added some examples and aim to add to these.
-Proportional hazards models  Comparison with a Cox model simple simulation study to show agreement with Cox model. predicting hazard and survival functions (use of the timevar() option) Sensitvity analsis for the number of knots.
+      stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using stset it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using sts graph. In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using stcox. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).
       
     </div>
   </div>

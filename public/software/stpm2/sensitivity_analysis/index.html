@@ -328,7 +328,7 @@ obs. time interval:  (0, rf]
 
 <p>The AIC and BIC can be used as an <em>informal</em> guide (certainly not definitive) to the choice of model.  Both the AIC and BIC are lowest for the model with 2df.</p>
 
-<p>One of the advantages of using parametric models is the simpicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.</p>
+<p>One of the advantages of using parametric models is the simplicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.</p>
 
 <p>First, the baseline hazard functions. Note I used the <code>per(1000)</code> option when I predicted the hazard functions to give the rate per 1000 person years.</p>
 
@@ -341,7 +341,7 @@ obs. time interval:  (0, rf]
 
 </code></pre>
 
-<p>The graph is shown below. The model with 1 df (equivalent to a Weill model) stands out. The hazard function for the Weibull model is monotonic and so can&rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.</p>
+<p>The graph is shown below. The model with 1 df (equivalent to a Weibull model) stands out. The hazard function for the Weibull model is monotonic and so can&rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.</p>
 
 <p><img src="/statasvg/ph_sensitivity_hazard.svg" alt="" /></p>
 
@@ -362,7 +362,7 @@ obs. time interval:  (0, rf]
 
 <p>This has been a simple sensitivity analysis where I have assumed proportional hazards and only fitted a single covariate, but I hope that it shows how simple it is to try these things.</p>
 
-<p>What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord <em>et al</em> for a more detailed simulation study on the ability of these models to capture complex hazard functions.</p>
+<p>What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord <em>et al.</em> for a more detailed simulation study on the ability of these models to capture complex hazard functions.</p>
 
 <h3 id="references">References</h3>
 
