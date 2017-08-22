@@ -58,7 +58,7 @@ obs. time interval:  (time[_n-1], time]
                                           last observed exit t =  8.454483
 
 ```
-In order to show how `stcrprep` expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using `stcrprep'. The listing is for subject 17 (`patid==17`).
+In order to show how `stcrprep` expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using `stcrprep`. The listing is for subject 17 (`patid==17`).
 
 
 ```stata
@@ -72,15 +72,18 @@ In order to show how `stcrprep` expands the data and calculates the probability 
 
 ```
 
-This subject died after 2.29 years and in data set before using `stcrprep` has just has one row of
+This subject died after 2.29 years and  before using `stcrprep` has just has one row of
 data.
 
-Next I use `stcrprep` to restructure the data. The events() option requires the variable defining all possible events and the censored value. The trans() option gives the transitions of the events of interest; here we
-are interested in the transitions to both relapse(status=1) and death (status=2); this is actually the default, but is shown here for clarity. The keep() option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The byg() option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
+Next I use `stcrprep` to restructure the data. The `events()` option requires the variable defining all possible events and the censored value. The `trans()` option gives the transitions of the events of interest; here we
+are interested in the transitions to both relapse(`status=1`) and death (`status=2`); this is actually the default, but is shown here for clarity. The `keep()` option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The `byg()` option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
 non-parametric estimate of the cause-specific CIF in each group, the byg() option will estimate the censoring distribution separately in each group. 
 
 ```stata
 . stcrprep, events(status) keep(score) trans(1 2) byg(score)
+
+. di "There are " _N " observations"
+There are 70262 observations
 
 . format tstart %6.5f                                                                     
 
@@ -163,7 +166,7 @@ obs. time interval:  (0, tstop]
                                           last observed exit t =  8.454483
 
 ```
-We first create the variable, event. This is defined as 1 if the event of interest occurs
+We first create the variable, `event`. This is defined as 1 if the event of interest occurs
 and zero otherwise. As we have split time data, we need to give information on the start
 time (`tstart`) and stop time (`tstop`) of each row of data.
 We use `sts graph` in the usual way, but use the failure option as we are interested
@@ -190,7 +193,7 @@ Note that the lines are extended to the maximum censoring time in each group, ra
 Alternatively, `sts gen` can be used to generate the cause-specific CIF and this can be
 plotted with appropriate if statements to control the maximum follow-up time for each line.
 
-It is also possible to list the CIF at specific time points using `sts list`.
+It is also possible to list the CIF at specific time points using `sts list`. For example, the cause-specific CIF at 1 and 5 years by risk group and for each cause can be obtained as follows,
 
 ```stata
 . sts list, at(1 5) failure by(failcode score)    
@@ -246,6 +249,6 @@ Total       |       456         456.00
 
 ## References
 
-de Wreede, L.; Fiocco, M. & Putter, H. `mstate`: An R package for the analysis of competing risks and multi-state models. _Journal of Statistical Software_ 2011;38.
+de Wreede, L.; Fiocco, M. & Putter, H. `mstate`: An R package for the analysis of competing risks and multi-state models. _Journal of Statistical Software_ 2011;**38**.
 
 Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. _The Annals of Statistics_ 1988;**16**:1141-1154.

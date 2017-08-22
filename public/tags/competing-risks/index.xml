@@ -97,7 +97,7 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In order to show how &lt;code&gt;stcrprep&lt;/code&gt; expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using &lt;code&gt;stcrprep&#39;. The listing is for subject 17 (&lt;/code&gt;patid==17`).&lt;/p&gt;
+&lt;p&gt;In order to show how &lt;code&gt;stcrprep&lt;/code&gt; expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using &lt;code&gt;stcrprep&lt;/code&gt;. The listing is for subject 17 (&lt;code&gt;patid==17&lt;/code&gt;).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. list patid status _t0 _t _d if patid==17, noobs
 
@@ -109,14 +109,17 @@ obs. time interval:  (time[_n-1], time]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This subject died after 2.29 years and in data set before using &lt;code&gt;stcrprep&lt;/code&gt; has just has one row of
+&lt;p&gt;This subject died after 2.29 years and  before using &lt;code&gt;stcrprep&lt;/code&gt; has just has one row of
 data.&lt;/p&gt;
 
-&lt;p&gt;Next I use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. The events() option requires the variable defining all possible events and the censored value. The trans() option gives the transitions of the events of interest; here we
-are interested in the transitions to both relapse(status=1) and death (status=2); this is actually the default, but is shown here for clarity. The keep() option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The byg() option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
+&lt;p&gt;Next I use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. The &lt;code&gt;events()&lt;/code&gt; option requires the variable defining all possible events and the censored value. The &lt;code&gt;trans()&lt;/code&gt; option gives the transitions of the events of interest; here we
+are interested in the transitions to both relapse(&lt;code&gt;status=1&lt;/code&gt;) and death (&lt;code&gt;status=2&lt;/code&gt;); this is actually the default, but is shown here for clarity. The &lt;code&gt;keep()&lt;/code&gt; option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The &lt;code&gt;byg()&lt;/code&gt; option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
 non-parametric estimate of the cause-specific CIF in each group, the byg() option will estimate the censoring distribution separately in each group.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcrprep, events(status) keep(score) trans(1 2) byg(score)
+
+. di &amp;quot;There are &amp;quot; _N &amp;quot; observations&amp;quot;
+There are 70262 observations
 
 . format tstart %6.5f                                                                     
 
@@ -200,7 +203,7 @@ obs. time interval:  (0, tstop]
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We first create the variable, event. This is defined as 1 if the event of interest occurs
+&lt;p&gt;We first create the variable, &lt;code&gt;event&lt;/code&gt;. This is defined as 1 if the event of interest occurs
 and zero otherwise. As we have split time data, we need to give information on the start
 time (&lt;code&gt;tstart&lt;/code&gt;) and stop time (&lt;code&gt;tstop&lt;/code&gt;) of each row of data.
 We use &lt;code&gt;sts graph&lt;/code&gt; in the usual way, but use the failure option as we are interested
@@ -224,7 +227,7 @@ be plotted as follows,&lt;/p&gt;
 Alternatively, &lt;code&gt;sts gen&lt;/code&gt; can be used to generate the cause-specific CIF and this can be
 plotted with appropriate if statements to control the maximum follow-up time for each line.&lt;/p&gt;
 
-&lt;p&gt;It is also possible to list the CIF at specific time points using &lt;code&gt;sts list&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It is also possible to list the CIF at specific time points using &lt;code&gt;sts list&lt;/code&gt;. For example, the cause-specific CIF at 1 and 5 years by risk group and for each cause can be obtained as follows,&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts list, at(1 5) failure by(failcode score)    
 
@@ -278,7 +281,7 @@ Total       |       456         456.00
 
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
-&lt;p&gt;de Wreede, L.; Fiocco, M. &amp;amp; Putter, H. &lt;code&gt;mstate&lt;/code&gt;: An R package for the analysis of competing risks and multi-state models. &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 2011;38.&lt;/p&gt;
+&lt;p&gt;de Wreede, L.; Fiocco, M. &amp;amp; Putter, H. &lt;code&gt;mstate&lt;/code&gt;: An R package for the analysis of competing risks and multi-state models. &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 2011;&lt;strong&gt;38&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. &lt;em&gt;The Annals of Statistics&lt;/em&gt; 1988;&lt;strong&gt;16&lt;/strong&gt;:1141-1154.&lt;/p&gt;
 </description>
