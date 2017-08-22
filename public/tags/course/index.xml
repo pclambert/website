@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course on Paul C. Lambert</title>
+    <link>/tags/course/</link>
+    <description>Recent content in Course on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/course/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Course: Cancer Predictions: Model-based approaches using Stata</title>
+      <link>/teaching/apccourse/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/apccourse/</guid>
+      <description>&lt;p&gt;I am teaching a 1 day course with &lt;a href=&#34;http://www2.le.ac.uk/departments/health-sciences/research/biostats/staff-pages/mjr40&#34;&gt;Mark Rutherford&lt;/a&gt; on the use of Age Period Cohort (APC) models for predictions of cancer incidence an mortality. This take place before the &lt;a href=&#34;http://www.iacr2017.org/index.html&#34;&gt;Intenational Association of Cancer Registries&lt;/a&gt; conference in Utrect on 16th October 2017.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Course: Competing Risks and multi-state models</title>
+      <link>/teaching/multistatecourse/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/multistatecourse/</guid>
+      <description>&lt;p&gt;I am teaching a new three day course with &lt;a href=&#34;http://www.mjcrowther.co.uk/&#34;&gt;Michael Crowther&lt;/a&gt; on competing risks and multi-state models at the Swiss Epidemiology Winter School, 15th-18th January 2018. Details on how to register can be found &lt;a href=&#34;https://www.epi-winterschool.org/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Practicals will be conducted in Stata, making use of the &lt;code&gt;multistate&lt;/code&gt; package in Stata.&lt;/p&gt;
+
+&lt;p&gt;We plan to run this course in Leicester and in Stockholm, sometime in 2018.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

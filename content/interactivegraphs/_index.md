@@ -15,13 +15,19 @@ I have written some programs in JavaScript using the excellent [D3 library](http
 
 The graphs do not work in older versions of Internet Explorer, but appear OK in newer versions (I am currently using IE11) or using Microsoft Edge. However, the best perforamce appears to be in Chrome and Firefox.
 
+<<<<<<< HEAD
+### [The number and location of knots](spline_eg/spline_eg.html)
+=======
+## Splines
+
+
 ### [The number and location of knots](spline_eg/spline_eg.html)
 
 The first graph fits a non-linear function using splines within a linear regression model. The user is allowed to move, add and remove knots. Follow the instructions below the graph. The user can also select different spline functions, including linear, quadratic, cubic and restricted cubic splines. The fitted  regression line is updated in real time. To open the graph in a new window click [here](spline_eg/spline_eg.html).
 
 ### [Continuity restrictions](spline_continuity/spline_continuity.html)
 
-A spline function <span>of degree</span> _n_ is a piecewise polynomial function whose function values and first _n_-1 derivatives agree at the knots, i.e. the function is constrained to be continuous and continuously differentiable up to order _n_-1\. The continuity restrictions graph allows the user to investigate the impact of different continuity restrictions from piecewise polynomials with no restrictions to the function being continuously differentiable up to order  _n_-1. To open the graph in a new window click [here](spline_continuity/spline_continuity.html). Note that the continuity restriction menu sometimes disappears when using Internet Explorer. I am not sure why this is, and suggest you use an alternative browser where this problem does not occur (I have tested in Chrome and Firefox).
+A spline function of degree $n$ is a piecewise polynomial function whose function values and first $n-1$ derivatives agree at the knots, i.e. the function is constrained to be continuous and continuously differentiable up to order $n-1$. The continuity restrictions graph allows the user to investigate the impact of different continuity restrictions from piecewise polynomials with no restrictions to the function being continuously differentiable up to order  $n-1$. To open the graph in a new window click [here](spline_continuity/spline_continuity.html). Note that the continuity restriction menu sometimes disappears when using Internet Explorer. I am not sure why this is, and suggest you use an alternative browser where this problem does not occur (I have tested in Chrome and Firefox).
 
 ## Survival Analysis
 
@@ -39,11 +45,11 @@ We have used the mixture Weibull distribution to simulate data when evaluating h
 
 ### [Competing Risks](competing_risks/competingrisks.html)
 
-This is a simple demonstration of the link between cause-specific hazards and cause-specific cumulative incidence functions. Assuming exponential distributions, i.e. a constant hazard, the cause-specific hazards for cancer and for other causes can be defined for those unexposed and exposed to a risk factor. By changing the underlying mortality (hazard) rate and/or the hazard ratio between the exposed and unexposed it is possible to see the impact on the cause-specific cumulative incidence function for both cancer and other causes. Performance is not so good in FireFox for some reason. <span>To open the graph in a new window click [here](competing_risks/competingrisks.html).
+This is a simple demonstration of the link between cause-specific hazards and cause-specific cumulative incidence functions. Assuming exponential distributions, i.e. a constant hazard, the cause-specific hazards for cancer and for other causes can be defined for those unexposed and exposed to a risk factor. By changing the underlying mortality (hazard) rate and/or the hazard ratio between the exposed and unexposed it is possible to see the impact on the cause-specific cumulative incidence function for both cancer and other causes. Performance is not so good in FireFox for some reason. To open the graph in a new window click [here](competing_risks/competingrisks.html).
 
 ### [Expected Survival](lifeexpectency/life_expectency.html)
 
-This shows expected survival by deprivation quintile and sex. You can drag the age slide bar, so you can see the expected survival for someone of a given age. To open the graph in a new window click here(lifeexpectency/life_expectency.html).
+This shows expected survival by deprivation quintile and sex. You can drag the age slide bar, so you can see the expected survival for someone of a given age. To open the graph in a new window click [here](lifeexpectency/life_expectency.html).
 
 ### [InterPreT](http://interpret.le.ac.uk)
 

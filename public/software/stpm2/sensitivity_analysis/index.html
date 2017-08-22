@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github-gist.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2/sensitivity_analysis/">
+
+  
+
+  <title>Sensitivity analysis to number of knots (proportional hazards) | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Allpublications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Sensitivity analysis to number of knots (proportional hazards)</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Aug 6, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/proportional-hazards">proportional hazards</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2%2fsensitivity_analysis%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Sensitivity%20analysis%20to%20number%20of%20knots%20%28proportional%20hazards%29&amp;url=%2fsoftware%2fstpm2%2fsensitivity_analysis%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2%2fsensitivity_analysis%2f&amp;title=Sensitivity%20analysis%20to%20number%20of%20knots%20%28proportional%20hazards%29"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2%2fsensitivity_analysis%2f&amp;title=Sensitivity%20analysis%20to%20number%20of%20knots%20%28proportional%20hazards%29"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Sensitivity%20analysis%20to%20number%20of%20knots%20%28proportional%20hazards%29&amp;body=%2fsoftware%2fstpm2%2fsensitivity_analysis%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="sensitivity-analysis">Sensitivity Analysis</h1>
+
+<p>We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use <code>stset</code> to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()&rsquo; option.</p>
+
+<pre><code class="language-stata">. use http://pclambert.netlify.com/data/rott2b, clear
+(Rotterdam breast cancer data (augmented with cause of death))
+
+. stset rf, f(rfi==1) scale(12) exit(time 60)
+
+     failure event:  rfi == 1
+obs. time interval:  (0, rf]
+ exit on or before:  time 60
+    t for analysis:  time/12
+
+------------------------------------------------------------------------------
+      2,982  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+      2,982  observations remaining, representing
+      1,181  failures in single-record/single-failure data
+ 11,130.825  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =         5
+
+</code></pre>
+
+<p>I will use different degrees of freedom for the baseline. The easiest way to do this is in a loop. The following code fits between 1 and 6 df, predicts the baseline hazard and survival functions and stores each model (using <code>estimates store</code>).  I use <code>quietly</code> to suppress the output. I also generate a new time variable (<code>temptime</code>) for the predictions, rather than use the default of <code>_t</code>.</p>
+
+<pre><code class="language-stata">. range temptime 0 5 200
+(2,782 missing values generated)
+
+. forvalues i = 1/6 {
+  2.         quietly stpm2 hormon, df(`i') scale(hazard) 
+  3.         predict h0_df`i', hazard timevar(temptime) per(1000) zeros
+  4.         predict s0_df`i', survival timevar(temptime) zeros
+  5. }
+
+</code></pre>
+
+<p>We can now compare the results from fitting the 6 different models.</p>
+
+<pre><code class="language-stata">. estimates table df*, keep(hormon) b(%6.5f) se(%6.5f) stats(AIC BIC) stfmt(%6.2f)
+
+--------------------------------------------------------------------------
+    Variable |   df1       df2       df3       df4       df5       df6    
+-------------+------------------------------------------------------------
+      hormon | 0.23312   0.22044   0.22038   0.22023   0.22020   0.22007  
+             | 0.08642   0.08643   0.08643   0.08643   0.08643   0.08643  
+-------------+------------------------------------------------------------
+         AIC | 6362.72   6210.98   6212.43   6213.72   6213.75   6215.98  
+         BIC | 6377.94   6231.28   6237.80   6244.17   6249.27   6256.57  
+--------------------------------------------------------------------------
+                                                              legend: b/se
+
+</code></pre>
+
+<p>The log hazard ratios are very similar between the different models, particularly from 2df and above (using 1 df is equivalent to fitting a Weibull model). The standard errors are also very similar.</p>
+
+<p>The AIC and BIC can be used as an <em>informal</em> guide (certainly not definitive) to the choice of model.  Both the AIC and BIC are lowest for the model with 2df.</p>
+
+<p>One of the advantages of using parametric models is the simpicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.</p>
+
+<p>First, the baseline hazard functions. Note I used the <code>per(1000)</code> option when I predicted the hazard functions to give the rate per 1000 person years.</p>
+
+<pre><code class="language-stata">. twoway  (line h0_df* temptime), ///
+&gt;                 ytitle(&quot;hazard rate (per 1000 py)&quot;) ///
+&gt;                 xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 ylabel(,format(%2.0f) angle(h)) ///
+&gt;                 legend(order(1 &quot;1 df&quot; 2 &quot;2 df&quot; 3 &quot;3df&quot; 4 &quot;4df&quot; 5 &quot;5df&quot; 6 &quot;6df&quot;) ///
+&gt;                         ring(0) cols(1) pos(5))
+
+</code></pre>
+
+<p>The graph is shown below. The model with 1 df (equivalent to a Weill model) stands out. The hazard function for the Weibull model is monotonic and so can&rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.</p>
+
+<p><img src="/statasvg/ph_sensitivity_hazard.svg" alt="" /></p>
+
+<p>Now, using similar code we can plot the six baseline survival functions.</p>
+
+<pre><code class="language-stata">. twoway  (line s0_df* temptime), ///
+&gt;                 ytitle(&quot;Survival function - S(t)&quot;) ///
+&gt;                 xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 ylabel(,format(%3.1f) angle(h)) ///
+&gt;                 legend(order(1 &quot;1 df&quot; 2 &quot;2 df&quot; 3 &quot;3df&quot; 4 &quot;4df&quot; 5 &quot;5df&quot; 6 &quot;6df&quot;) ///
+&gt;                         ring(0) cols(1) pos(1))
+
+</code></pre>
+
+<p>This graph is shown below and again the model with 1 df stands out, which is not surprising given the hazard function. However, there is excellent agreement between the remaining 5 models. In general, one sees better agreement when comparing survival functions as it is a cumulative measure the small differences seen the hazard functions cancel out.</p>
+
+<p><img src="/statasvg/ph_sensitivity_survival.svg" alt="" /></p>
+
+<p>This has been a simple sensitivity analysis where I have assumed proportional hazards and only fitted a single covariate, but I hope that it shows how simple it is to try these things.</p>
+
+<p>What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord <em>et al</em> for a more detailed simulation study on the ability of these models to capture complex hazard functions.</p>
+
+<h3 id="references">References</h3>
+
+<p>Rutherford M.J., Crowther M.J., Lambert, P.C. The use of restricted cubic splines to approximate complex hazard functions in the analysis of time-to-event data: a simulation study. <em>Journal of Statistical Computation and Simulation</em> 2015;<strong>4</strong>:777–793</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+
+    
+    <li class="next"><a href="/software/stpm2/comparewithcox/">Proportional hazards models in stpm2 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

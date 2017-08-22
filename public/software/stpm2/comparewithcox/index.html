@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.26" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github-gist.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2/comparewithcox/">
+
+  
+
+  <title>Proportional hazards models in stpm2 | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/Allpublications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Proportional hazards models in stpm2</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Aug 6, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/proportional-hazards">proportional hazards</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2%2fcomparewithcox%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Proportional%20hazards%20models%20in%20stpm2&amp;url=%2fsoftware%2fstpm2%2fcomparewithcox%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2%2fcomparewithcox%2f&amp;title=Proportional%20hazards%20models%20in%20stpm2"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2%2fcomparewithcox%2f&amp;title=Proportional%20hazards%20models%20in%20stpm2"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Proportional%20hazards%20models%20in%20stpm2&amp;body=%2fsoftware%2fstpm2%2fcomparewithcox%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h1 id="proportional-hazards-model">Proportional hazards model</h1>
+
+<p>We first load the example breast cancer data data using <code>webuse</code> and then use <code>stset</code> to declare the survival time and event indicator.</p>
+
+<pre><code class="language-stata">. webuse brcancer, clear
+(German breast cancer data)
+
+. stset rectime, f(censrec==1) scale(365.24)
+
+     failure event:  censrec == 1
+obs. time interval:  (0, rectime]
+ exit on or before:  failure
+    t for analysis:  time/365.24
+
+------------------------------------------------------------------------------
+        686  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+        686  observations remaining, representing
+        299  failures in single-record/single-failure data
+  2,112.036  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =  7.280145
+
+</code></pre>
+
+<p>The <code>scale(365.25)</code> option converts the times recorded in days to years.</p>
+
+<p>A standard Cox proportional hazards model can be defined as follows,</p>
+
+<p>$$
+h_i(t|\mathbf{x}_i)=h_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
+$$</p>
+
+<p>A key point about the Cox model is that we do not estimate the baseline hazard, $h_0(t)$, as this cancels out in the partial likelihood, so we only estimate the relative effects, i.e. hazard ratios.</p>
+
+<p>We can now fit a Cox model in Stata with <code>hormon</code> as the only covariate.</p>
+
+<pre><code class="language-stata">. stcox hormon, 
+
+         failure _d:  censrec == 1
+   analysis time _t:  rectime/365.24
+
+Iteration 0:   log likelihood = -1788.1731
+Iteration 1:   log likelihood =  -1783.774
+Iteration 2:   log likelihood =  -1783.765
+Iteration 3:   log likelihood =  -1783.765
+Refining estimates:
+Iteration 0:   log likelihood =  -1783.765
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =          686                  Number of obs    =         686
+No. of failures =          299
+Time at risk    =  2112.035922
+                                                LR chi2(1)       =        8.82
+Log likelihood  =    -1783.765                  Prob &gt; chi2      =      0.0030
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      hormon |   .6949616   .0869009    -2.91   0.004      .543905    .8879705
+------------------------------------------------------------------------------
+
+</code></pre>
+
+<p>We will now fit a flexible parametric survival model. Here are model is on the log <em>cumulative</em> hazard scale, so our model is defined using uppercase H rather than lowercase h.</p>
+
+<p>$$
+H_i(t|\mathbf{x}_i)=H_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
+$$</p>
+
+<p>Do we have to worry about the switch from hazard function to cumulative hazard function? Well, the answer is &ldquo;No&rdquo; as if we have proportional hazards we also have proportional cumulative hazards.</p>
+
+<p>In the flexile parametric survival we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,</p>
+
+<p>$$
+\ln[H(t|\mathbf{x}_i)] = \eta<em>i = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}</em>{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
+$$</p>
+
+<p>where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).</p>
+
+<p>We now fit this model in Stata using <code>stpm2</code>.</p>
+
+<pre><code class="language-stata">. stpm2 hormon, df(3) scale(hazard) eform
+
+Iteration 0:   log likelihood = -671.75275  
+Iteration 1:   log likelihood = -670.39949  
+Iteration 2:   log likelihood = -670.39239  
+Iteration 3:   log likelihood = -670.39239  
+
+Log likelihood = -670.39239                     Number of obs     =        686
+
+------------------------------------------------------------------------------
+             |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+xb           |
+      hormon |   .6966754   .0870015    -2.89   0.004     .5454206    .8898757
+       _rcs1 |   4.931928   .6329089    12.43   0.000     3.835156    6.342354
+       _rcs2 |   1.786812   .2092654     4.96   0.000     1.420329    2.247857
+       _rcs3 |   .9519031     .03275    -1.43   0.152     .8898306    1.018306
+       _cons |   .3032836   .0247012   -14.65   0.000     .2585366    .3557753
+------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation.
+
+</code></pre>
+
+<p>I have used three options. The <code>df(3)</code> option requests there to be 3 restricted cubic spline parameters (4 knots). These are at the default knot locations, which are at evenly spaced centiles of the uncensored event times. The <code>scale()</code> option defines the link function and <code>scale(hazard)</code> asks for a log(-log) link function, i.e. our linear predictor is on the log cumulative hazard scale. The <code>eform</code> option means that the coefficients will be exponentiated.</p>
+
+<p>The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.</p>
+
+<p>A sensible question is, <em>if we get the same anwers, why not just fit a Cox model?</em>  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.</p>
+
+<p>There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/software/stpm2/sensitivity_analysis/"><span
+      aria-hidden="true">&larr;</span> Sensitivity analysis to number of knots (proportional hazards)</a></li>
+    
+
+    
+    <li class="next"><a href="/software/stpm2/">stpm2 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
