@@ -14,7 +14,7 @@ weight = 60
 
 +++
 
-My main teaching is on the [MSc Medical Statisics](https://le.ac.uk/courses/medical-statistics-msc) at the University of Leicester. I was a stduent on  this course way back in $1991 \backslash 1992$.
+My main teaching is on the [MSc Medical Statisics](https://le.ac.uk/courses/medical-statistics-msc) at the University of Leicester. I was a student on  this course way back in $1991 \backslash 1992$.
 
 I teach on the following teaching weeks for the MSc.,
 

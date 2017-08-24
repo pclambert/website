@@ -34,15 +34,29 @@ caption = ""
 
 21-23 January 2016, Flexible Parametric Survival Models, [_Swiss Epidemiology Winter School_](https://www.epi-winterschool.org), Wengen, Switzerland.
 
+12 January 2016. The benefits of using parametric survival models for analysis of competing risks with time-to-event data. University of Nottingham.
+
 28 October 2015. Introduction to Flexible Parametric Survival Models, Department of Medical Epidemiology and Biostatistics, Stockholm, Sweden.
 
-June 8-13, 2015, [Statistical methods for population-based cancer survival analysis](http://cansurv.net/), Veneto, Italy.
+15 June 2015. Applications and developments of flexible parametric aurvival models. _Epidemiological Approaches to Evaluating Cancer Survival_, Genova.
+
+8-13 June 8-13 2015, [Statistical methods for population-based cancer survival analysis](http://cansurv.net/), Veneto, Italy.
 
 19-21 January 2015, Flexible Parametric Survival Models, [_Swiss Epidemiology Winter School_](https://www.epi-winterschool.org), Wengen, Switzerland.
 
+19 November 2014. Parametric modelling of the cumulative incidence function in competing risks models. University of Birmingham.
+
 28 October 2014. The use of flexible parametric survival models in epidemiology. Department of Public Health, Aarhus University, Denmark.
 
+4 September 2014. Comparison of different Approaches to estimating age standardized net survival. _Annual meeting of the Association of Nordic Cancer Registries_, Malmo, Sweden.
+
+30 June 2014. Parametric modelling of the cumulative incidence function in competing risks models. _Statistical Analysis of Multi-Outcome Data 2014_, University of Cambridge.
+
 16-21 June 2014, [Statistical methods for population-based cancer survival analysis](http://cansurv.net/), Veneto, Italy.
+
+4 June 2014. Parametric modelling of the cumulative incidence function in competing risks models. _Fundamental Problems in Survival Analysis_, Kings College London.
+
+8 April 2014. Survival analysis: The importance of being flexible. _Scientific Seminar on Global Health and Methodology_, University College London, UK.
 
 18 October 2013. The many ways to report differences in cancer survival. _International Agency for Research on Cancer (IARC)_. Lyon, France.
 

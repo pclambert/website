@@ -30,19 +30,19 @@ Peters T.L., Weibull C.E, Fang F., Sandler D.P., **Lambert P.C.**, Ye W., Kamel 
 
 **2016**
 
-<span></span><span>Bower H.,</span>**Lambert** <span>P.C., Crowther M.J.</span> <span></span> <span>strcs: A command for fitting flexible parametric</span> <span>survival models on the log-hazard scale.</span> _The Stata Journal__;**16**:989-1012._
+Bower H.,**Lambert** <span>P.C., Crowther M.J.strcs: A command for fitting flexible parametric</span> <span>survival models on the log-hazard scale. _The Stata Journal__;**16**:989-1012._
 
-<span>Bower H., Björkholm M., Dickman P.W., Höglund M.,</span> **Lambert P.C.**<span>, Andersson T.M.. Reply to D. Pulte et al. Journal of Clinical Oncology 2016 (in press)</span>
+Bower H., Björkholm M., Dickman P.W., Höglund M., **Lambert P.C.**, Andersson T.M.. Reply to D. Pulte et al. Journal of Clinical Oncology 2016 (in press)
 
-<span><span>Cramb S.M., Mengersen K.L., Lambert P.C., Ryan L.M., Baade P.D. A flexible parametric approach to examining spatial variation in relative survival. _Statistics in Medicine;_**35**:5448-5463.</span></span>
+Cramb S.M., Mengersen K.L., Lambert P.C., Ryan L.M., Baade P.D. A flexible parametric approach to examining spatial variation in relative survival. _Statistics in Medicine;_**35**:5448-5463.
 
-<span><span>Edgren G., Hjalgrim H., Rostgaard K., **Lambert P.C.,** Wikman A., Norda R., Titlestad K.-E., Erikstrup C., Ullum H., Melbye M., Busch M. P., Nyrén, O. Transmission of Neurodegenerative Disorders Through Blood Transfusion: A Cohort Study. Ann Intern Med, 2016; <span style="float: none; text-align: left; ">doi: 10.7326/M15-2421</span></span></span>
+Edgren G., Hjalgrim H., Rostgaard K., **Lambert P.C.,** Wikman A., Norda R., Titlestad K.-E., Erikstrup C., Ullum H., Melbye M., Busch M. P., Nyrén, O. Transmission of Neurodegenerative Disorders Through Blood Transfusion: A Cohort Study. Ann Intern Med, 2016. 
 
-<span><span>Bower H., Björkholm M., Dickman P.W., Högland M., **Lambert P.C**., Andersson T.M-L Life expectancy of patients with chronic myeloid leukemia approaches the life expectancy of the general population. _JCO_ 2016;**24**:2851-2857.</span></span>
+Bower H., Björkholm M., Dickman P.W., Högland M., **Lambert P.C**., Andersson T.M-L Life expectancy of patients with chronic myeloid leukemia approaches the life expectancy of the general population. _JCO_ 2016;**24**:2851-2857.
 
 Latimer N.R., Abrams K.R., **Lambert P.C.**, Morden J.P., Crowther M.J. Assessing methods for dealing with treatment switching in clinical trials: A follow-up simulation study. _Statistical Methods in Medical Research_ 2016(in press).
 
-<span>Bower H., Andersson T.M-L., Björkholm M., Dickman P.W., **Lambert P.C**., Rangert Derol Å. Continued improvement in survival of acute myeloid leukemia patients: An application of the loss in expectation of life. <span>_Blood Cancer Journal_ 2016;</span></span>**6**:e390
+Bower H., Andersson T.M-L., Björkholm M., Dickman P.W., **Lambert P.C**., Rangert Derol Å. Continued improvement in survival of acute myeloid leukemia patients: An application of the loss in expectation of life. _Blood Cancer Journal_ 2016;**6**:e390
 
 Crowther M.J., **Lambert, P.C.**, <span>Andersson T.M., Abrams K.R., Humphreys K.</span> Joint modelling of longitudinal and survival data: Incorporating delayed entry and an assessment of model misspecification. _Statistics in Medicine_ 2016;**35**:1193-209
 
