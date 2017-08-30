@@ -12,11 +12,11 @@ caption = ""
 
 # Sensitivity Analysis
 
-We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use `stset` to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()' option.
+We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use `stset` to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()` option.
 
 ```stata
 <<dd_do>>
-use http://pclambert.netlify.com/data/rott2b, clear
+use https://www.pclambert.net/data/rott2b, clear
 stset rf, f(rfi==1) scale(12) exit(time 60)
 <</dd_do>>
 ```
@@ -30,6 +30,7 @@ forvalues i = 1/6 {
 	quietly stpm2 hormon, df(`i') scale(hazard) 
 	predict h0_df`i', hazard timevar(temptime) per(1000) zeros
 	predict s0_df`i', survival timevar(temptime) zeros
+	estimates store df`i'
 }
 <</dd_do>>
 ```

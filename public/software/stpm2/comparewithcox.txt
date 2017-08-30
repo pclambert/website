@@ -53,7 +53,7 @@ $$
 \ln[H(t|\mathbf{x}\_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}\_{0}\right) + \mathbf{x}\_i \boldsymbol{\beta} 
 $$
 
-where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).  
+where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).  
 
 We now fit this model in Stata using `stpm2`.
 
@@ -66,7 +66,7 @@ I have used three options. The `df(3)` option requests there to be 3 restricted 
 
 The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.
 
-A sensible question is, _if we get the same anwers, why not just fit a Cox model?_  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.
+A sensible question is, _if we get the same anwers, why not just fit a Cox model_?  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.
 
 There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.
 

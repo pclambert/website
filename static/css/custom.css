@@ -1,0 +1,27 @@
+
+nav#navbar-main li {
+  font-size: 18px;
+}
+
+.navbar-default .navbar-brand {
+  text-transform: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #1856ba;
+  background-color:rgb(200, 200, 200);
+}
+
+.navbar-default {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+    background-color:rgb(200, 200, 200);
+}
+
+
+code {
+    background: #fff;
+    color:blue;
+    padding: 0 0 0 0;
+}  

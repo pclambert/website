@@ -29,6 +29,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;/software/stcrprep/nonparametriccif/&#34;&gt;Using sts graph for cause-specific CIFs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stcrprep/computational_benefits/&#34;&gt;Computational benefits of using &lt;code&gt;stcrprep&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Schoenfeld residuals&lt;/li&gt;
 &lt;/ul&gt;
 

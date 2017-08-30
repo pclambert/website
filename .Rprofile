@@ -1,1 +1,1 @@
-##options(servr.daemon = TRUE)
+options(servr.daemon = FALSE)

@@ -14,7 +14,7 @@ I have added some examples and aim to add to these.
 - [Comparison with a Cox model]({{< ref "software/stpm2/comparewithcox.md" >}})
 - simple simulation study to show agreement with Cox model.
 - predicting hazard and survival functions (use of the `timevar()` option)
-- [Sensitvity analsis for the number of knots]({{< ref "software/stpm2/sensitivity_analysis.md" >}}).
+- [Sensitivity analysis for the number of knots]({{< ref "software/stpm2/sensitivity_analysis.md" >}}).
 
 ## Time-dependent effects (non proportional hazards)
 - non-proportional hazards

@@ -11,12 +11,192 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Some key issues in the reporting of national cancer survival statistics</title>
+      <link>/talk/phe2017/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/phe2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>An online interactive tool to improve the understanding of cancer survival statistics</title>
       <link>/talk/naaccr_online/</link>
       <pubDate>Thu, 14 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/talk/naaccr_online/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>stcrprep - computational benefits</title>
+      <link>/software/stcrprep/computational_benefits/</link>
+      <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stcrprep/computational_benefits/</guid>
+      <description>&lt;p&gt;When using &lt;code&gt;stcrprep&lt;/code&gt; there are some computational benefits when compared to using Stata&amp;rsquo;s inbuilt &lt;code&gt;stcrreg&lt;/code&gt;. One reason for this is that everytime you fit a model using &lt;code&gt;stcrreg&lt;/code&gt; you the probability of censoring weights are calculated and the data must be expanded (in the background) when maximising the likelihood. When using &lt;code&gt;stcrprep&lt;/code&gt; you only need to do this once.&lt;/p&gt;
+
+&lt;p&gt;I have run some timings. If I fit a simple model to the embt1 data with risk score as the only covariate (2 dummy variables) then these are the timings no my current work laptop (Intel i5 - running Stata 15 MP2).&lt;/p&gt;
+
+&lt;p&gt;First I load and &lt;code&gt;stset&lt;/code&gt; the data.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/ebmt1_stata.dta, clear
+
+. stset time, failure(status==1) scale(365.25) id(patid) noshow
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, &lt;code&gt;stcrreg&lt;/code&gt; can be used&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer clear
+
+. timer on 1
+
+. stcrreg i.score, compete(status==2) nolog noshow
+
+Competing-risks regression                       No. of obs       =      1,977
+                                                 No. of subjects  =      1,977
+Failure event  : status == 1                     No. failed       =        456
+Competing event: status == 2                     No. competing    =        685
+                                                 No. censored     =        836
+
+                                                 Wald chi2(2)     =       9.87
+Log pseudolikelihood = -3333.3217                Prob &amp;gt; chi2      =     0.0072
+
+                              (Std. Err. adjusted for 1,977 clusters in patid)
+------------------------------------------------------------------------------
+             |               Robust
+          _t |        SHR   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       score |
+Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
+  High risk  |   1.769853   .3238535     3.12   0.002     1.236465    2.533337
+------------------------------------------------------------------------------
+
+. timer off 1
+
+. timer list
+   1:     16.21 /        1 =      16.2060
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This takes 16.2 seconds to fit.&lt;/p&gt;
+
+&lt;p&gt;I now reload and &lt;code&gt;stset&lt;/code&gt; the data, but this time declaring both &lt;code&gt;status=1&lt;/code&gt; and &lt;code&gt;status=2&lt;/code&gt; as events.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/ebmt1_stata.dta, clear
+
+. stset time, failure(status==1,2) scale(365.25) id(patid)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can now run &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer on 2
+
+. stcrprep, events(status) keep(score) trans(1)   
+
+. timer off 2
+
+. timer list 2
+   2:      4.48 /        1 =       4.4820
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This takes  4.5 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen      event = status == failcode
+
+. stset tstop [iw=weight_c], failure(event) enter(tstart) 
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We use &lt;code&gt;stcox&lt;/code&gt; to fit the model.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer on 3
+
+. stcox i.score
+
+         failure _d:  event
+   analysis time _t:  tstop
+  enter on or after:  time tstart
+             weight:  [iweight=weight_c]
+
+Iteration 0:   log likelihood = -3338.1244
+Iteration 1:   log likelihood = -3333.4173
+Iteration 2:   log likelihood = -3333.3113
+Iteration 3:   log likelihood = -3333.3112
+Refining estimates:
+Iteration 0:   log likelihood = -3333.3112
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =       72,880                  Number of obs    =      72,880
+No. of failures =          456
+Time at risk    =   6026.27434
+                                                LR chi2(2)       =        9.63
+Log likelihood  =   -3333.3112                  Prob &amp;gt; chi2      =      0.0081
+
+------------------------------------------------------------------------------
+          _t | Haz. Ratio   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       score |
+Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
+  High risk  |   1.769899   .3219273     3.14   0.002     1.239148     2.52798
+------------------------------------------------------------------------------
+
+. timer off 3
+
+. timer list
+   1:     16.21 /        1 =      16.2060
+   2:      4.48 /        1 =       4.4820
+   3:      1.06 /        1 =       1.0630
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stset&lt;/code&gt; again.&lt;/p&gt;
+
+&lt;p&gt;To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;expand 20
+replace time = time + runiform()*0.0001
+replace patid = _n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This leads to 19,770 indviduals in the analysis. The fact that there are no ties is perhaps a little unrealistic in a dataset this size, but this is still a usefull assessment of computational speed. The same analysis as above on this larger dataset gave the following times.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;command&lt;/th&gt;
+&lt;th&gt;Time&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;stcrreg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2066.3 seconds&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;stcrprep&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;890.2 seconds&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;stcox&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;46.1 seconds&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I think this really highlights the benfits of restructuring the data and using &lt;code&gt;stcox&lt;/code&gt; in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an &lt;code&gt;stcrreg&lt;/code&gt; model takes almost 35 minutes, whilst the same model using &lt;code&gt;stcox&lt;/code&gt; after using &lt;code&gt;stcrprep&lt;/code&gt;takes only 46 seconds.&lt;/p&gt;
+
+&lt;p&gt;It is worthwhile noting that Stata&amp;rsquo;s implementation of Fine and Grays proportional subhazards model using &lt;code&gt;stcrreg&lt;/code&gt; seems particularly slow. If I fit the model in R using &lt;code&gt;crr&lt;/code&gt; the model fitted to the expanded data it only takes 370 seconds compared to 2066 in Stata.&lt;/p&gt;
+
+&lt;p&gt;There are other benefits with using &lt;code&gt;stcox&lt;/code&gt; to fit the subhazards model, mainly because we can now use many of the other commands and extensions associated with &lt;code&gt;stcox&lt;/code&gt;. I will discuss these in other tutorials.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -62,6 +242,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;/software/stcrprep/nonparametriccif/&#34;&gt;Using sts graph for cause-specific CIFs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stcrprep/computational_benefits/&#34;&gt;Computational benefits of using &lt;code&gt;stcrprep&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Schoenfeld residuals&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -92,7 +273,7 @@
 &lt;li&gt;&lt;a href=&#34;/software/stpm2/comparewithcox/&#34;&gt;Comparison with a Cox model&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;simple simulation study to show agreement with Cox model.&lt;/li&gt;
 &lt;li&gt;predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitvity analsis for the number of knots&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitivity analysis for the number of knots&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
@@ -216,7 +397,7 @@ $$&lt;/p&gt;
 \ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
 $$&lt;/p&gt;
 
-&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).&lt;/p&gt;
+&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).&lt;/p&gt;
 
 &lt;p&gt;We now fit this model in Stata using &lt;code&gt;stpm2&lt;/code&gt;.&lt;/p&gt;
 
@@ -247,7 +428,7 @@ Note: Estimates are transformed only in the first equation.
 
 &lt;p&gt;The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.&lt;/p&gt;
 
-&lt;p&gt;A sensible question is, &lt;em&gt;if we get the same anwers, why not just fit a Cox model?&lt;/em&gt;  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.&lt;/p&gt;
+&lt;p&gt;A sensible question is, &lt;em&gt;if we get the same anwers, why not just fit a Cox model&lt;/em&gt;?  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.&lt;/p&gt;
 
 &lt;p&gt;There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.&lt;/p&gt;
 </description>
@@ -263,9 +444,9 @@ Note: Estimates are transformed only in the first equation.
 
 &lt;h1 id=&#34;sensitivity-analysis&#34;&gt;Sensitivity Analysis&lt;/h1&gt;
 
-&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()&amp;rsquo; option.&lt;/p&gt;
+&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the &lt;code&gt;exit()&lt;/code&gt; option.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use http://pclambert.netlify.com/data/rott2b, clear
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/rott2b, clear
 (Rotterdam breast cancer data (augmented with cause of death))
 
 . stset rf, f(rfi==1) scale(12) exit(time 60)
@@ -297,7 +478,8 @@ obs. time interval:  (0, rf]
   2.         quietly stpm2 hormon, df(`i&#39;) scale(hazard) 
   3.         predict h0_df`i&#39;, hazard timevar(temptime) per(1000) zeros
   4.         predict s0_df`i&#39;, survival timevar(temptime) zeros
-  5. }
+  5.         estimates store df`i&#39;
+  6. }
 
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -607,16 +789,6 @@ Total       |       456         456.00
 &lt;p&gt;de Wreede, L.; Fiocco, M. &amp;amp; Putter, H. &lt;code&gt;mstate&lt;/code&gt;: An R package for the analysis of competing risks and multi-state models. &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 2011;&lt;strong&gt;38&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. &lt;em&gt;The Annals of Statistics&lt;/em&gt; 1988;&lt;strong&gt;16&lt;/strong&gt;:1141-1154.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Interactive tool</title>
-      <link>/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/talk/example-talk/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     

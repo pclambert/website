@@ -13,6 +13,7 @@ Below are some simple examples of using `stcrprep`.
 ### Non and semi parametric methods
 - [Using sts graph for cause-specific CIFs]({{< ref "software/stcrprep/nonparametriccif.md" >}}) 
 - Using `stcox` instead of `stcrreg`
+- [Computational benefits of using `stcrprep`]({{< ref "software/stcrprep/computational_benefits.md" >}})
 - Schoenfeld residuals
 
 ### Parametric models

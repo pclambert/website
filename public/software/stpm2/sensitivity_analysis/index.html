@@ -18,7 +18,7 @@
   
     
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github-gist.min.css">
+    <link rel="stylesheet" href="/css/highlight.min.css">
     
   
   
@@ -29,6 +29,8 @@
   
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
   <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
   
 
   
@@ -282,9 +284,9 @@
 
 <h1 id="sensitivity-analysis">Sensitivity Analysis</h1>
 
-<p>We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use <code>stset</code> to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()&rsquo; option.</p>
+<p>We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use <code>stset</code> to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the <code>exit()</code> option.</p>
 
-<pre><code class="language-stata">. use http://pclambert.netlify.com/data/rott2b, clear
+<pre><code class="language-stata">. use https://www.pclambert.net/data/rott2b, clear
 (Rotterdam breast cancer data (augmented with cause of death))
 
 . stset rf, f(rfi==1) scale(12) exit(time 60)
@@ -316,7 +318,8 @@ obs. time interval:  (0, rf]
   2.         quietly stpm2 hormon, df(`i') scale(hazard) 
   3.         predict h0_df`i', hazard timevar(temptime) per(1000) zeros
   4.         predict s0_df`i', survival timevar(temptime) zeros
-  5. }
+  5.         estimates store df`i'
+  6. }
 
 </code></pre>
 

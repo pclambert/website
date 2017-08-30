@@ -30,9 +30,9 @@ Peters T.L., Weibull C.E, Fang F., Sandler D.P., **Lambert P.C.**, Ye W., Kamel 
 
 **2016**
 
-Bower H.,**Lambert** <span>P.C., Crowther M.J.strcs: A command for fitting flexible parametric</span> <span>survival models on the log-hazard scale. _The Stata Journal__;**16**:989-1012._
+Bower H.,**Lambert** P.C., Crowther M.J.strcs: A command for fitting flexible parametric survival models on the log-hazard scale. _The Stata Journal_ 2016;**16**:989-1012.
 
-Bower H., Björkholm M., Dickman P.W., Höglund M., **Lambert P.C.**, Andersson T.M.. Reply to D. Pulte et al. Journal of Clinical Oncology 2016 (in press)
+Bower H., Björkholm M., Dickman P.W., Höglund M., **Lambert P.C.**, Andersson T.M.. Reply to D. Pulte et al. _Journal of Clinical Oncology_ 2016;**35**:696-697.
 
 Cramb S.M., Mengersen K.L., Lambert P.C., Ryan L.M., Baade P.D. A flexible parametric approach to examining spatial variation in relative survival. _Statistics in Medicine;_**35**:5448-5463.
 

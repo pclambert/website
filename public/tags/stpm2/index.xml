@@ -28,7 +28,7 @@
 &lt;li&gt;&lt;a href=&#34;/software/stpm2/comparewithcox/&#34;&gt;Comparison with a Cox model&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;simple simulation study to show agreement with Cox model.&lt;/li&gt;
 &lt;li&gt;predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitvity analsis for the number of knots&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitivity analysis for the number of knots&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
@@ -140,7 +140,7 @@ $$&lt;/p&gt;
 \ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
 $$&lt;/p&gt;
 
-&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restricted cubic spline function of log(time).&lt;/p&gt;
+&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).&lt;/p&gt;
 
 &lt;p&gt;We now fit this model in Stata using &lt;code&gt;stpm2&lt;/code&gt;.&lt;/p&gt;
 
@@ -171,7 +171,7 @@ Note: Estimates are transformed only in the first equation.
 
 &lt;p&gt;The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.&lt;/p&gt;
 
-&lt;p&gt;A sensible question is, &lt;em&gt;if we get the same anwers, why not just fit a Cox model?&lt;/em&gt;  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.&lt;/p&gt;
+&lt;p&gt;A sensible question is, &lt;em&gt;if we get the same anwers, why not just fit a Cox model&lt;/em&gt;?  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.&lt;/p&gt;
 
 &lt;p&gt;There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.&lt;/p&gt;
 </description>
@@ -187,9 +187,9 @@ Note: Estimates are transformed only in the first equation.
 
 &lt;h1 id=&#34;sensitivity-analysis&#34;&gt;Sensitivity Analysis&lt;/h1&gt;
 
-&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the `exit()&amp;rsquo; option.&lt;/p&gt;
+&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the &lt;code&gt;exit()&lt;/code&gt; option.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use http://pclambert.netlify.com/data/rott2b, clear
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/rott2b, clear
 (Rotterdam breast cancer data (augmented with cause of death))
 
 . stset rf, f(rfi==1) scale(12) exit(time 60)
@@ -221,7 +221,8 @@ obs. time interval:  (0, rf]
   2.         quietly stpm2 hormon, df(`i&#39;) scale(hazard) 
   3.         predict h0_df`i&#39;, hazard timevar(temptime) per(1000) zeros
   4.         predict s0_df`i&#39;, survival timevar(temptime) zeros
-  5. }
+  5.         estimates store df`i&#39;
+  6. }
 
 &lt;/code&gt;&lt;/pre&gt;
 

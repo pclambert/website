@@ -5,8 +5,26 @@
     
     <url>
     
+      <loc>/talk/phe2017/</loc>
+      <lastmod>2017-11-29T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/talk/naaccr_online/</loc>
       <lastmod>2017-09-14T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/software/stcrprep/computational_benefits/</loc>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -104,15 +122,6 @@
     
     <url>
     
-      <loc>/talk/example-talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/post/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -169,7 +178,7 @@
     <url>
     
       <loc>/tags/competing-risks/</loc>
-      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -245,7 +254,7 @@
     <url>
     
       <loc>/tags/software/</loc>
-      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -255,7 +264,7 @@
     <url>
     
       <loc>/software/</loc>
-      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -265,7 +274,7 @@
     <url>
     
       <loc>/tags/stata/</loc>
-      <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -295,7 +304,7 @@
     <url>
     
       <loc>/tags/survival/</loc>
-      <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
