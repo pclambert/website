@@ -54,11 +54,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 1
 
 . timer list
-   1:     16.21 /        1 =      16.2060
+   1:     15.35 /        1 =      15.3500
 
 ```
 
-This takes 16.2 seconds to fit. 
+This takes 15.4 seconds to fit. 
 
 I now reload and `stset` the data, but this time declaring both `status=1` and `status=2` as events.
 
@@ -79,13 +79,13 @@ We can now run `stcrprep`.
 . timer off 2
 
 . timer list 2
-   2:      4.48 /        1 =       4.4820
+   2:      4.39 /        1 =       4.3910
 
 ```
 
 
 
-This takes  4.5 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use `stset`.
+This takes  4.4 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use `stset`.
 
 
 ```stata
@@ -133,13 +133,13 @@ Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
 . timer off 3
 
 . timer list
-   1:     16.21 /        1 =      16.2060
-   2:      4.48 /        1 =       4.4820
-   3:      1.06 /        1 =       1.0630
+   1:     15.35 /        1 =      15.3500
+   2:      4.39 /        1 =       4.3910
+   3:      1.09 /        1 =       1.0930
 
 ```
 
-This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stset` again.
+This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stcrprep` again.
 
 To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.
 

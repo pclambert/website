@@ -83,7 +83,7 @@ timer list
 <</dd_do>>
 ```
 
-This takes <<dd_display:%4.1f r(t3)>> seconds to run giving a combined total of <<dd_display:%4.1f r(t3)+`stcrprep_time'>> seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stset` again.
+This takes <<dd_display:%4.1f r(t3)>> seconds to run giving a combined total of <<dd_display:%4.1f r(t3)+`stcrprep_time'>> seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stcrprep` again.
 
 To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.
 

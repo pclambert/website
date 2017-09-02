@@ -76,11 +76,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 1
 
 . timer list
-   1:     16.21 /        1 =      16.2060
+   1:     15.35 /        1 =      15.3500
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes 16.2 seconds to fit.&lt;/p&gt;
+&lt;p&gt;This takes 15.4 seconds to fit.&lt;/p&gt;
 
 &lt;p&gt;I now reload and &lt;code&gt;stset&lt;/code&gt; the data, but this time declaring both &lt;code&gt;status=1&lt;/code&gt; and &lt;code&gt;status=2&lt;/code&gt; as events.&lt;/p&gt;
 
@@ -99,11 +99,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 2
 
 . timer list 2
-   2:      4.48 /        1 =       4.4820
+   2:      4.39 /        1 =       4.3910
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes  4.5 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This takes  4.4 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen      event = status == failcode
 
@@ -148,13 +148,13 @@ Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
 . timer off 3
 
 . timer list
-   1:     16.21 /        1 =      16.2060
-   2:      4.48 /        1 =       4.4820
-   3:      1.06 /        1 =       1.0630
+   1:     15.35 /        1 =      15.3500
+   2:      4.39 /        1 =       4.3910
+   3:      1.09 /        1 =       1.0930
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stset&lt;/code&gt; again.&lt;/p&gt;
+&lt;p&gt;This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stcrprep&lt;/code&gt; again.&lt;/p&gt;
 
 &lt;p&gt;To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.&lt;/p&gt;
 
