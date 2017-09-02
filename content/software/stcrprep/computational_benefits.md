@@ -54,11 +54,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 1
 
 . timer list
-   1:     15.35 /        1 =      15.3500
+   1:     23.32 /        1 =      23.3150
 
 ```
 
-This takes 15.4 seconds to fit. 
+This takes 23.3 seconds to fit. 
 
 I now reload and `stset` the data, but this time declaring both `status=1` and `status=2` as events.
 
@@ -79,13 +79,13 @@ We can now run `stcrprep`.
 . timer off 2
 
 . timer list 2
-   2:      4.39 /        1 =       4.3910
+   2:      6.22 /        1 =       6.2240
 
 ```
 
 
 
-This takes  4.4 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use `stset`.
+This takes  6.2 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use `stset`.
 
 
 ```stata
@@ -133,13 +133,13 @@ Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
 . timer off 3
 
 . timer list
-   1:     15.35 /        1 =      15.3500
-   2:      4.39 /        1 =       4.3910
-   3:      1.09 /        1 =       1.0930
+   1:     23.32 /        1 =      23.3150
+   2:      6.22 /        1 =       6.2240
+   3:      1.41 /        1 =       1.4060
 
 ```
 
-This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stcrprep` again.
+This takes  1.4 seconds to run giving a combined total of  7.6 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run `stcrprep` again.
 
 To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.
 
@@ -158,7 +158,7 @@ This leads to 19,770 indviduals in the analysis. The fact that there are no ties
 |`stcrprep`|890.2 seconds|
 |`stcox`|46.1 seconds|
 
-I think this really highlights the benfits of restructuring the data and using `stcox` in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an `stcrreg` model takes almost 35 minutes, whilst the same model using `stcox` after using `stcrprep`takes only 46 seconds.
+I think this really highlights the benfits of restructuring the data and using `stcox` in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an `stcrreg` model takes almost 35 minutes, whilst the same model using `stcox` after using `stcrprep` takes only 46 seconds.
 
 It is worthwhile noting that Stata's implementation of Fine and Grays proportional subhazards model using `stcrreg` seems particularly slow. If I fit the model in R using `crr` the model fitted to the expanded data it only takes 370 seconds compared to 2066 in Stata. 
 

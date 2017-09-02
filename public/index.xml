@@ -76,11 +76,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 1
 
 . timer list
-   1:     15.35 /        1 =      15.3500
+   1:     23.32 /        1 =      23.3150
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes 15.4 seconds to fit.&lt;/p&gt;
+&lt;p&gt;This takes 23.3 seconds to fit.&lt;/p&gt;
 
 &lt;p&gt;I now reload and &lt;code&gt;stset&lt;/code&gt; the data, but this time declaring both &lt;code&gt;status=1&lt;/code&gt; and &lt;code&gt;status=2&lt;/code&gt; as events.&lt;/p&gt;
 
@@ -99,11 +99,11 @@ Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
 . timer off 2
 
 . timer list 2
-   2:      4.39 /        1 =       4.3910
+   2:      6.22 /        1 =       6.2240
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes  4.4 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This takes  6.2 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen      event = status == failcode
 
@@ -148,13 +148,13 @@ Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
 . timer off 3
 
 . timer list
-   1:     15.35 /        1 =      15.3500
-   2:      4.39 /        1 =       4.3910
-   3:      1.09 /        1 =       1.0930
+   1:     23.32 /        1 =      23.3150
+   2:      6.22 /        1 =       6.2240
+   3:      1.41 /        1 =       1.4060
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This takes  1.1 seconds to run giving a combined total of  5.5 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stcrprep&lt;/code&gt; again.&lt;/p&gt;
+&lt;p&gt;This takes  1.4 seconds to run giving a combined total of  7.6 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stcrprep&lt;/code&gt; again.&lt;/p&gt;
 
 &lt;p&gt;To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.&lt;/p&gt;
 
@@ -191,7 +191,7 @@ replace patid = _n
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;I think this really highlights the benfits of restructuring the data and using &lt;code&gt;stcox&lt;/code&gt; in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an &lt;code&gt;stcrreg&lt;/code&gt; model takes almost 35 minutes, whilst the same model using &lt;code&gt;stcox&lt;/code&gt; after using &lt;code&gt;stcrprep&lt;/code&gt;takes only 46 seconds.&lt;/p&gt;
+&lt;p&gt;I think this really highlights the benfits of restructuring the data and using &lt;code&gt;stcox&lt;/code&gt; in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an &lt;code&gt;stcrreg&lt;/code&gt; model takes almost 35 minutes, whilst the same model using &lt;code&gt;stcox&lt;/code&gt; after using &lt;code&gt;stcrprep&lt;/code&gt; takes only 46 seconds.&lt;/p&gt;
 
 &lt;p&gt;It is worthwhile noting that Stata&amp;rsquo;s implementation of Fine and Grays proportional subhazards model using &lt;code&gt;stcrreg&lt;/code&gt; seems particularly slow. If I fit the model in R using &lt;code&gt;crr&lt;/code&gt; the model fitted to the expanded data it only takes 370 seconds compared to 2066 in Stata.&lt;/p&gt;
 

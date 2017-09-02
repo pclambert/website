@@ -102,7 +102,7 @@ This leads to 19,770 indviduals in the analysis. The fact that there are no ties
 |`stcrprep`|890.2 seconds|
 |`stcox`|46.1 seconds|
 
-I think this really highlights the benfits of restructuring the data and using `stcox` in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an `stcrreg` model takes almost 35 minutes, whilst the same model using `stcox` after using `stcrprep`takes only 46 seconds.
+I think this really highlights the benfits of restructuring the data and using `stcox` in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an `stcrreg` model takes almost 35 minutes, whilst the same model using `stcox` after using `stcrprep` takes only 46 seconds.
 
 It is worthwhile noting that Stata's implementation of Fine and Grays proportional subhazards model using `stcrreg` seems particularly slow. If I fit the model in R using `crr` the model fitted to the expanded data it only takes 370 seconds compared to 2066 in Stata. 
 
