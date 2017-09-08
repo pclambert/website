@@ -14,13 +14,15 @@ caption = ""
 
 **2017**
 
+Mozumder S.I., Rutherford M.J., **Lambert P.C.** Direct likelihood inference on the cause-specific cumulative incidence function: a flexible parametric regression modelling approach. _Statistics in Medicine (in press)._
+
 Bower H., Andersson T.M-L., Crowther M.J., Dickman P.W., Lambe M., **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2017 (in press).
 
 Syriopoulou E., Bower H., Andersson T.M-L., **Lambert P.C.**, Rutherford M.J. Estimating the impact of a cancer diagnosis on life expectancy by socioeconomic group for a range of cancer types in England. _British Journal of Cancer_ 2017 (in press)
 
 Crowther M.J., **Lambert P.C.** Parametric multi-state survival models: flexible modelling allowing transition-specific distributions with application to estimating clinically useful measures of effect differences. _Statistics in Medicine (in press)._
 
-Mozumder S.I., Rutherford M.J.,  `stpm2cr`: A flexible parametric competing risks model using a direct likelihood approach for the cause-specific cumulative incidence function. _The Stata Journal_ 2017:**17**:462-489.
+Mozumder S.I., Rutherford M.J., **Lambert P.C.**  `stpm2cr`: A flexible parametric competing risks model using a direct likelihood approach for the cause-specific cumulative incidence function. _The Stata Journal_ 2017:**17**:462-489.
 
 Peters T.L., Weibull C.E, Fang F., Sandler D.P., **Lambert P.C.**, Ye W., Kamel F. Association of Fractures with the Incidence of Amyotrophic Lateral Sclerosis. _Amyotrophic Lateral Sclerosis and Frontotemporal Degeneration_ 2017:**18**:419-425.
 
@@ -60,21 +62,21 @@ Rutherford M.J., Ironmonger L., Ormiston-Smith N., Abel G.A., Greenberg D.C., Ly
 
 Rutherford M.J., Andersson T.M-L., Møller H., **Lambert P.C.** Understanding the impact of socioeconomic differences in breast cancer survival in England and Wales: Avoidable deaths and potential gain in expectation of life. _Cancer Epidemiology_ 2015;**39**:118-25.
 
-Latimer N.R., Abrams K.R., **Lambert P.C.**, Crowther M.J., Wailoo A., Morden J., Akehurst R., Campbell M. Adjusting for treatment switching in randomised controlled trials - A simulation study and a simplified two-stage method. _Stat Methods Med Res_ 2015: doi: <span class="slug">10.1177/0962280214557578</span>;
+Latimer N.R., Abrams K.R., **Lambert P.C.**, Crowther M.J., Wailoo A., Morden J., Akehurst R., Campbell M. Adjusting for treatment switching in randomised controlled trials - A simulation study and a simplified two-stage method. _Stat Methods Med Res_ 2015: 
 
 Rutherford M.J., Crowther M.J., **Lambert, P.C.** The use of restricted cubic splines to approximate complex hazard functions in the analysis of time-to-event data: a simulation study. _Journal of Statistical Computation and Simulation_ 2015;**4**:777–793
 
 **2014**
 
-Crowther M.J., **Lambert, P.C.** A general framework for parametric survival analysis. _Statistics in Medicine_ 2014;<span style="float: none; text-align: left; ">**33**:5280-97</span>.
+Crowther M.J., **Lambert, P.C.** A general framework for parametric survival analysis. _Statistics in Medicine_ 2014;**33**:5280-97
 
-Eloranta S., **Lambert P.C.,** Andersson T.M-L., Björkholm M., Dickman P.W. The application of cure models in the presence of competing risks - a tool for improved risk communication in population-based cancer patient survival studies. _Epidemiology_ 2014;<span style="float: none; text-align: left; ">**25**:742-8</span>
+Eloranta S., **Lambert P.C.,** Andersson T.M-L., Björkholm M., Dickman P.W. The application of cure models in the presence of competing risks - a tool for improved risk communication in population-based cancer patient survival studies. _Epidemiology_ 2014;**25**:742-8
 
-Latimer N.R., Abrams K.R., **Lambert P.C.,** Crowther M.J., Wailoo A.J., Morden J.P, Akehurst R.L., Campbell M.J. Adjusting survival time estimates to account for treatment switching in randomized controlled trials—an cconomic evaluation context: Methods, limitations, and recommendations. _Medical Decision Making_ 2014;<span style="float: none; text-align: left; ">**34**:387-402</span>.
+Latimer N.R., Abrams K.R., **Lambert P.C.,** Crowther M.J., Wailoo A.J., Morden J.P, Akehurst R.L., Campbell M.J. Adjusting survival time estimates to account for treatment switching in randomized controlled trials—an cconomic evaluation context: Methods, limitations, and recommendations. _Medical Decision Making_ 2014;**34**:387-402
 
-Andersson T.M-L., Eriksson H., Hansson J., Månsson-Brahme E., Dickman P.W., Eloranta S., Lambe M., **Lambert P.C.** Estimating the cure proportion of malignant melanoma, an alternative approach to assess long term survival; a population-based study. _Cancer Epidemiology_ 2014; <span style="float: none; text-align: left; ">**38**:93-9</span>
+Andersson T.M-L., Eriksson H., Hansson J., Månsson-Brahme E., Dickman P.W., Eloranta S., Lambe M., **Lambert P.C.** Estimating the cure proportion of malignant melanoma, an alternative approach to assess long term survival; a population-based study. _Cancer Epidemiology_ 2014;**38**:93-9
 
-Gao H., Hägg S., Sjögren P., **Lambert P.C.**, Ingelsson E., van Dam R.M. <span>Serum selenium in relation to measures of glucose metabolism and incidence of type 2 diabetes in an older Swedish population. _Diabetic Medicine_ 2014;<span style="float: none; text-align: left; ">**31**:787-93</span></span>
+Gao H., Hägg S., Sjögren P., **Lambert P.C.**, Ingelsson E., van Dam R.M. <span>Serum selenium in relation to measures of glucose metabolism and incidence of type 2 diabetes in an older Swedish population. _Diabetic Medicine_ 2014;**31**:787-93
 
 Feldman A.L., Johansson A.L.V., **Lambert P.C**., Sieurin J., Yang F, Pedersen N.L., Wirdefeldt K. Familial Co-aggregation of Alzheimer’s Disease and Parkinson’s Disease: Systematic Review and Meta-Analysis. _Neuroepidemiology_ 2014;**42**:69-80
 
@@ -88,19 +90,18 @@ Andersson T.M-L., Dickman P.W., Eloranta S., Lambe M., **Lambert P.C.** Estimati
 
 Ahyow L.C., **Lambert P.C.**, Jenkins D.R., Neal K.R. Tobin M. Bed occupancy rates and hospital acquired Clostridium difficile infection, a cohort study. _Infection Control and Hospital Epidemiology_ 2013;**34**:1062-9
 
-<span></span>
 
 Shah A., Andersson T. M-L., Rachet B., Björkholm M., **Lambert P.C.** Survival and cure of acute myeloid leukaemia in England, 1971-2006: a population-based study. _British Journal of Haematology_ 2013;**162**:509-16
 
 Rutherford M.J., Hinchliffe S.R., Abel, G, Lyratzopoulos G., **Lambert P.C.**, Greenberg, D. How much of the deprivation gap in cancer survival can be explained by variation in stage at diagnosis: an example from breast cancer in the East of England. _International Journal of Cancer_ 2013;**133**:2192-200
 
-<span>Crowther M.J., **Lambert P.C**. Simulating biologically plausible complex survival data. _Statistics in Medicine_ 2013;**32**:4118–4134</span>
+Crowther M.J., **Lambert P.C**. Simulating biologically plausible complex survival data. _Statistics in Medicine_ 2013;**32**:4118–4134
 
-<span></span><span>Hinchliffe S.R., Seaton S.E., **Lambert P.C.**, Draper E.S., Field D.J., Manktelow B.N. Modelling time to death or discharge in neonatal care: an application of competing risks. _Paediatric and Perinatal Epidemiology_ 2013;**27**:426-33</span>
+Hinchliffe S.R., Seaton S.E., **Lambert P.C.**, Draper E.S., Field D.J., Manktelow B.N. Modelling time to death or discharge in neonatal care: an application of competing risks. _Paediatric and Perinatal Epidemiology_ 2013;**27**:426-33
 
-<span>Hinchliffe <span>S.R., Scott D.A., **Lambert P.C**. Flexible parametric illness-death models. _The Stata Journal_ 2013;**13**:759-775</span></span>
+Hinchliffe S.R., Scott D.A., **Lambert P.C**. Flexible parametric illness-death models. _The Stata Journal_ 2013;**13**:759-775
 
-<span>Hinchliffe <span>S.R., **Lambert P.C**.</span> Flexible parametric modelling of cause-specific hazards to estimate cumulative incidence functions. _BMC Medical Research Methodology_ 2013;**13**:13</span>
+Hinchliffe S.R., **Lambert P.C**.</span> Flexible parametric modelling of cause-specific hazards to estimate cumulative incidence functions. _BMC Medical Research Methodology_ 2013;**13**:13
 
 Eloranta S.  Adolfsson J., **Lambert P.C.**, Stattin P., Akre O., Andersson T.M-L., Dickman P.W. How can we make cancer survival statistics more useful for patients and clinicians: An illustration using localized prostate cancer in Sweden. _Cancer Causes Control_ 2013;**24**:505-15
 

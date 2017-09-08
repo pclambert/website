@@ -14,7 +14,7 @@ weight = 60
 
 +++
 
-I have developed a number of Stata commands. For some of these I will add some examples. The software I have written is
+I have developed a number of Stata commands. I have added some examples of using this code and intend to add to these over time.
 
 - [**stpm2**]({{< ref "software/stpm2.md" >}}) - flexible parametric survival models
 - **rcsgen** - generate restricted cubic splines

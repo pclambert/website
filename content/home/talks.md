@@ -20,3 +20,5 @@ detailed_list = false
 +++
 
 A full list of talks can be found [here](alltalks/)
+
+Below are some recent/upcoming talks.

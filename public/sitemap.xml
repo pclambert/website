@@ -23,6 +23,15 @@
     
     <url>
     
+      <loc>/software/stpm2/knot_positions_sensitivity/</loc>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/software/stcrprep/computational_benefits/</loc>
       <lastmod>2017-08-27T00:00:00+00:00</lastmod>
     </url>
@@ -235,7 +244,7 @@
     <url>
     
       <loc>/tags/proportional-hazards/</loc>
-      <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -254,7 +263,7 @@
     <url>
     
       <loc>/tags/software/</loc>
-      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -264,7 +273,7 @@
     <url>
     
       <loc>/software/</loc>
-      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -274,7 +283,7 @@
     <url>
     
       <loc>/tags/stata/</loc>
-      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -294,7 +303,7 @@
     <url>
     
       <loc>/tags/stpm2/</loc>
-      <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -304,7 +313,7 @@
     <url>
     
       <loc>/tags/survival/</loc>
-      <lastmod>2017-08-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

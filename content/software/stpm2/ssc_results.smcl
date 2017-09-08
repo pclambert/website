@@ -1,0 +1,178 @@
+{smcl}
+
+{txt}{net "from http://repec.org/bocode":SSC} Stata modules created or revised 2017-08-04 to 2017-09-04
+{hline}
+
+{net "describe http://repec.org/bocode/x/xtdpdgmm":XTDPDGMM}
+{txt} module to perform generalized method of moments estimation of linear dynamic panel data models
+{txt} Authors: Sebastian Kripfganz       Req: Stata version 12.1
+{txt} Created: 2017-08-25
+
+{net "describe http://repec.org/bocode/s/sivreg":SIVREG}
+{txt} module to perform adaptive Lasso with some invalid instruments
+{txt} Authors: Helmut Farbmacher       Req: Stata version 10 and moremata from SSC (q.v.)
+{txt} Created: 2017-08-20
+
+{net "describe http://repec.org/bocode/c/codebook_ripper":CODEBOOK_RIPPER}
+{txt} module to  convert metadata managed in a spreadsheet into do files with renaming, notes as well as variable and value labelling
+{txt} Authors: Niels Henrik Bruun       Req: Stata version 12
+{txt} Created: 2017-08-16
+
+{net "describe http://repec.org/bocode/c/cprdcribs":CPRDCRIBS}
+{txt} module providing template do-files for inputting CPRD datasets into Stata
+{txt} Authors: Roger Newson       Req: Stata version 13
+{txt} Created: 2017-08-17
+
+{net "describe http://repec.org/bocode/a/aggind":AGGIND}
+{txt} module to aggregate indicators among units within a specified radius
+{txt} Authors: Andreas Hartung       Req: Stata version 10
+{txt} Created: 2017-08-05
+
+{net "describe http://repec.org/bocode/t/thsearch":THSEARCH}
+{txt} module to evaluate threshold search model for non-linear models based on information criterion
+{txt} Authors:   Ho Fai Chan   Brenda Gannon    David Harris    Mark Harris       Req: Stata version 7
+{txt} Created: 2017-08-05
+
+{net "describe http://repec.org/bocode/s/std_beta":STD_BETA}
+{txt} module to calculate centered and standardized coefficients after estimation
+{txt} Authors:  Doug Hemken       Req: Stata version 12
+{txt} Created: 2017-08-05
+
+{net "describe http://repec.org/bocode/f/flowchart":FLOWCHART}
+{txt} module to generate subject disposition flow diagram figures in LaTeX using PGF/TikZ to include in manuscripts
+{txt} Authors:  Isaac M. E. Dodd       Req: Stata version 13 and texdoc from SSC (q.v.)
+{txt} Revised: 2017-09-01
+
+{net "describe http://repec.org/bocode/d/ddid":DDID}
+{txt} module to compute pre- and post-treatment estimation of the Average Treatment Effect (ATE) with binary time-varying treatment
+{txt} Authors: Giovanni Cerulli       Req: Stata version 14
+{txt} Revised: 2017-08-25
+
+{net "describe http://repec.org/bocode/c/corr2docx":CORR2DOCX}
+{txt} module to report Pearson & Spearman correlation coefficients to formatted table in DOCX file
+{txt} Authors: Chuntao Li   Zijian Li  Yuan Xue       Req: Stata version 15
+{txt} Revised: 2017-08-04
+
+{net "describe http://repec.org/bocode/s/stbrier":STBRIER}
+{txt} module to compute Brier score for censored time-to-event (survival) data
+{txt} Authors:  Ariel Linden   Thomas A Gerds  Chuck Huber       Req: Stata version 13
+{txt} Revised: 2017-08-25
+
+{net "describe http://repec.org/bocode/s/smclpres":SMCLPRES}
+{txt} module to create a SMCL presentation from a do file
+{txt} Authors: Maarten L. Buis       Req: Stata version 8
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/w/wordconvert":WORDCONVERT}
+{txt} module to  transfer files among several types in Windows 
+{txt} Authors: Chuntao Li  Yuan Xue       Req: Stata version 12 for Windows
+{txt} Revised: 2017-08-04
+
+{net "describe http://repec.org/bocode/p/pcpanel":PCPANEL}
+{txt} module to perform power calculations for randomized experiments with panel data, allowing for arbitrary serial correlation
+{txt} Authors: Fiona Burlig  Louis Preonas  Matt Woerman       Req: Stata version 9
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/t/tw3xls":TW3XLS}
+{txt} module to export publication-ready three-way and four-way tables into xls or xlsx
+{txt} Authors: Andrey Ampilogov       Req: Stata version 14.1
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/s/subinfile":SUBINFILE}
+{txt} module to perform byte-based substitution for the contents of a text-formatted file
+{txt} Authors: Chuntao Li  Yuan Xue  Rong GAO       Req: Stata version 14
+{txt} Revised: 2017-08-04
+
+{net "describe http://repec.org/bocode/m/matrixtools":MATRIXTOOLS}
+{txt} module to build, present and style Stata matrices
+{txt} Authors: Niels Henrik Bruun       Req: Stata version 12 
+{txt} Revised: 2017-08-16
+
+{net "describe http://repec.org/bocode/c/cprdutil":CPRDUTIL}
+{txt} module for inputting CPRD datasets into Stata
+{txt} Authors: Roger Newson       Req: Stata version 13 and keyby, lablist, addinby, chardef, intext from SSC (q.v.)
+{txt} Revised: 2017-08-17
+
+{net "describe http://repec.org/bocode/s/strcs":STRCS}
+{txt} module to estimate flexible parametric survival models on the log hazard scale
+{txt} Authors: Hannah Bower  Michael J. Crowther  Paul Lambert       Req: Stata version 13.1
+{txt} Revised: 2017-08-16
+
+{net "describe http://repec.org/bocode/d/dcreate":DCREATE}
+{txt} module to create efficient designs for discrete choice experiments
+{txt} Authors: Arne Risa Hole       Req: Stata version 11.1
+{txt} Revised: 2017-08-25
+
+{net "describe http://repec.org/bocode/n/numdate":NUMDATE}
+{txt} module to generate date-times or components 
+{txt} Authors: Nicholas J. Cox       Req: Stata version 12
+{txt} Created: 2017-09-01
+
+{net "describe http://repec.org/bocode/b/basetable":BASETABLE}
+{txt} module to compare a set of risk factors or effects with respect to a categorical variable
+{txt} Authors: Niels Henrik Bruun       Req: Stata version 13
+{txt} Revised: 2017-08-16
+
+{net "describe http://repec.org/bocode/c/clustse":CLUSTSE}
+{txt} module to estimate the statistical significance of parameters when the data is clustered with a small number of clusters
+{txt} Authors: Andrew Menger       Req: Stata version 9, clusterbs and estout from SSC (q.v.)
+{txt} Revised: 2017-08-04
+
+{net "describe http://repec.org/bocode/c/ceq":CEQ}
+{txt} module to carry out Commitment to Equity (CEQ) fiscal incidence analysis
+{txt} Authors: Sean Higgins  Rodrigo Aranda  Ruoxi Li       Req: Stata version 13
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/c/cntrade":CNTRADE}
+{txt} module to retrieve Chinese stock market quotations from NetEase
+{txt} Authors: Chuntao Li  Xuan Zhang       Req: Stata version 12
+{txt} Revised: 2017-08-04
+
+{net "describe http://repec.org/bocode/q/qog":QOG}
+{txt} module to access the most recent release of the "Quality of Government" data
+{txt} Authors: Christoph Thewes       Req: Stata version 11
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/d/diff":DIFF}
+{txt} module to perform Differences in Differences estimation
+{txt} Authors: Juan M. Villa       Req: Stata version 10.0
+{txt} Revised: 2017-08-16
+
+{net "describe http://repec.org/bocode/t/texsave":TEXSAVE}
+{txt} module to save a dataset in LaTeX format
+{txt} Authors: Julian Reif       Req: Stata version 10
+{txt} Revised: 2017-08-25
+
+{net "describe http://repec.org/bocode/c/cmp":CMP}
+{txt} module to implement conditional (recursive) mixed process estimator
+{txt} Authors: David Roodman       Req: Stata version 11 and package ghk2 (q.v.)
+{txt} Revised: 2017-09-01
+
+{net "describe http://repec.org/bocode/s/svygei_svyatk":SVYGEI_SVYATK}
+{txt} module to derive the sampling variances of Generalized Entropy and Atkinson inequality indices when estimated from complex survey data
+{txt} Authors: Stephen P. Jenkins  Martin Biewen       Req: Stata version 10
+{txt} Revised: 2017-08-31
+
+{net "describe http://repec.org/bocode/s/svr":SVR}
+{txt} module to compute estimates with survey replication (SVR) based standard errors
+{txt} Authors: Nick Winter       Req: Stata version 7.0
+{txt} Revised: 2017-08-18
+
+{net "describe http://repec.org/bocode/s/survwgt":SURVWGT}
+{txt} module to create and manipulate survey weights 
+{txt} Authors: Nick Winter       Req: Stata version 7.0
+{txt} Revised: 2017-08-18
+
+{net "describe http://repec.org/bocode/d/dologx":DOLOGX}
+{txt} modules to execute commands from a file with logging
+{txt} Authors: Roger Newson       Req: Stata version 15.0 / 14.0 / 13.0 / 12.0 / 11.0 / 10.0 / 9.0 / 8.0 / 7.0 / 6.0
+{txt} Revised: 2017-08-16
+
+{net "describe http://repec.org/bocode/d/dolog":DOLOG}
+{txt} modules to execute commands from a file with logging
+{txt} Authors: Roger Newson       Req: Stata version 15
+{txt} Revised: 2017-08-16
+
+{hline}
+{txt} End of recent additions and updates
+
