@@ -29,6 +29,28 @@
     </item>
     
     <item>
+      <title>rcsgen</title>
+      <link>/software/rcsgen/</link>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/rcsgen/</guid>
+      <description>
+
+&lt;p&gt;The &lt;code&gt;rcsgen&lt;/code&gt; command generates basis function for restricted cubic splines. The command is used by my &lt;code&gt;stpm2&lt;/code&gt; command to fit flexible parameric survival models. It has a number of advantages over Stata&amp;rsquo;s inbuilt &lt;code&gt;mkspline&lt;/code&gt; command, which will be demonstrated in the tutorials below.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-rcsgen&#34;&gt;Using &lt;code&gt;rcsgen&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generating splines - use of the &lt;code&gt;knots()&lt;/code&gt;, &lt;code&gt;bkknots()&lt;/code&gt; and &lt;code&gt;percentiles()&lt;/code&gt; options.&lt;/li&gt;
+&lt;li&gt;Using the &lt;code&gt;scalar()&lt;/code&gt; option for predictions.&lt;/li&gt;
+&lt;li&gt;Using the &lt;code&gt;center()&lt;/code&gt; optin for easier predictions&lt;/li&gt;
+&lt;li&gt;Some issues when orthogonalising.&lt;/li&gt;
+&lt;li&gt;The derivative of resicted cubic spline function (the &lt;code&gt;dgen()&lt;/code&gt; option).&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Sensitivity analysis to location of knots (proportional hazards)</title>
       <link>/software/stpm2/knot_positions_sensitivity/</link>
       <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
@@ -813,7 +835,7 @@ replace patid = _n
 &lt;li&gt;Simple simulation study to show agreement with Cox model.&lt;/li&gt;
 &lt;li&gt;Predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitivity analysis for the number of knots&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/knot_positions_sensitivity/&#34;&gt;The default knot positions - are they sensible?&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stpm2/knot_positions_sensitivity/&#34;&gt;The default knot positions - are they sensible?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
@@ -825,7 +847,7 @@ replace patid = _n
 &lt;h2 id=&#34;relative-survival&#34;&gt;Relative survival&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a simple relative survival model&lt;/li&gt;
+&lt;li&gt;A simple relative survival model&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;alternative-link-functions&#34;&gt;Alternative link functions&lt;/h2&gt;

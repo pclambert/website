@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rcsgen on Paul C. Lambert</title>
+    <link>/tags/rcsgen/</link>
+    <description>Recent content in Rcsgen on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Wed, 13 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/rcsgen/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>rcsgen</title>
+      <link>/software/rcsgen/</link>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/rcsgen/</guid>
+      <description>
+
+&lt;p&gt;The &lt;code&gt;rcsgen&lt;/code&gt; command generates basis function for restricted cubic splines. The command is used by my &lt;code&gt;stpm2&lt;/code&gt; command to fit flexible parameric survival models. It has a number of advantages over Stata&amp;rsquo;s inbuilt &lt;code&gt;mkspline&lt;/code&gt; command, which will be demonstrated in the tutorials below.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-rcsgen&#34;&gt;Using &lt;code&gt;rcsgen&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generating splines - use of the &lt;code&gt;knots()&lt;/code&gt;, &lt;code&gt;bkknots()&lt;/code&gt; and &lt;code&gt;percentiles()&lt;/code&gt; options.&lt;/li&gt;
+&lt;li&gt;Using the &lt;code&gt;scalar()&lt;/code&gt; option for predictions.&lt;/li&gt;
+&lt;li&gt;Using the &lt;code&gt;center()&lt;/code&gt; optin for easier predictions&lt;/li&gt;
+&lt;li&gt;Some issues when orthogonalising.&lt;/li&gt;
+&lt;li&gt;The derivative of resicted cubic spline function (the &lt;code&gt;dgen()&lt;/code&gt; option).&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

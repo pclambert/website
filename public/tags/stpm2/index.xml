@@ -568,7 +568,7 @@ BIC
 &lt;li&gt;Simple simulation study to show agreement with Cox model.&lt;/li&gt;
 &lt;li&gt;Predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitivity analysis for the number of knots&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/knot_positions_sensitivity/&#34;&gt;The default knot positions - are they sensible?&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/software/stpm2/knot_positions_sensitivity/&#34;&gt;The default knot positions - are they sensible?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
@@ -580,7 +580,7 @@ BIC
 &lt;h2 id=&#34;relative-survival&#34;&gt;Relative survival&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a simple relative survival model&lt;/li&gt;
+&lt;li&gt;A simple relative survival model&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;alternative-link-functions&#34;&gt;Alternative link functions&lt;/h2&gt;

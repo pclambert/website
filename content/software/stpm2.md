@@ -15,13 +15,13 @@ I have added some examples and aim to add to these.
 - Simple simulation study to show agreement with Cox model.
 - Predicting hazard and survival functions (use of the `timevar()` option)
 - [Sensitivity analysis for the number of knots]({{< ref "software/stpm2/sensitivity_analysis.md" >}}).
-- [The default knot positions - are they sensible?]({{< ref "software/stpm2/knot_positions_sensitivity.md" >}}).
+- [The default knot positions - are they sensible?]({{< ref "software/stpm2/knot_positions_sensitivity.md" >}})
 
 ## Time-dependent effects (non proportional hazards)
 - Non-proportional hazards
  
 ## Relative survival
-- a simple relative survival model
+- A simple relative survival model
 
 ## Alternative link functions
 - the logistic, probit and Aranda-Ordaz link functions.

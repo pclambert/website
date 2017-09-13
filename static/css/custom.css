@@ -22,6 +22,12 @@ nav#navbar-main li {
 
 code {
     background: #fff;
-    color:blue;
+    color:rgb(234, 25, 154);
     padding: 0 0 0 0;
 }  
+
+.article-container {
+  max-width: 850px;
+  padding: 1rem 20px 0 20px;
+  margin: 0 auto 0 auto;
+}

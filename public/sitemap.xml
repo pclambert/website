@@ -23,6 +23,15 @@
     
     <url>
     
+      <loc>/software/rcsgen/</loc>
+      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/software/stpm2/knot_positions_sensitivity/</loc>
       <lastmod>2017-09-03T00:00:00+00:00</lastmod>
     </url>
@@ -262,8 +271,18 @@
     
     <url>
     
+      <loc>/tags/rcsgen/</loc>
+      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/software/</loc>
-      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -273,7 +292,7 @@
     <url>
     
       <loc>/software/</loc>
-      <lastmod>2017-09-03T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
