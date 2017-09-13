@@ -17,7 +17,7 @@ weight = 60
 I have developed a number of Stata commands. I have added some examples of using this code and intend to add to these over time.
 
 - [**stpm2**]({{< ref "software/stpm2.md" >}}) - flexible parametric survival models
-- **rcsgen** - generate restricted cubic splines
+- [**rcsgen**]({{< ref "software/rcsgen.md" >}})  - generate restricted cubic splines
 - **stpm2_standsurv** - standardized survival curves after fitting an `stpm2` model
 - **stpm2cif** - cause-specific cumulative incidence function after fitting a stpm2 competing risks model
 - [**stcrprep**]({{< ref "software/stcrprep.md" >}}) - data-preparation command to fit a range of competing risks models.
