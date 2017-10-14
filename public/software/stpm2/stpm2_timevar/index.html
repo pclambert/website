@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.29" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-105116466-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2/stpm2_timevar/">
+
+  
+
+  <title>Use of the timevar() option | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Use of the timevar() option</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-09-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Sep 3, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/proportional-hazards">proportional hazards</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2%2fstpm2_timevar%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Use%20of%20the%20timevar%28%29%20option&amp;url=%2fsoftware%2fstpm2%2fstpm2_timevar%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2%2fstpm2_timevar%2f&amp;title=Use%20of%20the%20timevar%28%29%20option"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2%2fstpm2_timevar%2f&amp;title=Use%20of%20the%20timevar%28%29%20option"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Use%20of%20the%20timevar%28%29%20option&amp;body=%2fsoftware%2fstpm2%2fstpm2_timevar%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="background">Background</h2>
+
+<p>In this tutorial I will describe some simple use of the <code>timevar()</code> option when obtaining predictions after fitting a model using <code>stpm2</code>. When using Stata&rsquo;s survival models, such as <code>streg</code> and <code>stcox</code>, predictions are made at the values of  <code>_t</code>, which is each record&rsquo;s event or censoring time. This is the default behaviour of <code>stpm2</code>.</p>
+
+<p>One of the advantages of parametric survival models is that we can predict various quantities (hazard, survival functions etc etc) at any value of time  and for any covariate pattern as we have an equation which is a function of time and any covariates we have modelled.</p>
+
+<p>Before I show some examples I should explain that we need to be a bit cautious when making such predictions. In Stata it is only possible to have one data set in memory. When we make predictions at specific values of time using the <code>timevar()</code> option we effectively want a second data set that we can use for predictions, and then use for producing graphs and tabulations.</p>
+
+<p>We have found it easiest to think of two data sets side by side as shown below.</p>
+
+<pre><code class="language-stata">------------------  --------------
+|                |  |            |
+|                |  | Prediction |
+| Analysis Data  |  |    Data    |
+|                |  |            |
+|                |  --------------
+|                |
+------------------
+</code></pre>
+
+<p>This means that we have our analysis data and our prediction data stored in the same data set. We have to remember that there are actually two (or more) data sets and that row 1 or the analysis data does not have a relationship with row 1 of the prediction data.</p>
+
+<p>I now will illustrate the use of the <code>timevar()</code> option.</p>
+
+<h2 id="example">Example</h2>
+
+<p>I first load and <code>stset</code> the <code>rott2b</code> data.</p>
+
+<pre><code class="language-stata">. use https://www.pclambert.net/data/rott2b, clear
+(Rotterdam breast cancer data (augmented with cause of death))
+
+. stset rf, f(rfi==1) scale(12) exit(time 60)
+
+     failure event:  rfi == 1
+obs. time interval:  (0, rf]
+ exit on or before:  time 60
+    t for analysis:  time/12
+
+------------------------------------------------------------------------------
+      2,982  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+      2,982  observations remaining, representing
+      1,181  failures in single-record/single-failure data
+ 11,130.825  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =         5
+
+</code></pre>
+
+<p>I will model the effect of age using restricted cubic splines. These can be generated using the <code>rcsgen</code> command. I make use of the <code>center</code> option make the created spline variables all equal 0 at the specified value, in this case at age 60. I then fit an <code>stpm2</code> model including the effect of hormonal therapy (<code>hormon</code>), progesterone receptor (transformed using $\log(pr+1)$), and age (using the 3 created restricted cubic spline variables).</p>
+
+<pre><code class="language-stata">. rcsgen age, df(3) gen(agercs) center(60)
+Variables agercs1 to agercs3 were created
+
+. stpm2 hormon agercs* pr_1, scale(hazard) df(4) eform
+
+Iteration 0:   log likelihood = -3065.3989  
+Iteration 1:   log likelihood = -3065.2479  
+Iteration 2:   log likelihood = -3065.2478  
+
+Log likelihood = -3065.2478                     Number of obs     =      2,982
+
+------------------------------------------------------------------------------
+             |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+xb           |
+      hormon |   1.253481    .112407     2.52   0.012     1.051442    1.494342
+     agercs1 |   .9678468   .0119668    -2.64   0.008     .9446742    .9915879
+     agercs2 |    .999971   .0000315    -0.92   0.357     .9999092    1.000033
+     agercs3 |   1.000014   .0000304     0.46   0.648     .9999543    1.000074
+        pr_1 |   .9080251   .0118154    -7.41   0.000     .8851601    .9314808
+       _rcs1 |   2.464395   .0655981    33.88   0.000     2.339121    2.596377
+       _rcs2 |   1.227705   .0289332     8.70   0.000     1.172287    1.285744
+       _rcs3 |   1.013422   .0117182     1.15   0.249     .9907135    1.036652
+       _rcs4 |   1.005574   .0050256     1.11   0.266      .995772    1.015472
+       _cons |   .3891571   .0248262   -14.79   0.000     .3434176    .4409885
+------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation.
+
+</code></pre>
+
+<p>I now create some values of time that I want to predict at. I use the <code>range</code> command to give 100 values between 0 and 5 in a new variable <code>tt</code>.</p>
+
+<pre><code class="language-stata">. range tt 0 5 100
+(2,882 missing values generated)
+
+</code></pre>
+
+<p>After creating the new variable I can use it in the <code>timevar()</code> option when using <code>stpm2</code>&rsquo;s <code>predict</code> command.</p>
+
+<pre><code class="language-stata">. predict s0, survival timevar(tt) zeros ci
+
+</code></pre>
+
+<p>This will predict the baseline survival function at the time values in the variable <code>tt</code>. The <code>zeros</code> option sets all covarites equal to zero, i.e. the baseline. The <code>ci</code> option asks for the upper and lower bounds of the 95% confidence interval to be calculated. The function can now be plotted.</p>
+
+<pre><code class="language-stata">. twoway (rarea s0_lci s0_uci tt, color(blue%25)) ///
+&gt;                 (line s0 tt, lcolor(red)) ///
+&gt;                 , legend(off) ///
+&gt;                 ylabel(,angle(h) format(%3.1f)) ///
+&gt;                 xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 ytitle(&quot;S(t)&quot;)
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_baseline_survival.svg" alt="" /></p>
+
+<h2 id="combining-with-the-at-option">Combining with the <code>at()</code> option.</h2>
+
+<p>It is possible to make predictions at any values the covariates included in the model using the <code>at()</code> option. The two lines below predict the hazard functions for women using and not using hormonal treatment at the reference age (60) and the mean value of log progesterone receptor (3.43).</p>
+
+<pre><code class="language-stata">. predict h0, hazard timevar(tt) at(hormon 0 pr_1 3.43) zeros per(1000) ci
+
+. predict h1, hazard timevar(tt) at(hormon 1 pr_1 3.43) zeros per(1000) ci
+
+</code></pre>
+
+<p>I have used the <code>timevar(tt)</code> option again and so predictions will be at the 100 value of <code>tt</code> (actually at 99 values as the hazard is not defined at t=0). The <code>at()</code> option gives the values of the covariates that we want to predict at. The <code>zeros</code> option will set any remaining covariates equal to zero, i.e. the age spline variables are set to zero which is the reference age of 60. The <code>per(1000)</code> option multiplies the hazard rate by 1000 as it is easier to interpret the rate per 1000 years than per person per year.</p>
+
+<p>The resulting predictions are then plotted,</p>
+
+<pre><code class="language-stata">. twoway  (rarea h0_lci h0_uci tt, color(red%25)) ///             
+&gt;                 (rarea h1_lci h1_uci tt, color(blue%25)) ///
+&gt;                 (line h0 tt, lcolor(red) lwidth(thick)) ///
+&gt;                 (line h1 tt, lcolor(blue) lwidth(thick)) ///
+&gt;                 ,xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 ytitle(&quot;Recrurrence rate (per 1000 py)&quot;) ///
+&gt;                 legend(order( 3 &quot;hormon=0&quot; 4 &quot;hormon=1&quot;) ring(0) pos(1) cols(1))
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_compare_hazards.svg" alt="" /></p>
+
+<p>As the model assumes proportional hazards the predicted hazard functions are perfectly proportional.</p>
+
+<h2 id="predictions-at-single-values-of-time">Predictions at single values of time.</h2>
+
+<p>It can be useful to see the variation in survival at specific values of time, for example at one and five years. The followig code predicts the survival at one year for all subjects in the dataset.</p>
+
+<pre><code class="language-stata">. gen t1 = 1 
+
+. predict s_time1, survival timevar(t1) 
+
+</code></pre>
+
+<p>This can then be plotted in a histogram.</p>
+
+<pre><code class="language-stata">. hist s_time1, width(0.02) xlab(0.3(0.1)1) name(t1, replace)             
+(bin=7, start=.81623113, width=.02)
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_hist_time1.svg" alt="" /></p>
+
+<p>We can compare this to the variation at 5 years.</p>
+
+<pre><code class="language-stata">. gen t5 = 5 
+
+. predict s_time5, survival timevar(t5) 
+
+. hist s_time5, width(0.02) xlab(0.3(0.1)1)  name(t5, replace)
+(bin=22, start=.30392122, width=.02)
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_hist_time5.svg" alt="" /></p>
+
+<p>If we are interested in specific covariates then we can look at 1 and 5 year survival as a function of that covariate. For example, we can plot the 1 and 5 year survival as a function of age at diagnosis. As this will also depend on the values of the other covariate I will fix these at specific values (not on hormonal treatment and at the mean level of log progesterone receptor).</p>
+
+<p>First the one year survival as a function of age,</p>
+
+<pre><code class="language-stata">. predict t1_age, surv at(hormon 0 pr_1 3.43) ci timevar(t1)
+
+. twoway  (rarea t1_age_lci t1_age_uci age, sort color(blue%25))  ///
+&gt;                 (line t1_age age, sort lcolor(red)) ///
+&gt;                 ,ytitle(&quot;1 year survival&quot;) legend(off) ///
+&gt;                 ylabel(,angle(h) format(%3.1f)) name(age_t1, replace)
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_age_time1.png" alt="" /></p>
+
+<p>And now the 5 year survival&hellip;.</p>
+
+<pre><code class="language-stata">. predict t5_age, surv at(hormon 0 pr_1 3.43) ci timevar(t5)
+
+. twoway  (rarea t5_age_lci t5_age_uci age, sort color(blue%25))  ///
+&gt;                 (line t5_age age, sort lcolor(red)) ///
+&gt;                 ,ytitle(&quot;5 year survival&quot;) legend(off) ///
+&gt;                 ylabel(,angle(h) format(%3.1f)) name(age_t5, replace)
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_timevar_age_time5.png" alt="" /></p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/software/stcrprep/computational_benefits/"><span
+      aria-hidden="true">&larr;</span> stcrprep - computational benefits</a></li>
+    
+
+    
+    <li class="next"><a href="/software/stpm2/knot_positions_sensitivity/">Sensitivity analysis to location of knots (proportional hazards) <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+    <script src="/js/custom.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
