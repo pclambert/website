@@ -108,8 +108,8 @@ sts graph if failcode==1, by(score) failure ///
 graph export c:/website/static/statasvg/stcrprep_cif1.svg, replace width(700px)
 <</dd_do>>
 
-![](/statasvg/stcrprep_cif1.svg)
-
+  ![](/statasvg/stcrprep_cif1.svg)
+  
 
 Note that the lines are extended to the maximum censoring time in each group, rather than the maximum event time.
 Alternatively, `sts gen` can be used to generate the cause-specific CIF and this can be

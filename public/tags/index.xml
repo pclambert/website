@@ -86,7 +86,7 @@
     <item>
       <title>Software</title>
       <link>/tags/software/</link>
-      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/software/</guid>
       <description></description>
@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>Stpm2_standsurv</title>
+      <link>/tags/stpm2_standsurv/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/stpm2_standsurv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Survival</title>
       <link>/tags/survival/</link>
       <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
@@ -134,15 +143,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tags/talks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Webpage</title>
-      <link>/tags/webpage/</link>
-      <pubDate>Sat, 19 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/webpage/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stpm2_standsurv on Paul C. Lambert</title>
+    <link>/tags/stpm2_standsurv/</link>
+    <description>Recent content in Stpm2_standsurv on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/stpm2_standsurv/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>stpm2_standsurv</title>
+      <link>/software/stpm2_standsurv/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/</guid>
+      <description>
+
+&lt;p&gt;The &lt;code&gt;stpm2_standsurv&lt;/code&gt; estimates standardized survival curves and related measures. It also allows various contrasts between the standardized functions. It is a post-estimation command and is used after fitting an &lt;code&gt;stpm2&lt;/code&gt;model.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-stpm2-standsurv&#34;&gt;Using &lt;code&gt;stpm2_standsurv&lt;/code&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Standardized survival functions and contrasts.&lt;/li&gt;
+&lt;li&gt;Centiles of the standardized survival function.&lt;/li&gt;
+&lt;li&gt;Restricted mean survival using standardized survival functions.&lt;/li&gt;
+&lt;li&gt;The hazard function of the standardized survival curve.&lt;/li&gt;
+&lt;li&gt;Estimating attributable fractions in cohort studies&lt;/li&gt;
+&lt;li&gt;Standardized cause-specific cumulative incidence functions.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

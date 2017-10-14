@@ -14,6 +14,15 @@
     
     <url>
     
+      <loc>/software/stpm2_standsurv/</loc>
+      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/talk/naaccr_online/</loc>
       <lastmod>2017-09-14T00:00:00+00:00</lastmod>
     </url>
@@ -86,15 +95,6 @@
     
     <url>
     
-      <loc>/post/newwebpage/</loc>
-      <lastmod>2017-08-19T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/software/stpm2/comparewithcox/</loc>
       <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     </url>
@@ -105,6 +105,15 @@
     <url>
     
       <loc>/software/stpm2/sensitivity_analysis/</loc>
+      <lastmod>2017-08-06T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/software/stpm2_standsurv/standardized_survival/</loc>
       <lastmod>2017-08-06T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,25 +149,7 @@
     
     <url>
     
-      <loc>/post/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/allpublications/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -282,7 +273,7 @@
     <url>
     
       <loc>/tags/software/</loc>
-      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -292,7 +283,7 @@
     <url>
     
       <loc>/software/</loc>
-      <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -323,6 +314,16 @@
     
       <loc>/tags/stpm2/</loc>
       <lastmod>2017-09-03T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/stpm2_standsurv/</loc>
+      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -362,16 +363,6 @@
     
       <loc>/teaching/</loc>
       <lastmod>2017-08-21T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/webpage/</loc>
-      <lastmod>2017-08-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

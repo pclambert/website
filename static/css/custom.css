@@ -1,6 +1,6 @@
 
 nav#navbar-main li {
-  font-size: 18px;
+  font-size: 18px; 
 }
 
 .navbar-default .navbar-brand {
@@ -27,7 +27,7 @@ code {
 }  
 
 .article-container {
-  max-width: 850px;
+  max-width: 900px;
   padding: 1rem 20px 0 20px;
   margin: 0 auto 0 auto;
 }
