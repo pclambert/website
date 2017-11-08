@@ -1,0 +1,26 @@
++++
+date = "2017-11-07"
+title = "Centiles of Standardized Survival Functions"
+summary = "stpm2"
+tags = ["stpm2","stpm2_standsurv","software","Stata","survival","Standardization"]
+external_link = "" 
+math = true
+[header]
+image = ""
+caption = ""
++++
+
+## Background
+
+In the previous tutorial I used `stpm2_standsurv` to obtain standardized survival functions. In this tutorial I show the first of a 
+number of different measures of the standardized survival function where I obtain centiles of the standardized survival function.
+
+As a reminder a centiles of a survival function can be obtanined by solving $S(t) = \alpha$ for $t$. For simple parametric distributions, such as the Weibull, this can be done analytically, but for more complex models the centile is obtained analytically. This what is done when using `stpm2`. 
+
+The centile of a standardized survival function is
+
+$$
+E\left(S(t | X=x,Z\right) = \alpha
+$$
+
+

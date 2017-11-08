@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.28" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-105116466-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2_standsurv/standardized_survival_centiles/">
+
+  
+
+  <title>Centiles of Standardized Survival Functions | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Centiles of Standardized Survival Functions</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-11-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Tue, Nov 7, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/stpm2_standsurv">stpm2_standsurv</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/standardization">Standardization</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_centiles%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Centiles%20of%20Standardized%20Survival%20Functions&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_centiles%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_centiles%2f&amp;title=Centiles%20of%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_centiles%2f&amp;title=Centiles%20of%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Centiles%20of%20Standardized%20Survival%20Functions&amp;body=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_centiles%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="background">Background</h2>
+
+<p>In the previous tutorial I used <code>stpm2_standsurv</code> to obtain standardized survival functions. In this tutorial I show the first of a
+number of different measures of the standardized survival function where I obtain centiles of the standardized survival function.</p>
+
+<p>As a reminder a centiles of a survival function can be obtanined by solving $S(t) = \alpha$ for $t$. For simple parametric distributions, such as the Weibull, this can be done analytically, but for more complex models the centile is obtained analytically. This what is done when using <code>stpm2</code>.</p>
+
+<p>The centile of a standardized survival function is obtained by solving the following equation for t.</p>
+
+<p>$$
+E\left(S(t | X=x,Z\right) = \alpha
+$$</p>
+
+<p>This is done through root finding (using Brent&rsquo;s root finder) by solving</p>
+
+<p>$$
+\sum_{i=1}^N {S(t | X=x,Z)} - \alpha = 0
+$$</p>
+
+<p>Variances can be obtained using M-estimation.</p>
+
+<h2 id="example">Example</h2>
+
+<p>I use a colon cancer example. I first load and <code>stset</code> the data</p>
+
+<pre><code class="language-stata">. //use https://www.pclambert.net/data/colon, clear
+. use c:/cansurv/data/colon, clear
+(Colon carcinoma, diagnosed 1975-94, follow-up to 1995)
+
+. drop if stage==0
+(2,356 observations deleted)
+
+. stset surv_mm, f(status=1,2) scale(12) exit(time 120)
+
+     failure event:  status == 1 2
+obs. time interval:  (0, surv_mm]
+ exit on or before:  time 120
+    t for analysis:  time/12
+
+------------------------------------------------------------------------------
+     13,208  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+     13,208  observations remaining, representing
+      8,866  failures in single-record/single-failure data
+ 43,950.667  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =        10
+
+</code></pre>
+
+<p>I drop those with missing stage information (<code>stage == 0</code>). I am investigating all cause survival (<code>status=1,2</code>).</p>
+
+<p>I fit a model that includes stage, sex and age (using a rectriced cubic splines). I assume proportional hazards, but if I relax this assusmption the syntax for <code>stpm2_standsurv</code> would be identical. Stage is classified as local, regional and distant and is modelled using two dummatu covariates with local as the reference category.</p>
+
+<pre><code class="language-stata">. tab stage, gen(stage)
+
+   Clinical |
+   stage at |
+  diagnosis |      Freq.     Percent        Cum.
+------------+-----------------------------------
+  Localised |      6,274       47.50       47.50
+   Regional |      1,787       13.53       61.03
+    Distant |      5,147       38.97      100.00
+------------+-----------------------------------
+      Total |     13,208      100.00
+
+. gen female = sex==2
+
+. rcsgen age, df(3) gen(agercs) center(60)
+Variables agercs1 to agercs3 were created
+
+. stpm2 stage2 stage3 female agercs*, scale(hazard) df(4) nolog eform
+
+Log likelihood = -19665.932                     Number of obs     =     13,208
+
+------------------------------------------------------------------------------
+             |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+xb           |
+      stage2 |   1.758926   .0617187    16.09   0.000     1.642026    1.884149
+      stage3 |   5.656322   .1390555    70.48   0.000      5.39024    5.935539
+      female |   .8634681     .01891    -6.70   0.000     .8271894     .901338
+     agercs1 |   .9958187   .0053355    -0.78   0.434     .9854161    1.006331
+     agercs2 |   1.000015   .0000127     1.22   0.223     .9999906     1.00004
+     agercs3 |   .9999654   .0000155    -2.24   0.025     .9999351    .9999957
+       _rcs1 |   3.484444   .0392205   110.90   0.000     3.408415    3.562169
+       _rcs2 |     1.1908   .0101285    20.53   0.000     1.171113    1.210817
+       _rcs3 |   .9620673   .0050498    -7.37   0.000     .9522207    .9720158
+       _rcs4 |   1.015331    .003491     4.43   0.000     1.008512    1.022197
+       _cons |   .1615451   .0046341   -63.55   0.000     .1527132    .1708879
+------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation.
+
+</code></pre>
+
+<p>The is a clear effect of stage with a hazard ratio of 5.66 for distant stage versus local stage. Remember that I am modelling all¨cause survival and one would expect a cause-specific hazard ratio to be higher. The all-cause mortality rate for females is 14% lower tham males.</p>
+
+<p>I will now predict the standardized survival function, one where I force all subjects to be male and one where I force everyone to be female.</p>
+
+<pre><code class="language-stata">. range tt 0 10 100
+(13,108 missing values generated)
+
+. stpm2_standsurv, at1(female 0) at2(female 1) timevar(tt) atvar(ms_male ms_female) ci
+
+. twoway  (line ms_male ms_female tt, sort) ///
+&gt;                 , yline(0.5, lpattern(dash) lcolor(black)) ///
+&gt;                 yline(0.5, lpattern(dash) lcolor(black)) ///
+&gt;                 xtitle(&quot;Years since diagnosis&quot;) ///
+&gt;                 ytitle(&quot;S(t)&quot;, angle(h)) ///
+&gt;                 ylabel(0(0.2)1, format(%3.1f) angle(h)) ///
+&gt;                 legend(order(1 &quot;Male&quot; 2 &quot;Female&quot;) ring(0) pos(1) cols(1))
+
+</code></pre>
+
+<p>The graph of the two standardised survival functions can be seen below.</p>
+
+<p><img src="/statasvg/stpm2_standsurv_survival_centile1.svg" alt="" /></p>
+
+<p>As expected (given the hazard ratio) females have better survival than males. I have added a horizontal reference line at $S(t) 0.5$. Where thhis line crosses the survival curves gives the median survival time. Reading from the graph, this is just under 2 years for the males and just under 2.5 years for females. Using the <code>centile</code> option of <code>stpm2_standsurv</code> will estimate these values more accurately with 95% confidenec intervals. We are also interested in contrasts of the centiles and</p>
+
+<pre><code class="language-stata">. stpm2_standsurv, at1(female 0) at2(female 1) timevar(tt) centile(50) ///
+&gt;                 atvar(med_male med_female) contrast(difference) ci
+
+. list med_male* in 1     
+
+     +-----------------------------------+
+     |  med_male   med_m~lci   med_m~uci |
+     |-----------------------------------|
+  1. | 1.9801987   1.8728516   2.0936987 |
+     +-----------------------------------+
+
+. list med_female* in 1   
+
+     +-----------------------------------+
+     | med_fem~e   med_f~lci   med_f~uci |
+     |-----------------------------------|
+  1. | 2.4249751   2.3000843   2.5566472 |
+     +-----------------------------------+
+
+. list _contrast* in 1
+
+     +----------------------------------+
+     | _contra~1   _cont~lci   _con~uci |
+     |----------------------------------|
+  1. | .44477636   .30074772    .588805 |
+     +----------------------------------+
+
+</code></pre>
+
+<p>The median survival time is 1.98 years for males with a 95% CI (1.87 to 2.09). The median for females is 2.42 years (95% CI, 2.30 to 2.56). As I use the <code>contrast</code> option I also get the difference in the median of the standardised survival curves with a 95% CI. Thus the time at which 50% of females have died is 0.44 years more than the time at which 50% of males have died, 95% CI (0.30 to 0.59).</p>
+
+<p>It is possible to predict for multiple centiles by passing a <strong>numlist</strong> to the <code>centiles</code> option. For example, the code below calculations centiles xxx</p>
+
+<pre><code class="language-stata">. stpm2_standsurv, at1(female 0) at2(female 1) timevar(tt) centile(10(10)60) ///
+&gt;                 atvar(cen_males cen_females) contrast(difference) ci ///
+&gt;                 centvar(centiles) contrastvar(cendiff)
+
+. list centile cen_males cen_females cendiff in 1/6, sep(0) noobs
+
+  +----------------------------------------------+
+  | centiles   cen_males   cen_fem~s     cendiff |
+  |----------------------------------------------|
+  |       10   .14919254   .16940399   .02021145 |
+  |       20   .32365079   .38459929    .0609485 |
+  |       30   .63821705   .78393263   .14571558 |
+  |       40   1.1648032   1.4192444   .25444124 |
+  |       50   1.9801987   2.4249751   .44477636 |
+  |       60   3.4239223    4.277573   .85365069 |
+  +----------------------------------------------+
+
+</code></pre>
+
+<h2 id="acknowledgement">Acknowledgement</h2>
+
+<p>I would like to acknowledge David Druker of StataCorp who I discussed these ideas with at two Nordic Stata User group meetings. David has written a command that estimates centiles of standardized distributions using a two parameter gamma distribution which is available [here]{<a href="https://www.researchgate.net/publication/263218606_Quantile_treatment_effect_estimation_from_censored_data_by_regression_adjustment">https://www.researchgate.net/publication/263218606_Quantile_treatment_effect_estimation_from_censored_data_by_regression_adjustment</a>}.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/software/stpm2_standsurv/"><span
+      aria-hidden="true">&larr;</span> stpm2_standsurv</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+    <script src="/js/custom.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+
