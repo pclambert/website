@@ -13,7 +13,8 @@ caption = ""
 ## Background
 
 When we are performing data exploration on survival data we usually start with plotting Kaplan-Meier curves. In clinical trials 
-with a survival outcome, one would nearly always expect to see a Kaplan-Meier curve plotted. They are incredibly easy to interpret.
+with a survival outcome, one would nearly always expect to see a Kaplan-Meier curve plotted. They are simple to interpret (though 
+there can be confusion when there are competing risks).
 
 In observational studies, we expect that there will be confounding and would usually adjust for these confounders in a Cox model. 
 If you have read my other tutorials then you will know that I prefer fitting parametric models, but the choice is that not that important 
@@ -128,7 +129,7 @@ Summary statistics: mean
 Those who received the hormonal therapy tended to be older and have more lymph node involvment. Thus, even if hormonal treatment did not 
 have any effect on survival, we would expect to see a difference in such a simplistic analysis due to the type of people who receieved the treatment.
 
-So, we now adjust for some covariates. To simplify things, I will assume proportional hazards and include the covariates	 age, nodes and 
+So, we now adjust for some covariates. To simplify things, I will assume proportional hazards and include the covariates age, nodes and 
 progesterone receptor. Previous analyses of this data have found that transformation of the nodes variable (exp(-0.12*nodes)) 
 and the progesterone variable (log(pr + 1)) model the non-linear effects of these variables fairly well and so I will use these transformed
 variables. The model is fitted below
@@ -211,8 +212,8 @@ E\left(S(t | X=1,Z\right) - E\left(S(t | X=0,Z\right)
 $$
 
 In the above, $X$ is the exposure of interest and $Z$ are the confounders. We are interested in the expectation over the distribution of $Z$, 
-with the key point being this distrubution is forced to be the same for $X=0$ and $X=1$. If our model is sufficent for confounding control then
-the above gives formula gives the average causal effect.
+with the key point being this distribution is forced to be the same for $X=0$ and $X=1$. If our model is sufficent for confounding control then
+the above formula gives the average causal effect.
 
 To estimate the difference in the standardized curves we need to generate the two standardized survival curves. In each of these we predict as many survival curves as there are observations
 in the data set and then take the average of these curves. The only difference is that in one we make everyone be exposed (`hormon=1`) and in the 
@@ -239,7 +240,7 @@ Any covariates not specified keep their observed values. Thus we are just implem
 name of the variable that gives the survival times in which to evaluate the survival function. I have already defined a variable `timevar`
 above to be 50 rows ranging from 0 to 10. The `ci` option requests that confidence intervals be calculated. Standard errors are either obtained
 using the delta-method or M-estimation. The default is the delta-method (for standardized survival). The `contrast()` option asks for a comparison
-of the two survival curves with the `difference` argument asking to take differences in the standardized survival curves. By deafault `at1` is the reference,
+of the two survival curves with the `difference` argument asking to take differences in the standardized survival curves. By default `at1` is the reference,
 i.e. the contrast will be `at2`-`at1`, but this can be changed using the `atref()` option.
 
 The command will create the following variables, `_at1`, `_at2`, `_contrast2_1`. These are the default names, but can be changed using the `atvar()` and
@@ -254,7 +255,7 @@ Below I list the standardized curves at 10 years, followed by their difference.
   +-----------------------------------+
   |      _at1    _at1_lci    _at1_uci |
   |-----------------------------------|
-  | .54380594   .50064092   .59069263 |
+  | .54380594   .52512603   .56315034 |
   +-----------------------------------+
 
 . list _at2* if timevar==10, noobs
@@ -270,7 +271,7 @@ Below I list the standardized curves at 10 years, followed by their difference.
   +----------------------------------------------------+
   | _contrast2_1   _contrast2_1_lci   _contrast2_1_uci |
   |----------------------------------------------------|
-  |    .06368483          .06368483          .06368483 |
+  |    .06368483          .01748572          .10988394 |
   +----------------------------------------------------+
 
 ```
@@ -311,7 +312,7 @@ And now we can plot the difference in standardized curves together with a 95% co
 
 The covariate distribution we are averaging over is a combination of those on and not on hormon treatment. 
 It may also be of interest to restrict to the covariate distribution of the exposed or the unexposed. Assuming our model has controlled for 
-confounding this will give teh average causal effect in the exposed. All we need to do is to add an `if` statement.
+confounding this will give the average causal effect in the exposed. All we need to do is to add an `if` statement.
 
 ```stata
 . drop _at* _contrast*
@@ -320,7 +321,7 @@ confounding this will give teh average causal effect in the exposed. All we need
 
 ```
 
-The resulting standardzied curves can then be plotted.
+The resulting standardized curves can then be plotted.
 
 ```stata
 . twoway  (rarea _at1_lci _at1_uci timevar, color(red%25)) ///
@@ -339,7 +340,6 @@ The resulting standardzied curves can then be plotted.
 
 Note that these curves give higher survival. This is because on average those who received hormonal treatment were younger and had less 
 severe disease.
-
 
 We can also plot the difference in these standardized curves together with a 95% confidence interval.
 

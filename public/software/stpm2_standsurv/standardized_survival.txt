@@ -245,7 +245,7 @@ graph export c:/website/static/statasvg/stpm2_standsurv_survival_stand_hormon_di
 
 The covariate distribution we are averaging over is a combination of those on and not on hormon treatment. 
 It may also be of interest to restrict to the covariate distribution of the exposed or the unexposed. Assuming our model has controlled for 
-confounding this will give teh average causal effect in the exposed. All we need to do is to add an `if` statement.
+confounding this will give the average causal effect in the exposed. All we need to do is to add an `if` statement.
 
 ```stata
 <<dd_do >>
@@ -254,7 +254,7 @@ stpm2_standsurv if hormon==1, at1(hormon 0) at2(hormon 1) timevar(timevar) ci co
 <</dd_do>>
 ```
 
-The resulting standardzied curves can then be plotted.
+The resulting standardized curves can then be plotted.
 
 ```stata
 <<dd_do >>
@@ -277,7 +277,6 @@ graph export c:/website/static/statasvg/stpm2_standsurv_survival_stand_hormon_ex
 
 Note that these curves give higher survival. This is because on average those who received hormonal treatment were younger and had less 
 severe disease.
-
 
 We can also plot the difference in these standardized curves together with a 95% confidence interval.
 

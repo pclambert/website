@@ -1,0 +1,114 @@
++++
+date = "2017-11-09"
+title = "Hazard of Standardized Survival Functions"
+summary = "stpm2"
+tags = ["stpm2","stpm2_standsurv","software","Stata","survival","Standardization"]
+external_link = "" 
+math = true
+[header]
+image = ""
+caption = ""
++++
+
+This will be a short tutorial as the ideas are very simple. I have previously discussed standardized survival functions. In survival analysis we know that there is a simple mathematical transformation from hazard to survival function and vice versa. The idea here is to transform  to a hazard function from the *standardized* survival function. Recall that a standardized survivak funnction; $S_s(t)$ is 
+
+$$
+S_s(t) = \frac{1}{N}\sum\_{i=1}^{N}S(t|X=x,Z)
+$$
+
+
+If we apply the usual transformation from survival to hazard to function ($h(t) = \frac{d}{dt}-log[S(t)]$) we get
+
+$$
+S_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
+$$
+
+This is a weighted average of the $N$ indivual hazard functions with weights equal to S(t|X=x,Z=z_i), i.e. the predicted survival function for individual $i$ whne forced to take a specific value of the exposure variable, $X$, but their observed values of confounding variables, $Z$.
+
+This is implemented in `stpm2_standsurv` using the `hazard` option.
+
+## Example
+
+I will use the Rotterdam Breast cancer data. The code below loads and `stset`'s the data and then fits a model using `stpm2`. 
+
+```stata
+<<dd_do >>
+use https://www.pclambert.net/data/rott2b, clear
+stset os, f(osi==1) scale(12) exit(time 120)
+stpm2 hormon age enodes pr_1, scale(hazard) df(4) eform nolog tvc(hormon) dftvc(3)
+<</dd_do>>
+```
+
+I have made the effect of our exposure, `hormon`, time-dependent using the `tvc` option.
+
+
+I first calculate the standardized survival curves where everyone if forced to be exposed and then unexposed.
+
+```stata
+<<dd_do >>
+range timevar 0 10 100
+stpm2_standsurv, at1(hormon 0) at2(hormon 1) timevar(timevar) ci contrast(difference)
+
+twoway  (rarea _at1_lci _at1_uci timevar, color(red%25)) ///
+                 (rarea _at2_lci _at2_uci timevar, color(blue%25)) ///
+                 (line _at1 timevar, sort lcolor(red)) ///
+                 (line _at2  timevar, sort lcolor(blue)) ///
+                 , legend(order(1 "No hormonal treatment" 2 "Hormonal treatment") ring(0) cols(1) pos(1)) ///
+                 ylabel(0.5(0.1)1,angle(h) format(%3.1f)) ///
+                 ytitle("S(t)") ///
+                 xtitle("Years from surgery")
+<</dd_do>>
+```
+
+<<dd_do: quietly>>
+graph export c:/website/static/statasvg/stpm2_standsurv_survival_stand_hormon_hazard.svg, replace width(700px)
+<</dd_do>>
+
+![](/statasvg/stpm2_standsurv_survival_stand_hormon_hazard.svg)
+
+
+If I run `stpm2_standsurv` again with the `hazard` option I get the corresponding hazard functions of the standardized curves.
+
+
+```stata
+<<dd_do >>
+range timevar 0 10 100capture drop _at* _contrast*
+stpm2_standsurv, at1(hormon 0) at2(hormon 1) timevar(timevar) hazard ci contrast(ratio) per(1000)
+<</dd_do>>
+```
+
+Plot the standardized hazard functions.
+
+```stata
+<<dd_do >>
+twoway (rarea _at1_lci _at1_uci timevar, color(red%30)) ///
+	(rarea _at2_lci _at2_uci timevar, color(blue%30)) ///
+	(line _at1 timevar, color(red)) ///
+	(line _at2 timevar, color(blue)) ///
+	, legend(off) ///
+	ylabel(,angle(h) format(%3.1f)) ///
+	xtitle("Years from surgery")	 
+<</dd_do>>
+```
+
+I can't explain the lower and then higher hazard for those on hormon therapy. Perhaps better adjustment for confounders would change this.
+
+I can also plot the ratio of these two hazard functions with a 95% confidence interval.
+
+```stata
+<<dd_do >>
+twoway (rarea _contrast2_1_lci _contrast2_1_uci timevar, color(red%30)) ///
+	(line _contrast2_1 timevar, color(black)) ///
+	, yscale(log) ///
+	ylabel(,angle(h) format(%3.1f))
+  xtitle("Years from surgery")
+<</dd_do>>
+```
+
+If I had used the `difference` arguemnt of the `contrast()` option I would have obtained the ansolute difference in the standardized hazard functions.
+
+I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events chages over follow-up time with a cumulative measuer (i.e. standardized survival).
+
+
+
+

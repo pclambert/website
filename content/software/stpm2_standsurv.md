@@ -10,10 +10,10 @@ The `stpm2_standsurv` estimates standardized survival curves and related measure
 
 
 ## Using `stpm2_standsurv`
-- Standardized survival functions and contrasts.
-- Centiles of the standardized survival function.
+- [Standardized survival functions and contrasts.]({{< ref "software/stpm2_standsurv/standardized_survival.md" >}})
+- [Centiles of the standardized survival function.]({{< ref "software/stpm2_standsurv/standardized_survival_centiles.md" >}})
 - Restricted mean survival using standardized survival functions.
-- The hazard function of the standardized survival curve.
+- [The hazard function of the standardized survival curve.]({{< ref "software/stpm2_standsurv/standardized_survival_hazard.md" >}})
 - Estimating attributable fractions in cohort studies
 - Standardized cause-specific cumulative incidence functions.
 

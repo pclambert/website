@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.28" />
+  <meta name="generator" content="Hugo 0.30.2" />
   <meta name="author" content="Paul C Lambert">
   <meta name="description" content="Professor of Biostatistics">
 
@@ -288,7 +288,8 @@
 <h2 id="background">Background</h2>
 
 <p>When we are performing data exploration on survival data we usually start with plotting Kaplan-Meier curves. In clinical trials
-with a survival outcome, one would nearly always expect to see a Kaplan-Meier curve plotted. They are incredibly easy to interpret.</p>
+with a survival outcome, one would nearly always expect to see a Kaplan-Meier curve plotted. They are simple to interpret (though
+there can be confusion when there are competing risks).</p>
 
 <p>In observational studies, we expect that there will be confounding and would usually adjust for these confounders in a Cox model.
 If you have read my other tutorials then you will know that I prefer fitting parametric models, but the choice is that not that important
@@ -398,7 +399,7 @@ Summary statistics: mean
 <p>Those who received the hormonal therapy tended to be older and have more lymph node involvment. Thus, even if hormonal treatment did not
 have any effect on survival, we would expect to see a difference in such a simplistic analysis due to the type of people who receieved the treatment.</p>
 
-<p>So, we now adjust for some covariates. To simplify things, I will assume proportional hazards and include the covariates     age, nodes and
+<p>So, we now adjust for some covariates. To simplify things, I will assume proportional hazards and include the covariates age, nodes and
 progesterone receptor. Previous analyses of this data have found that transformation of the nodes variable (exp(-0.12*nodes))
 and the progesterone variable (log(pr + 1)) model the non-linear effects of these variables fairly well and so I will use these transformed
 variables. The model is fitted below</p>
@@ -478,8 +479,8 @@ E\left(S(t | X=1,Z\right) - E\left(S(t | X=0,Z\right)
 $$</p>
 
 <p>In the above, $X$ is the exposure of interest and $Z$ are the confounders. We are interested in the expectation over the distribution of $Z$,
-with the key point being this distrubution is forced to be the same for $X=0$ and $X=1$. If our model is sufficent for confounding control then
-the above gives formula gives the average causal effect.</p>
+with the key point being this distribution is forced to be the same for $X=0$ and $X=1$. If our model is sufficent for confounding control then
+the above formula gives the average causal effect.</p>
 
 <p>To estimate the difference in the standardized curves we need to generate the two standardized survival curves. In each of these we predict as many survival curves as there are observations
 in the data set and then take the average of these curves. The only difference is that in one we make everyone be exposed (<code>hormon=1</code>) and in the
@@ -505,7 +506,7 @@ Any covariates not specified keep their observed values. Thus we are just implem
 name of the variable that gives the survival times in which to evaluate the survival function. I have already defined a variable <code>timevar</code>
 above to be 50 rows ranging from 0 to 10. The <code>ci</code> option requests that confidence intervals be calculated. Standard errors are either obtained
 using the delta-method or M-estimation. The default is the delta-method (for standardized survival). The <code>contrast()</code> option asks for a comparison
-of the two survival curves with the <code>difference</code> argument asking to take differences in the standardized survival curves. By deafault <code>at1</code> is the reference,
+of the two survival curves with the <code>difference</code> argument asking to take differences in the standardized survival curves. By default <code>at1</code> is the reference,
 i.e. the contrast will be <code>at2</code>-<code>at1</code>, but this can be changed using the <code>atref()</code> option.</p>
 
 <p>The command will create the following variables, <code>_at1</code>, <code>_at2</code>, <code>_contrast2_1</code>. These are the default names, but can be changed using the <code>atvar()</code> and
@@ -519,7 +520,7 @@ for each estimate.</p>
   +-----------------------------------+
   |      _at1    _at1_lci    _at1_uci |
   |-----------------------------------|
-  | .54380594   .50064092   .59069263 |
+  | .54380594   .52512603   .56315034 |
   +-----------------------------------+
 
 . list _at2* if timevar==10, noobs
@@ -535,7 +536,7 @@ for each estimate.</p>
   +----------------------------------------------------+
   | _contrast2_1   _contrast2_1_lci   _contrast2_1_uci |
   |----------------------------------------------------|
-  |    .06368483          .06368483          .06368483 |
+  |    .06368483          .01748572          .10988394 |
   +----------------------------------------------------+
 
 </code></pre>
@@ -572,7 +573,7 @@ estimates together with 95% confidence intervals.</p>
 
 <p>The covariate distribution we are averaging over is a combination of those on and not on hormon treatment.
 It may also be of interest to restrict to the covariate distribution of the exposed or the unexposed. Assuming our model has controlled for
-confounding this will give teh average causal effect in the exposed. All we need to do is to add an <code>if</code> statement.</p>
+confounding this will give the average causal effect in the exposed. All we need to do is to add an <code>if</code> statement.</p>
 
 <pre><code class="language-stata">. drop _at* _contrast*
 
@@ -580,7 +581,7 @@ confounding this will give teh average causal effect in the exposed. All we need
 
 </code></pre>
 
-<p>The resulting standardzied curves can then be plotted.</p>
+<p>The resulting standardized curves can then be plotted.</p>
 
 <pre><code class="language-stata">. twoway  (rarea _at1_lci _at1_uci timevar, color(red%25)) ///
 &gt;                 (rarea _at2_lci _at2_uci timevar, color(blue%25)) ///
