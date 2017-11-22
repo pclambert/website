@@ -14,6 +14,9 @@ caption = ""
 
 **2017**
 
+
+Plym A., Bower H., Fredriksson I., **Lambert P.C.**, Holmberg L., et al., _British Journal of Cancer (in press)_
+
 Mozumder S.I., Rutherford M.J., **Lambert P.C.** Direct likelihood inference on the cause-specific cumulative incidence function: a flexible parametric regression modelling approach. _Statistics in Medicine (in press)._
 
 Bower H., Andersson T.M-L., Crowther M.J., Dickman P.W., Lambe M., **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2017 (in press).
