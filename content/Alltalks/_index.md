@@ -16,7 +16,19 @@ caption = ""
 
 +++
 
+4-9 June 2018. Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Veneto Italy. Further details available [here](http://cansurv.net/).
+
+26 February - 2 March 2018: Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Adelaide, Australia. Further details will be provided shortly.
+
+21-23 February 2018: I will teach a series of 1-day courses in Melbourne, Australia with Paul Dickman. Further details can be found [here](http://www.vicbiostat.org.au/vicbiostat-summer-school-2018).
+
 15-17 January 2018 Parametric Competing Risks and Multistate models, [_Swiss Epidemiology Winter School_](https://www.epi-winterschool.org), Wengen, Switzerland.
+
+30 November 2017. Some key issues in the reporting of national cancer survival statistics. Public Heath England, London.
+
+16 October 2017 [Age Period Cohort (APC) models for predictions of cancer incidence and mortality]({{< ref "teaching/apccourse.md" >}}), Pre-conference course.  Intenational Association of Cancer Registries, Utrect Utrecht.
+
+14 September 2017. An online interactive tool to improve the understanding of cancer survival statistics. North American Association of Central Cancer Registries Online Webinar
 
 22 June 2017, [An online interactive tool to improve the understanding of cancer survival statistics](pdf/NAACCR_Junel2017.pdf). _North American Association of Central Cancer Registries_, Albuquerque, New Mexico, USA.
 

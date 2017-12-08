@@ -2,7 +2,7 @@
 # An example of using the custom widget to create your own homepage section.
 # To create more sections, duplicate this file and edit the values below as desired.
 
-date = "2018-08-21"
+date = "2018-12-08"
 draft = false
 
 title = "Teaching"
@@ -22,9 +22,14 @@ I teach on the following teaching weeks for the MSc.,
 - Survival Analysis
 - Advanced Survival Analysis
 
-I also teach a number of short courses. These include,
+Below are some upcoming course.
 
-- [Statistical methods for population based cancer survival analysis (with Paul Dickman)](http://cansurv.net/)
-- Flexible parametric survival models in epidemiology
 - [Competing risks and multi-state models]({{< ref "teaching/multistatecourse.md" >}})
-- [Age Period Cohort (APC) Models]({{< ref "teaching/apccourse.md" >}})
+
+- 21-23 February 2018: I will teach a series of 1-day courses in Melbourne, Australia with Paul Dickman. Further details can be found [here](http://www.vicbiostat.org.au/vicbiostat-summer-school-2018).
+
+- 26 February - 2 March 2018: Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Adelaide, Australia. Further details will be provided shortly.
+
+- 4-9 June 2018. Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Veneto Italy. Further details available [here](http://cansurv.net/).
+
+
