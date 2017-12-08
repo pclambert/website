@@ -24,7 +24,7 @@ I teach on the following teaching weeks for the MSc.,
 
 Below are some upcoming course.
 
-- [Competing risks and multi-state models]({{< ref "teaching/multistatecourse.md" >}})
+- 15-17 January 2018 [Competing risks and multi-state models]({{< ref "teaching/multistatecourse.md" >}}),  [Swiss Epidemiology Winter School](https://www.epi-winterschool.org/), Wengen, Switzerland.
 
 - 21-23 February 2018: I will teach a series of 1-day courses in Melbourne, Australia with Paul Dickman. Further details can be found [here](http://www.vicbiostat.org.au/vicbiostat-summer-school-2018).
 
