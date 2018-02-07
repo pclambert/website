@@ -253,7 +253,7 @@ labels = form.selectAll("label")
     .attr("name","sexbutton")
 	.attr("class","SexSelect")
 	.attr("value", function(d, i) {return i;})
-	.property("checked",function(d, i) {return i==j;})
+	.property("checked",function(d, i) {return i==0;})
     .on("change", ChangeSex);
 }
 

@@ -26,7 +26,7 @@ $$
 This is done through root finding (using Brent's root finder) by solving,
 
 $$
-\sum_{i=1}^N {S(t | X=x,Z)} - \alpha = 0
+\frac{1}{N}\sum_{i=1}^N {S(t | X=x,Z)} - \alpha = 0
 $$
 
 Variances can be obtained using M-estimation .
@@ -65,7 +65,7 @@ obs. time interval:  (0, surv_mm]
 
 I drop those with missing stage information (`stage == 0`). I am investigating all cause survival (`status=1,2`).
 
-I fit a model that includes stage, sex and age (using a rectriced cubic splines). I assume proportional hazards, but if I relax this assusmption the syntax for `stpm2_standsurv` would be identical. Stage is classified as localised, regional and distant and is modelled using two dummy covariates with localised as the reference category.
+I fit a model that includes stage, sex and age (using a rectricted cubic splines). I assume proportional hazards, but if I relax this assusmption the syntax for `stpm2_standsurv` would be identical. Stage is classified as localised, regional and distant and is modelled using two dummy covariates with localised as the reference category.
 
 
 ```stata
@@ -110,9 +110,9 @@ Note: Estimates are transformed only in the first equation.
 
 ```
 
-The is a clear effect of stage with a hazard ratio of 5.66 for distant stage versus localised stage. Remember that I am modelling all cause survival and one would expect a cause-specific hazard ratio to be higher. The all-cause mortality rate for females is 14% lower tham males.
+The is a clear effect of stage with a hazard ratio of 5.66 for distant stage versus localised stage. Remember that I am modelling all cause survival and one would expect a cause-specific hazard ratio to be higher. The all-cause mortality rate for females is 14% lower than males.
 
-I will now predict the standardized survival function, one where I force all subjects to be male and one where I force everyone to be female.
+I will now predict the standardized survival functions, one where I force all subjects to be male and one where I force everyone to be female.
 
 ```stata
 . range tt 0 10 100
@@ -121,12 +121,12 @@ I will now predict the standardized survival function, one where I force all sub
 . stpm2_standsurv, at1(female 0) at2(female 1) timevar(tt) atvar(ms_male ms_female) ci
 
 . twoway  (line ms_male ms_female tt, sort) ///
->                 , yline(0.5, lpattern(dash) lcolor(black)) ///
->                 yline(0.5, lpattern(dash) lcolor(black)) ///
->                 xtitle("Years since diagnosis") ///
->                 ytitle("S(t)", angle(h)) ///
->                 ylabel(0(0.2)1, format(%3.1f) angle(h)) ///
->                 legend(order(1 "Male" 2 "Female") ring(0) pos(1) cols(1))
+>         , yline(0.5, lpattern(dash) lcolor(black)) ///
+>         yline(0.5, lpattern(dash) lcolor(black)) ///
+>         xtitle("Years since diagnosis") ///
+>         ytitle("S(t)", angle(h)) ///
+>         ylabel(0(0.2)1, format(%3.1f) angle(h)) ///
+>         legend(order(1 "Male" 2 "Female") ring(0) pos(1) cols(1))
 
 ```
 
@@ -141,33 +141,33 @@ As expected (given the hazard ratio) females have better survival than males. I 
 . stpm2_standsurv, at1(female 0) at2(female 1) timevar(tt) centile(50) ///
 >                 atvar(med_male med_female) contrast(difference) ci
 
-. list med_male* in 1     
+. list med_male* in 1,  ab(15)    
 
-     +-----------------------------------+
-     |  med_male   med_m~lci   med_m~uci |
-     |-----------------------------------|
-  1. | 1.9801987   1.8728516   2.0936987 |
-     +-----------------------------------+
+     +-----------------------------------------+
+     |  med_male   med_male_lci   med_male_uci |
+     |-----------------------------------------|
+  1. | 1.9801987      1.8728516      2.0936987 |
+     +-----------------------------------------+
 
-. list med_female* in 1   
+. list med_female* in 1, ab(15)   
 
-     +-----------------------------------+
-     | med_fem~e   med_f~lci   med_f~uci |
-     |-----------------------------------|
-  1. | 2.4249751   2.3000843   2.5566472 |
-     +-----------------------------------+
+     +----------------------------------------------+
+     | med_female   med_female_lci   med_female_uci |
+     |----------------------------------------------|
+  1. |  2.4249751        2.3000843        2.5566472 |
+     +----------------------------------------------+
 
-. list _contrast* in 1
+. list _contrast* in 1, ab(18)
 
-     +----------------------------------+
-     | _contra~1   _cont~lci   _con~uci |
-     |----------------------------------|
-  1. | .44477636   .30074772    .588805 |
-     +----------------------------------+
+     +----------------------------------------------------+
+     | _contrast2_1   _contrast2_1_lci   _contrast2_1_uci |
+     |----------------------------------------------------|
+  1. |    .44477636          .30074772            .588805 |
+     +----------------------------------------------------+
 
 ```
 
-The median survival time is 1.98 years for males with a 95% CI (1.87 to 2.09). The median for females is 2.42 years (95% CI, 2.30 to 2.56). As I use the `contrast` option I also get the difference in the median of the standardised survival curves with a 95% CI. Thus the time at which 50% of females have died is 0.44 years more than the time at which 50% of males have died, 95% CI (0.30 to 0.59).
+The median survival time is 1.98 years for males with a 95% CI (1.87 to 2.09). The median for females is 2.42 years (95% CI, 2.30 to 2.56). As I used the `contrast` option I also get the difference in the median of the standardised survival curves with a 95% CI. Thus the time at which 50% of females have died is 0.44 years more than the time at which 50% of males have died, 95% CI (0.30 to 0.59).
 
 It is possible to predict for multiple centiles by passing a *numlist* to the `centiles` option. For example, the code below calculates centiles between 10 and 60 at 10 unit intervals.
 
@@ -201,6 +201,9 @@ We can then plot the difference in these various centiles.
 >         legend(off)
 
 ```
+
+
+![](/statasvg/stpm2_standsurv_survival_centile_range.svg)
 
 There are probably more innovative ways of presenting such data.
 

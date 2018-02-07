@@ -14,8 +14,8 @@
     
     <url>
     
-      <loc>/software/stpm2_standsurv/standardized_survival_centiles/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <loc>/software/stpm2_standsurv/standardized_survival_hazard/</loc>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -23,7 +23,7 @@
     
     <url>
     
-      <loc>/software/stpm2_standsurv/standardized_survival_hazard/</loc>
+      <loc>/software/stpm2_standsurv/standardized_survival_centiles/</loc>
       <lastmod>2017-11-07T00:00:00+00:00</lastmod>
     </url>
     
@@ -300,7 +300,7 @@
     <url>
     
       <loc>/tags/software/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -310,7 +310,7 @@
     <url>
     
       <loc>/software/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -320,7 +320,7 @@
     <url>
     
       <loc>/tags/standardization/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -330,7 +330,7 @@
     <url>
     
       <loc>/tags/stata/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -350,7 +350,7 @@
     <url>
     
       <loc>/tags/stpm2/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -360,7 +360,7 @@
     <url>
     
       <loc>/tags/stpm2_standsurv/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -370,7 +370,7 @@
     <url>
     
       <loc>/tags/survival/</loc>
-      <lastmod>2017-11-07T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-09T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
