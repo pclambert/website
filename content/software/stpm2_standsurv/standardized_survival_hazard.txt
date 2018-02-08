@@ -20,7 +20,7 @@ $$
 If we apply the usual transformation from survival to hazard to function ($h(t) = \frac{-d}{dt}\log[S(t)]$) we get
 
 $$
-S_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
+h_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
 $$
 
 This is a weighted average of the $N$ individual hazard functions with weights equal to $S(t|X=x,Z=z_i)$, i.e. the predicted survival function for individual $i$ when forced to take a specific value of the exposure variable, $X$, but their observed values of confounding variables, $Z$.

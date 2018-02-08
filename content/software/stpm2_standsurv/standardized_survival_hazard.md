@@ -20,7 +20,7 @@ $$
 If we apply the usual transformation from survival to hazard to function ($h(t) = \frac{-d}{dt}\log[S(t)]$) we get
 
 $$
-S_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
+h_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
 $$
 
 This is a weighted average of the $N$ individual hazard functions with weights equal to $S(t|X=x,Z=z_i)$, i.e. the predicted survival function for individual $i$ when forced to take a specific value of the exposure variable, $X$, but their observed values of confounding variables, $Z$.
@@ -151,9 +151,9 @@ I can also plot the ratio of these two hazard functions with a 95% confidence in
 ![](/statasvg/stpm2_standsurv_hazard_stand_hormon_hazard_ratio.svg)
 
 
-If I had used the `difference` arguemnt of the `contrast()` option I would have obtained the absolute difference in the standardized hazard functions.
+If I had used the `difference` argument of the `contrast()` option I would have obtained the absolute difference in the standardized hazard functions.
 
-I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events chages over follow-up time with a cumulative measuer (i.e. standardized survival).
+I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events chages over follow-up time with a cumulative measure (i.e. standardized survival).
 
 
 
