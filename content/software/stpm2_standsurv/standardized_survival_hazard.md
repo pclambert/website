@@ -153,7 +153,7 @@ I can also plot the ratio of these two hazard functions with a 95% confidence in
 
 If I had used the `difference` argument of the `contrast()` option I would have obtained the absolute difference in the standardized hazard functions.
 
-I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events chages over follow-up time with a cumulative measure (i.e. standardized survival).
+I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events changes over follow-up time with a cumulative measure (i.e. standardized survival).
 
 
 

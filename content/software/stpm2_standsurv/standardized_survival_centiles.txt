@@ -15,7 +15,7 @@ caption = ""
 In the previous tutorial I used `stpm2_standsurv` to obtain standardized survival functions. In this tutorial I show the first of a 
 number of different measures of the standardized survival function where I obtain centiles of the standardized survival function.
 
-As a reminder a centile of a survival function can be obtanined by solving $S(t) = \alpha$ for $t$. For example, for the median survival time we set $\alpha = 0.5$, i.e. the 50th (per)centile. For simple parametric distributions, such as the Weibull, we can solve for $t$ analytically, but for more complex models the centile is obtained through iterative root finding techniques. In `stpm2` I have used Brent's root finder when evaluating centiles. 
+As a reminder a centile of a survival function can be obtained by solving $S(t) = \alpha$ for $t$. For example, for the median survival time we set $\alpha = 0.5$, i.e. the 50th (per)centile. For simple parametric distributions, such as the Weibull, we can solve for $t$ analytically, but for more complex models the centile is obtained through iterative root finding techniques. In `stpm2` I have used Brent's root finder when evaluating centiles. 
 
 The centile of a standardized survival function is obtained by solving the following equation for t. 
 
