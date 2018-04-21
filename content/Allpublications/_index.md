@@ -11,19 +11,19 @@ caption = ""
 
 +++
 
+**2018**
+
+Plym A, Bower H., Fredriksson I., Holmberg L., **Lambert P.C.**, Lambe M. Loss in working years after a breast cancer diagnosis. _British Journal of Cancer_ 2018;118:738-743
+
+Mozumder S.I., Rutherford M.J., **Lambert P.C.** Direct likelihood inference on the cause-specific cumulative incidence function: a flexible parametric regression modelling approach. _Statistics in Medicine_ 2018;**37**:82-97
+
+Bower H., Andersson T.M-L., Crowther M.J., Dickman P.W., Lambe M., **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2018;**187**:828-836
 
 **2017**
 
+Syriopoulou E., Bower H., Andersson T.M-L., **Lambert P.C.**, Rutherford M.J. Estimating the impact of a cancer diagnosis on life expectancy by socioeconomic group for a range of cancer types in England. _British Journal of Cancer_ 2017;**117**:1419–1426 
 
-Plym A., Bower H., Fredriksson I., **Lambert P.C.**, Holmberg L., et al., _British Journal of Cancer (in press)_
-
-Mozumder S.I., Rutherford M.J., **Lambert P.C.** Direct likelihood inference on the cause-specific cumulative incidence function: a flexible parametric regression modelling approach. _Statistics in Medicine (in press)._
-
-Bower H., Andersson T.M-L., Crowther M.J., Dickman P.W., Lambe M., **Lambert P.C.** Adjusting expected mortality rates using information from a control population: An example using socioeconomic status. _American Journal of Epidemiology_ 2017 (in press).
-
-Syriopoulou E., Bower H., Andersson T.M-L., **Lambert P.C.**, Rutherford M.J. Estimating the impact of a cancer diagnosis on life expectancy by socioeconomic group for a range of cancer types in England. _British Journal of Cancer_ 2017 (in press)
-
-Crowther M.J., **Lambert P.C.** Parametric multi-state survival models: flexible modelling allowing transition-specific distributions with application to estimating clinically useful measures of effect differences. _Statistics in Medicine (in press)._
+Crowther M.J., **Lambert P.C.** Parametric multi-state survival models: flexible modelling allowing transition-specific distributions with application to estimating clinically useful measures of effect differences. _Statistics in Medicine_ 2017:**36**:4719-4742
 
 Mozumder S.I., Rutherford M.J., **Lambert P.C.**  `stpm2cr`: A flexible parametric competing risks model using a direct likelihood approach for the cause-specific cumulative incidence function. _The Stata Journal_ 2017:**17**:462-489.
 
