@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-105116466-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2_standsurv/standardized_survival_rmst/">
+
+  
+
+  <title>RMST of Standardized Survival Functions | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">RMST of Standardized Survival Functions</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Fri, Jun 15, 2018
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/stpm2_standsurv">stpm2_standsurv</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/standardization">Standardization</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_rmst%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=RMST%20of%20Standardized%20Survival%20Functions&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_rmst%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_rmst%2f&amp;title=RMST%20of%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_rmst%2f&amp;title=RMST%20of%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=RMST%20of%20Standardized%20Survival%20Functions&amp;body=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_rmst%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>Here I will show another useful measure from standardized survival functions. There have been several papers promoting the use of restricted mean survival time (RMST) in clinical trials. The arguments are (i) ease of interpretation (though I am not convinced a restricted mean is that easy to explain) and (ii) providing a simple summary in the presence of non-proportional hazards. See Royston and Parmar (2013) for a description of the use of the measure in RCTs.</p>
+
+<p>The restricted mean survival time at time $t^*$ is defined as,
+$$
+E\left[min(t,t^*)\right]
+$$
+i.e. it is the mean up to some point $t^*$. The treatment effect in a RCT can be defined as the difference in RMST between the randomized arms at time $t^*$. The RMST can be estimated by calculating the area under the survival curve between 0 and $t^*$. In an observational study where we need to take account of potential confounders, we can define the RMST of the standardized survival function as</p>
+
+<p>$$
+RMST(t^*|X=x,Z) = \int_0^{t^*} E\left[S(t|X=x,Z)\right]
+$$</p>
+
+<p>and is estimated by</p>
+
+<p>$$
+\widehat{RMST}(t^*|X=x,Z) = \int_0^{t^*} \frac{1}{N}\sum_{i=1}^{N}S(t|X=x,Z=z_i)]
+$$</p>
+
+<p>Contrasts between exposure groups can either be differences or ratios,</p>
+
+<p>$$
+\widehat{RMST}(t^*|X=1,Z) - \widehat{RMST}(t^*|X=0,Z)
+$$</p>
+
+<p>$$
+\frac{\widehat{RMST}(t^*|X=1,Z)}{\widehat{RMST}(t^*|X=0,Z)}
+$$</p>
+
+<p>Standardized RMST and contrasts is implemented in <code>stpm2_standsurv</code> using the <code>rmst</code> option.</p>
+
+<h2 id="example">Example</h2>
+
+<p>I will use the Rotterdam Breast cancer data. The code below loads and <code>stset</code>&rsquo;s the data and then fits a model using <code>stpm2</code>.</p>
+
+<pre><code class="language-stata">. use https://www.pclambert.net/data/rott2b, clear
+(Rotterdam breast cancer data (augmented with cause of death))
+
+. stset os, f(osi==1) scale(12) exit(time 120)
+
+     failure event:  osi == 1
+obs. time interval:  (0, os]
+ exit on or before:  time 120
+    t for analysis:  time/12
+
+------------------------------------------------------------------------------
+      2,982  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+      2,982  observations remaining, representing
+      1,171  failures in single-record/single-failure data
+ 20,002.424  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =        10
+
+. stpm2 hormon age enodes pr_1, scale(hazard) df(4) eform nolog tvc(hormon) dftvc(3)
+
+Log likelihood = -2666.5999                     Number of obs     =      2,982
+
+--------------------------------------------------------------------------------
+               |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+---------------+----------------------------------------------------------------
+xb             |
+        hormon |   .8019893   .0741703    -2.39   0.017     .6690322     .961369
+           age |   1.013249   .0024115     5.53   0.000     1.008534    1.017987
+        enodes |   .1132406    .011008   -22.41   0.000     .0935961    .1370082
+          pr_1 |   .9061179   .0119267    -7.49   0.000      .883041    .9297979
+         _rcs1 |   2.644573   .0814503    31.58   0.000     2.489656    2.809129
+         _rcs2 |   1.209479   .0379393     6.06   0.000      1.13736    1.286172
+         _rcs3 |      1.014   .0162037     0.87   0.384     .9827339    1.046262
+         _rcs4 |   .9961807   .0072731    -0.52   0.600     .9820273    1.010538
+  _rcs_hormon1 |   1.003465   .0756175     0.05   0.963     .8656822    1.163176
+  _rcs_hormon2 |    .891054    .056664    -1.81   0.070      .786637    1.009331
+  _rcs_hormon3 |   1.025052   .0390804     0.65   0.516     .9512477    1.104583
+         _cons |   1.103353   .1771893     0.61   0.540     .8054133    1.511508
+--------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation.
+
+</code></pre>
+
+<p>I have made the effect of our exposure, <code>hormon</code>, time-dependent using the <code>tvc</code> option to illustrate that we can have interactions etc with our exposure in our model. This is an interaction with time, i.e. non proportional hazards.</p>
+
+<p>I first calculate the standardized survival curves where everyone is forced to be exposed and then unexposed.</p>
+
+<pre><code class="language-stata">. range timevar 0 10 100
+(2,882 missing values generated)
+
+. stpm2_standsurv, at1(hormon 0) at2(hormon 1) timevar(timevar) ci atvar(S_hormon0 S_hormon1)
+
+. 
+. twoway  (area S_hormon0 timevar, sort fcolor(red%30) lcolor(red)) ///
+&gt;         , legend(off) ///
+&gt;         ylabel(0(0.1)1, format(%3.1f)) ///
+&gt;         ytitle(&quot;S(t)&quot;) ///
+&gt;         xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 title(&quot;No treatment&quot;) ///
+&gt;                 name(hormon0, replace)
+
+. 
+. twoway  (area S_hormon1 timevar, sort fcolor(blue%30) lcolor(blue)) ///
+&gt;         , legend(off) ///
+&gt;         ylabel(0(0.1)1, format(%3.1f)) ///
+&gt;         ytitle(&quot;S(t)&quot;) ///
+&gt;         xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 title(&quot;Treatment&quot;) ///
+&gt;                 name(hormon1, replace)
+
+.                 
+. graph combine hormon0 hormon1, nocopies         
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_standsurv_rmst_stand.svg" alt="" /></p>
+
+<p>The RMST at 10 years for each of the standardized survival functions is the area under the standardized survival curve, shown by the shaded areas in the graphs above.</p>
+
+<p>I will now run <code>stpm2_standsurv</code> again with the <code>rmst</code> option to estimate these togther with the difference in RMST. I only want the RMST at
+10 years so create a variable <code>t_rmst10</code> with only one observation, equal to 10.</p>
+
+<pre><code class="language-stata">. gen t_rmst10 = 10 in 1
+(2,981 missing values generated)
+
+. stpm2_standsurv, at1(hormon 0) at2(hormon 1) timevar(t_rmst10) rmst ci contrast(difference) ///
+&gt;     atvar(rmst_h0 rmst_h1) contrastvar(rmstdiff)
+
+</code></pre>
+
+<p>I will first list the standardized RMST in both treatment groups.</p>
+
+<pre><code class="language-stata">. list t_rmst10 rmst_h0* rmst_h1* in 1, noobs abb(12) 
+
+  +------------------------------------------------------------------------------------------+
+  | t_rmst10     rmst_h0   rmst_h0_lci   rmst_h0_uci     rmst_h1   rmst_h1_lci   rmst_h1_uci |
+  |------------------------------------------------------------------------------------------|
+  |       10   7.5444214     7.4318182     7.6587307   7.9386152     7.6870964     8.1983635 |
+  +------------------------------------------------------------------------------------------+
+
+</code></pre>
+
+<p>The RMST at 10 years is 7.54 years in those not taking treatment and 7.94 years in those taking treatment. The 95% confidence
+intervals are also shown. As I used the <code>contrast(difference)</code> option I can look at the difference in RMST at 10 years.</p>
+
+<pre><code class="language-stata">. list t_rmst     rmstdiff* in 1, noobs abb(12)
+
+  +---------------------------------------------------+
+  | t_rmst10   rmstdiff   rmstdiff_lci   rmstdiff_uci |
+  |---------------------------------------------------|
+  |       10   .3941938      .11623628      .67215133 |
+  +---------------------------------------------------+
+
+</code></pre>
+
+<p>The difference is 0.39 years (95% CI 0.12 to 0.67).</p>
+
+<p>The RMST will vary by the choice of $t^*$. A range of values of $t^*$ can be given and then plotted.</p>
+
+<pre><code class="language-stata">. range t_rmst 0 10 50
+(2,932 missing values generated)
+
+. stpm2_standsurv, at1(hormon 0) at2(hormon 1) timevar(t_rmst) rmst ci contrast(difference) ///
+&gt;     atvar(rmst_h0b rmst_h1b) contrastvar(rmstdiffb)
+
+</code></pre>
+
+<p>We can plot how the RMST changes and the difference in RMST changes as a function of $t^*$.</p>
+
+<pre><code class="language-stata">. twoway  (line rmst_h0b rmst_h1b t_rmst) ///
+&gt;         , legend(order(1 &quot;No treatment&quot; 2 &quot;Treatment&quot;) cols(1) pos(11)) ///
+&gt;         ytitle(&quot;RMST (years)&quot;) ///
+&gt;         xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 name(RMST,replace)
+
+. 
+. twoway  (rarea rmstdiffb_lci rmstdiffb_uci t_rmst, color(blue%20)) ///
+&gt;                 (line rmstdiffb t_rmst, lcolor(blue)) ///
+&gt;         , legend(off) ///
+&gt;         ylabel(, format(%3.1f)) ///
+&gt;         ytitle(&quot;Difference in RMST (years)&quot;) ///
+&gt;         xtitle(&quot;Years from surgery&quot;) ///
+&gt;                 name(RMSTdiff, replace)
+
+.                 
+. graph combine RMST RMSTdiff, nocopies
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_standsurv_RMST_diff.svg" alt="" /></p>
+
+<h2 id="references">References</h2>
+
+<p>Royston, P. Parmar, M. K. B. Restricted mean survival time: an alternative to the hazard ratio for the design and analysis of randomized trials with a time-to-event outcome.
+<em>BMC medical research methodology</em> 2013;<strong>13</strong>:152</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/software/stpm2_standsurv/standardized_survival_hazard/"><span
+      aria-hidden="true">&larr;</span> Hazard of Standardized Survival Functions</a></li>
+    
+
+    
+    <li class="next"><a href="/software/stpm2_standsurv/standardized_survival_af/">Attributable Fraction from Standardized Survival Functions <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+    <script src="/js/custom.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

@@ -8,7 +8,82 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/about/</guid>
+      <description>Background I am a Professor of Biostatistics working in the Biostatistics Research Group in the Department of Health Sciences at the University of Leicester, UK. I also work part-time in the Biostatistics Group in the Department of Medical Epidemiology and Biostatistics, Karolinska Institutet, Stockholm, Sweden.
+I have a variety of interests, mainly in the area of survival analysis in epidemiology. Much of my work focuses on the analysis from data from national cancer registries.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/publications_selected/</guid>
+      <description>A full list of my publications can be found here
+I have written a book with Patrick Royston titled Flexible parametric survival models using Stata: Beyond the Cox model.
+A review of the book can be found here
+In the software section of my webpage you will find some tutorials on using these models.</description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/talks/</guid>
+      <description>A full list of talks can be found here
+Below are some recent/upcoming talks.</description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/home/teaching/</link>
+      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/home/teaching/</guid>
+      <description>My main teaching is on the MSc Medical Statisics at the University of Leicester. I was a student on this course way back in $1991 / 1992$.
+I teach on the following teaching weeks for the MSc.,
+ Computationally Intensive Methods Survival Analysis Advanced Survival Analysis  Below are some upcoming course.
+ 15-17 January 2018 Competing risks and multi-state models, Swiss Epidemiology Winter School, Wengen, Switzerland.
+ 21-23 February 2018: I will teach a series of 1-day courses in Melbourne, Australia with Paul Dickman.</description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>/home/software/</link>
+      <pubDate>Tue, 21 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/home/software/</guid>
+      <description>I have developed a number of Stata commands. I have added some examples of using this code and intend to add to these over time.
+ stpm2 - flexible parametric survival models rcsgen - generate restricted cubic splines stpm2_standsurv - standardized survival curves after fitting an stpm2 model stpm2cif - cause-specific cumulative incidence function after fitting a stpm2 competing risks model stcrprep - data-preparation command to fit a range of competing risks models.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/home/contact/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

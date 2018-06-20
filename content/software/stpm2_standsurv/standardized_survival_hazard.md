@@ -10,17 +10,16 @@ image = ""
 caption = ""
 +++
 
-This will be a short tutorial as the ideas are very simple. I have previously discussed standardized survival functions. In survival analysis we know that there is a simple mathematical transformation from hazard to survival function and vice versa. The idea here is to transform  to a hazard function from the *standardized* survival function. Recall that a standardized survivak funnction; $S_s(t)$ is 
+This will be a short tutorial as the ideas are very simple. I have previously discussed standardized survival functions. In survival analysis we know that there is a simple mathematical transformation from hazard to survival function and vice versa. The idea here is to transform  to a hazard function from the *standardized* survival function. Recall that a standardized survival funnction; $S_s(t|X=x,Z)$ is estimated by
 
 $$
-S_s(t) = \frac{1}{N}\sum\_{i=1}^{N}S(t|X=x,Z)
+S_s(t|X=x,Z) = \frac{1}{N}\sum\_{i=1}^{N}S(t|X=x,Z=z_i)
 $$
-
 
 If we apply the usual transformation from survival to hazard to function ($h(t) = \frac{-d}{dt}\log[S(t)]$) we get
 
 $$
-h_s(t) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
+h_s(t|X=x,Z) = \frac{1}{N} \frac{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)h(t|X=x,Z=z_i)}{\sum\_{i=1}^{N}S(t|X=x,Z=z_i)}
 $$
 
 This is a weighted average of the $N$ individual hazard functions with weights equal to $S(t|X=x,Z=z_i)$, i.e. the predicted survival function for individual $i$ when forced to take a specific value of the exposure variable, $X$, but their observed values of confounding variables, $Z$.
@@ -105,7 +104,7 @@ I first calculate the standardized survival curves where everyone is forced to b
 ![](/statasvg/stpm2_standsurv_survival_stand_hormon_hazard.svg)
 
 
-If I run `stpm2_standsurv` again with the `hazard` option I get the corresponding hazard functions of the standardized curves.
+If I run `stpm2_standsurv` again with the `hazard` option I get the corresponding hazard functions of the standardized curves. This is the marginal hazard ratio (as a function of time).
 
 
 ```stata
@@ -138,9 +137,9 @@ I can also plot the ratio of these two hazard functions with a 95% confidence in
 
 ```stata
 . twoway (rarea _contrast2_1_lci _contrast2_1_uci timevar, color(red%30)) ///
->     (line _contrast2_1 timevar, color(black)) ///
+>     (line _contrast2_1 timevar, color(red)) ///
 >     , yscale(log) ///
->     ylabel(1 2 4 8 20 40,angle(h) format(%3.1f)) ///
+>     ylabel(0.5 1 2 4 8 20 40, angle(h) format(%3.1f)) ///
 >     xtitle("Years from surgery") ///
 >     legend(off) ///
 >     yscale(log) 
@@ -153,7 +152,7 @@ I can also plot the ratio of these two hazard functions with a 95% confidence in
 
 If I had used the `difference` argument of the `contrast()` option I would have obtained the absolute difference in the standardized hazard functions.
 
-I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events changes over follow-up time with a cumulative measure (i.e. standardized survival).
+I am still thinking about the usefulness of this - in general I prefer the idea of standardized survival functions rather than the corresponding hazard function. However, it is harder to see how the risk of events changes over follow-up time with a cumulative measure (i.e. standardized survival). 
 
 
 

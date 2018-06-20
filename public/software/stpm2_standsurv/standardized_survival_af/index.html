@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="author" content="Paul C Lambert">
+  <meta name="description" content="Professor of Biostatistics">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-105116466-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+
+  <link rel="alternate" href="" type="application/rss+xml" title="Paul C. Lambert">
+  <link rel="feed" href="" type="application/rss+xml" title="Paul C. Lambert">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="/software/stpm2_standsurv/standardized_survival_af/">
+
+  
+
+  <title>Attributable Fraction from Standardized Survival Functions | Paul C. Lambert</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paul C. Lambert</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Talks</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#software">
+            
+            <span>Software</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/interactivegraphs">
+            
+            <span>Interactive Graphs</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Attributable Fraction from Standardized Survival Functions</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-06-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Sun, Jun 17, 2018
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/stpm2">stpm2</a
+    >, 
+    
+    <a href="/tags/stpm2_standsurv">stpm2_standsurv</a
+    >, 
+    
+    <a href="/tags/software">software</a
+    >, 
+    
+    <a href="/tags/stata">Stata</a
+    >, 
+    
+    <a href="/tags/survival">survival</a
+    >, 
+    
+    <a href="/tags/standardization">Standardization</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_af%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Attributable%20Fraction%20from%20Standardized%20Survival%20Functions&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_af%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_af%2f&amp;title=Attributable%20Fraction%20from%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_af%2f&amp;title=Attributable%20Fraction%20from%20Standardized%20Survival%20Functions"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Attributable%20Fraction%20from%20Standardized%20Survival%20Functions&amp;body=%2fsoftware%2fstpm2_standsurv%2fstandardized_survival_af%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>This example will demonstrate how the attributable fraction ($AF$) can be obtained for survival data. It will also demonstrate the flexibility to calculate various function of standardized estimates through use of the `userfunction()&rsquo; option.</p>
+
+<p>The is defined in epidemiology as the proportion of preventable outcomes if all subjects had not been exposed to a particular exposure. i.e.</p>
+
+<p>$$
+AF = \frac{P(D=1) - P(D=1|X=0)}{P(D=1)}
+$$</p>
+
+<p>where $P(D)$ is proportion diseased in the whole population, and $P(D|X=0)$ is the probability of being diseased in the exposed. In observation studies there will be confounding and we need to consider potential confounders, $Z$.</p>
+
+<p>$$
+AF = \frac{E(D=1|Z) - E(D=1|X=0,Z)}{P(D|Z)}
+$$</p>
+
+<p>In survival studies the probability of being diseased is a function of time, so we define the $AF$ using the failure function, $F(t) = 1 - S(t)$, so $AF(t)$ is defined as</p>
+
+<p>$$
+AF(t) = \frac{E[F(t|Z)] - E[F(t|X=0,Z)]}{E[F(t|Z)]} = 1 - \frac{E[F(t|X=0,Z)]}{E[F(t|Z)]}
+$$</p>
+
+<p>$E[F(t|Z)]$ is the standardized failure function over covariate distribution, $Z$, and $E[F(t|X=0,Z)]$ is the standardized failure function over covariate distribution, $Z$ where all subjects forced to be unexposed. See Samualson (2008) for some background.</p>
+
+<h2 id="example">Example</h2>
+
+<p>I will use the Rotterdam Breast cancer data. The code below loads and <code>stset</code>&rsquo;s the data and then fits a model using <code>stpm2</code>.</p>
+
+<pre><code class="language-stata">. clear all
+
+. use https://www.pclambert.net/data/rott2b, 
+(Rotterdam breast cancer data (augmented with cause of death))
+
+. stset os, f(osi==1) scale(12) exit(time 120)
+
+     failure event:  osi == 1
+obs. time interval:  (0, os]
+ exit on or before:  time 120
+    t for analysis:  time/12
+
+------------------------------------------------------------------------------
+      2,982  total observations
+          0  exclusions
+------------------------------------------------------------------------------
+      2,982  observations remaining, representing
+      1,171  failures in single-record/single-failure data
+ 20,002.424  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =        10
+
+. stpm2 hormon age enodes pr_1, scale(hazard) df(4) eform nolog 
+
+Log likelihood = -2668.4925                     Number of obs     =      2,982
+
+------------------------------------------------------------------------------
+             |     exp(b)   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+xb           |
+      hormon |   .7906432   .0715077    -2.60   0.009       .66221    .9439854
+         age |   1.013244   .0024119     5.53   0.000     1.008528    1.017983
+      enodes |   .1132534   .0110135   -22.40   0.000     .0935998    .1370337
+        pr_1 |   .9064855   .0119282    -7.46   0.000     .8834055    .9301685
+       _rcs1 |   2.632579    .073494    34.67   0.000     2.492403    2.780638
+       _rcs2 |   1.184191   .0329234     6.08   0.000     1.121389     1.25051
+       _rcs3 |   1.020234   .0150787     1.36   0.175     .9911046     1.05022
+       _rcs4 |    .996572   .0073038    -0.47   0.639     .9823591    1.010991
+       _cons |   1.101826     .17688     0.60   0.546       .80439    1.509244
+------------------------------------------------------------------------------
+Note: Estimates are transformed only in the first equation.
+
+</code></pre>
+
+<p>It is worthwhile commenting what we mean be &ldquo;exposed&rdquo; here. Those on hormal treatment will be consided unexposed and those <strong>not</strong> taking the treatment will be unexposed, i.e our unepxosed group is when <code>hormon=1</code>.</p>
+
+<p>I will first use the <code>failure</code> option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using <code>.</code> within an <code>at()' option, i.e. using</code>at3(.)` in the example below.</p>
+
+<pre><code class="language-stata">. range timevar 0 10 101
+(2,881 missing values generated)
+
+. stpm2_standsurv, at1(hormon 0) at2(hormon 1) at3(.) timevar(timevar) ci atvar(F_hormon0 F_hormon1 F_all) failure
+
+. 
+. twoway  (line F_hormon0 timevar) ///
+&gt;     (line F_hormon1 timevar) ///
+&gt;     (line F_all timevar) ///
+&gt;         , legend(order(1 &quot;No treatment&quot; 2 &quot;Treatment&quot; 3 &quot;All&quot;) cols(1) pos(11)) /// 
+&gt;     ylabel(, format(%3.1f)) ///
+&gt;     ytitle(&quot;S(t)&quot;) ///
+&gt;     xtitle(&quot;Years from surgery&quot;) 
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_standsurv_failure_stand.svg" alt="" /></p>
+
+<p>These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the &ldquo;No Treatment&rdquo; function is closer to the combined function.The attributable fraction could be calculated using</p>
+
+<pre><code class="language-stata">. gen AF_tmp = 1 - F_hormon1/F_all
+(2,882 missing values generated)
+
+. list timevar F_hormon1 F_all AF_tmp if inlist(timevar,1,5,10), noobs
+
+  +--------------------------------------------+
+  | timevar   F_hormon1       F_all     AF_tmp |
+  |--------------------------------------------|
+  |       1   .01685169   .02035349    .172049 |
+  |       5   .22362896   .26167585    .145397 |
+  |      10   .39250923   .44808119   .1240221 |
+  +--------------------------------------------+
+
+</code></pre>
+
+<p>I have listed the $AF$ at 1, 5 and 10 years. If I just wanted a point estimate I could stop here. However, generally we will want to calculate confidence intervals. This is where the <code>userfunction()</code> option comes in. We can calculate a transformation of our standardized estimates with standard errors estimated using the delta method where derivatives are calculated numerically (similar to <code>nlcom</code> and <code>predictnl</code>). I &ldquo;borrowed&rdquo; the idea of a <code>userfunction()</code> from Arvid Sjölander&rsquo;s <code>stdReg</code> R package (Sjölander 2018).</p>
+
+<p>The user function needs to be written in Mata. The function should receive one argument <code>at</code>, which refer to the various <code>at</code> options and can be indexed by <code>at[1]</code>, <code>at[2]</code> etc. The code below calculates the AF assuming that <code>at1</code> is the standardized failure function in the population as a whole and <code>at2</code> is the standardized failure function assuming everyone is unexposed (takes hormonal treatment). We need to be careful to specify the <code>at()</code> options is this order.</p>
+
+<pre><code class="language-stata">. mata
+------------------------------------------------- mata (type end to exit) ------------------------------------------------------------------------------------------------------------------------------------
+: function calcAF(at) {
+&gt;     // at2 is F(t|unexposed,Z)
+&gt;     // at1 is F(t,Z)
+&gt;     return(1 - at[2]/at[1])
+&gt; }
+
+: end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+</code></pre>
+
+<p>Having defined the Mata function I just pass this to <code>stpm2_standsurv</code> using the <code>userfunction()</code> option.</p>
+
+<pre><code class="language-stata">. stpm2_standsurv, at1(.) at2(hormon 1) ci timevar(timevar) failure ///
+&gt;     userfunction(calcAF) userfunctionvar(AF) 
+
+</code></pre>
+
+<p>I have specified the <code>userfunctionvar(AF)</code> option so that the new variable is called <code>AF</code>. Without this option
+the default is <code>_userfunc</code>. I can now plot the AF as a function of follow-up time.</p>
+
+<pre><code class="language-stata">. twoway  (rarea AF_lci AF_uci timevar, color(red%30)) ///
+&gt;     (line AF timevar, lcolor(red)) ///
+&gt;     , legend(off) /// 
+&gt;     ylabel(0(0.05)0.3, format(%4.2f)) ///
+&gt;     ytitle(&quot;AF&quot;) ///
+&gt;     xtitle(&quot;Years from surgery&quot;) 
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_standsurv_AF_stand.svg" alt="" /></p>
+
+<p>I purposely chose for the effect of hormonal treatment to be proportional as this example is illustrative. When I relaxed this assumption, the AF was negative for the first few months.</p>
+
+<p>Samualson (2008) defines alternative based on the hazard function. I am less keen on this than the use of the survival function, but show how this can be
+estimated using <code>stpm2_standsurv</code> for completeness.</p>
+
+<p>Samualson defines this is the attributable hazard fraction. The equation is similar to the AF defined above, but we replace the failure function with the hazard function.</p>
+
+<p>$$
+AHF(t) = \frac{E[\lambda(t|Z)] - E[\lambda(t|X=0,Z)]}{E[\lambda(t|Z)]} = 1 - \frac{E[\lambda(t|X=0,Z)]}{E[\lambda(t|Z)]}
+$$</p>
+
+<p>This give the proportion of preventable events <strong>at</strong> time $t$ rather than <strong>by</strong> time $t$.</p>
+
+<p>See the page of <a href="/software/stpm2_standsurv/standardized_survival_hazard/">The hazard function of the standardized survival curve.</a> for a description of standardized hazard functions.</p>
+
+<p>As I just have to replace the failure probability with the hazard function, I can just use the same Mata function. This means that I just have the change the option <code>failure</code> to <code>hazard</code> in <code>stpm2_standsurv</code>.</p>
+
+<pre><code class="language-stata">. drop _at*
+
+. stpm2_standsurv, at1(.) at2(hormon 1) ci timevar(timevar) hazard ///
+&gt;     userfunction(calcAF) userfunctionvar(AHF) 
+
+</code></pre>
+
+<p>I can now plot the results.</p>
+
+<pre><code class="language-stata">. twoway  (rarea AHF_lci AHF_uci timevar, color(red%30)) ///
+&gt;     (line AHF timevar, lcolor(red)) ///
+&gt;     , legend(off) /// 
+&gt;     ylabel(0(0.05)0.3, format(%4.2f)) ///
+&gt;     ytitle(&quot;AHF&quot;) ///
+&gt;     xtitle(&quot;Years from surgery&quot;) 
+
+</code></pre>
+
+<p><img src="/statasvg/stpm2_standsurv_AHF_stand.svg" alt="" /></p>
+
+<h2 id="references">References</h2>
+
+<p>Samuelsen S.O., Eide G.E. Attributable fractions with survival data. <em>Statistics in Medicine</em> 2008;<strong>27</strong>:1447&ndash;1467</p>
+
+<p>Sjölander A. Estimation of causal effect measures with the R-package stdReg.<em>European Journal of Epidemiology</em> 2018</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="/software/stpm2_standsurv/standardized_survival_rmst/"><span
+      aria-hidden="true">&larr;</span> RMST of Standardized Survival Functions</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Paul C Lambert &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.2/imagesloaded.pkgd.min.js" integrity="sha512-iHzEu7GbSc705hE2skyH6/AlTpOfBmkx7nUqTLGzPYR+C1tRaItbRlJ7hT/D3YQ9SV0fqLKzp4XY9wKulTBGTw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js" integrity="sha512-Z5heTz36xTemt1TbtbfXtTq5lMfYnOkXM2/eWcTTiLU01+Sw4ku1i7vScDc8fWhrP2abz9GQzgKH5NGBLoYlAw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js" integrity="sha512-CDeU7pRtkPX6XJtF/gcFWlEwyaX7mcAp5sO3VIu/ylsdR74wEw4wmBpD5yYTrmMAiAboi9thyBUr1vXRPA7t0Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+    <script src="/js/custom.js"></script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

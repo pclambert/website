@@ -16,11 +16,11 @@ caption = ""
 
 +++
 
-4-9 June 2018. Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Veneto Italy. Further details available [here](http://cansurv.net/).
+4-9 June 2018. Statistical methods for population-based cancer survival analysis, Veneto, Italy. [http://cansurv.net/](http://cansurv.net/).
 
-26 February - 2 March 2018: Paul Dickman and I will teach a 5-day course on statistical methods for population-based cancer survival analysis in Adelaide, Australia. Further details will be provided shortly.
+26 February - 2 March 2018: Statistical methods for population-based cancer survival analysis. Adelaide, Australia. 
 
-21-23 February 2018: I will teach a series of 1-day courses in Melbourne, Australia with Paul Dickman. Further details can be found [here](http://www.vicbiostat.org.au/vicbiostat-summer-school-2018).
+21-23 February 2018: Flexible parametric surival models in epidemiology 
 
 15-17 January 2018 Parametric Competing Risks and Multistate models, [_Swiss Epidemiology Winter School_](https://www.epi-winterschool.org), Wengen, Switzerland.
 

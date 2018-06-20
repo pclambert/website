@@ -7,8 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
-    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/software/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Attributable Fraction from Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_af/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_af/</guid>
+      <description>This example will demonstrate how the attributable fraction ($AF$) can be obtained for survival data. It will also demonstrate the flexibility to calculate various function of standardized estimates through use of the `userfunction()&amp;rsquo; option.
+The is defined in epidemiology as the proportion of preventable outcomes if all subjects had not been exposed to a particular exposure. i.e.
+$$ AF = \frac{P(D=1) - P(D=1|X=0)}{P(D=1)} $$
+where $P(D)$ is proportion diseased in the whole population, and $P(D|X=0)$ is the probability of being diseased in the exposed.</description>
+    </item>
+    
+    <item>
+      <title>RMST of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_rmst/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_rmst/</guid>
+      <description>Here I will show another useful measure from standardized survival functions. There have been several papers promoting the use of restricted mean survival time (RMST) in clinical trials. The arguments are (i) ease of interpretation (though I am not convinced a restricted mean is that easy to explain) and (ii) providing a simple summary in the presence of non-proportional hazards. See Royston and Parmar (2013) for a description of the use of the measure in RCTs.</description>
+    </item>
+    
+    <item>
+      <title>Hazard of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_hazard/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_hazard/</guid>
+      <description>This will be a short tutorial as the ideas are very simple. I have previously discussed standardized survival functions. In survival analysis we know that there is a simple mathematical transformation from hazard to survival function and vice versa. The idea here is to transform to a hazard function from the standardized survival function. Recall that a standardized survival funnction; $S_s(t|X=x,Z)$ is estimated by
+$$ S_s(t|X=x,Z) = \frac{1}{N}\sum_{i=1}^{N}S(t|X=x,Z=z_i) $$</description>
+    </item>
+    
+    <item>
+      <title>Centiles of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_centiles/</link>
+      <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_centiles/</guid>
+      <description>Background In the previous tutorial I used stpm2_standsurv to obtain standardized survival functions. In this tutorial I show the first of a number of different measures of the standardized survival function where I obtain centiles of the standardized survival function.
+As a reminder a centile of a survival function can be obtanined by solving $S(t) = \alpha$ for $t$. For example, for the median survival time we set $\alpha = 0.</description>
+    </item>
     
     <item>
       <title>stpm2_standsurv</title>
@@ -16,21 +59,8 @@
       <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stpm2_standsurv/</guid>
-      <description>
-
-&lt;p&gt;The &lt;code&gt;stpm2_standsurv&lt;/code&gt; estimates standardized survival curves and related measures. It also allows various contrasts between the standardized functions. It is a post-estimation command and is used after fitting an &lt;code&gt;stpm2&lt;/code&gt;model.&lt;/p&gt;
-
-&lt;h2 id=&#34;using-stpm2-standsurv&#34;&gt;Using &lt;code&gt;stpm2_standsurv&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Standardized survival functions and contrasts.&lt;/li&gt;
-&lt;li&gt;Centiles of the standardized survival function.&lt;/li&gt;
-&lt;li&gt;Restricted mean survival using standardized survival functions.&lt;/li&gt;
-&lt;li&gt;The hazard function of the standardized survival curve.&lt;/li&gt;
-&lt;li&gt;Estimating attributable fractions in cohort studies&lt;/li&gt;
-&lt;li&gt;Standardized cause-specific cumulative incidence functions.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>The stpm2_standsurv estimates standardized survival curves and related measures. It also allows various contrasts between the standardized functions. It is a post-estimation command and is used after fitting an stpm2 model.
+Using stpm2_standsurv  Standardized survival functions and contrasts. Centiles of the standardized survival function. Restricted mean survival using standardized survival functions. The hazard function of the standardized survival curve. Estimating attributable fractions in cohort studies Standardized cause-specific cumulative incidence functions.</description>
     </item>
     
     <item>
@@ -39,20 +69,8 @@
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/rcsgen/</guid>
-      <description>
-
-&lt;p&gt;The &lt;code&gt;rcsgen&lt;/code&gt; command generates basis function for restricted cubic splines. The command is used by my &lt;code&gt;stpm2&lt;/code&gt; command to fit flexible parameric survival models. It has a number of advantages over Stata&amp;rsquo;s inbuilt &lt;code&gt;mkspline&lt;/code&gt; command, which will be demonstrated in the tutorials below.&lt;/p&gt;
-
-&lt;h2 id=&#34;using-rcsgen&#34;&gt;Using &lt;code&gt;rcsgen&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generating splines - use of the &lt;code&gt;knots()&lt;/code&gt;, &lt;code&gt;bkknots()&lt;/code&gt; and &lt;code&gt;percentiles()&lt;/code&gt; options.&lt;/li&gt;
-&lt;li&gt;Using the &lt;code&gt;scalar()&lt;/code&gt; option for predictions.&lt;/li&gt;
-&lt;li&gt;Using the &lt;code&gt;center()&lt;/code&gt; optin for easier predictions&lt;/li&gt;
-&lt;li&gt;Some issues when orthogonalising.&lt;/li&gt;
-&lt;li&gt;The derivative of resicted cubic spline function (the &lt;code&gt;dgen()&lt;/code&gt; option).&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>The rcsgen command generates basis function for restricted cubic splines. The command is used by my stpm2 command to fit flexible parameric survival models. It has a number of advantages over Stata&amp;rsquo;s inbuilt mkspline command, which will be demonstrated in the tutorials below.
+Using rcsgen  Generating splines - use of the knots(), bkknots() and percentiles() options. Using the scalar() option for predictions. Using the center() optin for easier predictions Some issues when orthogonalising.</description>
     </item>
     
     <item>
@@ -61,537 +79,17 @@
       <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stpm2/knot_positions_sensitivity/</guid>
-      <description>
-
-&lt;h1 id=&#34;sensitivity-analysis-to-the-location-of-knots&#34;&gt;Sensitivity analysis to the location of knots&lt;/h1&gt;
-
-&lt;p&gt;When using &lt;code&gt;stpm2&lt;/code&gt; with the &lt;code&gt;df()&lt;/code&gt; option the location of the knots for the restricted cubic splines are selected using the defaults. These are the based at the centiles of $\ln(t)$ for the events (i.e. the non censored observations). The boundary knots are placed at the minimum and maximum log event times. For example, with 5 knots there will be knots placed at the $0^{th}$, $25^{th}$, $50^{th}$, $75^{th}$, and $100^{th}$ centiles of the log event times. The location of the internal knots can be changed using the &lt;code&gt;knots()&lt;/code&gt; option and the location of the boundary knots can be changed using the &lt;code&gt;bknots()&lt;/code&gt; option.&lt;/p&gt;
-
-&lt;p&gt;I was asked recently by Enzo Coviello why we use these knot locations and why not the knot locations suggested by Frank Harrell when using restricted cubic spines in his execellent book &lt;em&gt;Regression Modeling Strategies: With Applications to Linear Models, Logistic Regression, and Survival Analysis&lt;/em&gt;. The table below shows the knot locations suggested by Harrell and those we use in &lt;code&gt;stpm2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;No. of knots&lt;/th&gt;
-&lt;th&gt;Percentiles (Harrell)&lt;/th&gt;
-&lt;th&gt;Percentiles (&lt;code&gt;stpm2&lt;/code&gt;)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;10 50 90&lt;/td&gt;
-&lt;td&gt;0 50 100&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;5 35 65 95&lt;/td&gt;
-&lt;td&gt;0  33 67 100&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;5 27.5 50 72.5 95&lt;/td&gt;
-&lt;td&gt;0 25 50 75 100&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;5 23 41 59 77 95&lt;/td&gt;
-&lt;td&gt;0 20 40 60 80 100&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;2.5 18.33 34.17 50 65.83 81.67 97.5&lt;/td&gt;
-&lt;td&gt;0 17 33 50 67 83 100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;We have performed a number of sensitivity analysis to internal knot location, i.e. still keeping the boundary knots at the minimum and maximum log event times, and have found predicted hazard and survival functions to be very robust to these changes. However, we have not changed the boundary knots so much. The only time I can remember this is when fitting cure models (Andersson &lt;em&gt;et al.&lt;/em&gt; 2011).&lt;/p&gt;
-
-&lt;p&gt;In my reply to Enzo I explained that we had motivated our choice of knots by the fact that it is better not to make linearity assumptions within the range of the data, but the linearity assumption outside the range of the data adds some stability to the function at the extremes. I also ran a very quick simulation study based on the same scenarios in Mark Rutherford&amp;rsquo;s simulation paper (Rutherford 2015 &lt;em&gt;et al.&lt;/em&gt;). I extend that simulation study here.&lt;/p&gt;
-
-&lt;p&gt;I will simulate the same 4 scenarios as in Mark&amp;rsquo;s paper, but will not simulate any covariate effects as I am only really interested in how well the restricted cubic spline function performs. Each of the scenarios was simulated from a mixture Weibull distributon,&lt;/p&gt;
-
-&lt;p&gt;$$
-S(t) = \pi \exp(-\lambda_1 t^{\gamma_1}) + (1-\pi)\exp(-\lambda_2 t^{\gamma_2})
-$$&lt;/p&gt;
-
-&lt;p&gt;The following parameters are used for each scenario,&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Scenario&lt;/th&gt;
-&lt;th&gt;$\lambda_1$&lt;/th&gt;
-&lt;th&gt;$\lambda_1$&lt;/th&gt;
-&lt;th&gt;$\gamma_1$&lt;/th&gt;
-&lt;th&gt;$\gamma_2$&lt;/th&gt;
-&lt;th&gt;$\pi$&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0.6&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;0.8&lt;/td&gt;
-&lt;td&gt;–&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;0.2&lt;/td&gt;
-&lt;td&gt;1.6&lt;/td&gt;
-&lt;td&gt;0.8&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;0.2&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;1.5&lt;/td&gt;
-&lt;td&gt;0.5&lt;/td&gt;
-&lt;td&gt;0.5&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;0.03&lt;/td&gt;
-&lt;td&gt;0.3&lt;/td&gt;
-&lt;td&gt;1.9&lt;/td&gt;
-&lt;td&gt;2.5&lt;/td&gt;
-&lt;td&gt;0.7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The true survival and the hazard functions can be plotted for each scenario. Below is a program I use to do this. I first declare some local macros to define the Weibull mixture parameters in each scenario. These will also be used when running the simulations.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. local scenario1 lambda1(0.6) lambda2(0.6) gamma1(0.8) gamma2(0.8) pi(1) maxt(5)
-
-. local scenario2 lambda1(0.2) lambda2(1.6) gamma1(0.8) gamma2(1) pi(0.2) maxt(5)
-
-. local scenario3 lambda1(1) lambda2(1) gamma1(1.5) gamma2(0.5) pi(0.5) maxt(5)
-
-. local scenario4 lambda1(0.03) lambda2(0.3) gamma1(1.9) gamma2(2.5) pi(0.7) maxt(5)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I can then delclare and run the program to plot the true survival and hazard functions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. capture pr drop weibmixplot
-
-. program define weibmixplot
-  1.   syntax [, OBS(integer 1000) lambda1(real 1) lambda2(real 1) ///
-&amp;gt;       gamma1(real 1) gamma2(real 1) pi(real 0.5) maxt(real 5)  scenario(integer 1)]
-  2.   local S1 exp(-`lambda1&#39;*x^(`gamma1&#39;))
-  3.   local S2 exp(-`lambda2&#39;*x^(`gamma2&#39;))
-  4.   local h1 `lambda1&#39;*`gamma1&#39;*x^(`gamma1&#39; - 1)
-  5.   local h2 `lambda2&#39;*`gamma2&#39;*x^(`gamma2&#39; - 1)
-  6.   
-.   twoway function y = `pi&#39;*`S1&#39; + (1-`pi&#39;)*`S2&#39; ///
-&amp;gt;     , range(0 `maxt&#39;) name(s`scenario&#39;,replace) ///
-&amp;gt;     xtitle(&amp;quot;Time (years)&amp;quot;) ///
-&amp;gt;     ytitle(&amp;quot;S(t)&amp;quot;) ///
-&amp;gt;     ylabel(,angle(h) format(%3.1f)) ///
-&amp;gt;         title(&amp;quot;Scenario `scenario&#39;&amp;quot;)
-  7.   twoway function y = (`pi&#39;*`h1&#39;*`S1&#39; +(1-`pi&#39;)*`h2&#39;*`S2&#39;) / ///
-&amp;gt;                       (`pi&#39;*`S1&#39; + (1-`pi&#39;)*`S2&#39;) ///
-&amp;gt;     , range(0 `maxt&#39;) name(h`scenario&#39;,replace) ///
-&amp;gt;     xtitle(&amp;quot;Time (years)&amp;quot;) ///
-&amp;gt;     ytitle(&amp;quot;h(t)&amp;quot;) ///
-&amp;gt;     ylabel(,angle(h) format(%3.1f)) ///
-&amp;gt;         title(&amp;quot;Scenario `scenario&#39;&amp;quot;)
-  8. end
-
-. 
-. forvalues i = 1/4 {
-  2.         weibmixplot ,  `scenario`i&#39;&#39; scenario(`i&#39;)
-  3. }
-
-. graph combine s1 s2 s3 s4, nocopies name(true_s, replace) title(&amp;quot;Survival functions&amp;quot;)
-
-. graph combine h1 h2 h3 h4, nocopies name(true_h, replace) title(&amp;quot;Hazard functions&amp;quot;)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The true survival function for each scenario is shown below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/knot_position_true_survival.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;and here are the true hazard functions.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/knot_position_true_hazard.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For more details on the choice of these functions see Rutherford &lt;em&gt;et al.&lt;/em&gt; 2015.&lt;/p&gt;
-
-&lt;h3 id=&#34;simulation-program&#34;&gt;Simulation program&lt;/h3&gt;
-
-&lt;p&gt;In order to peform a simulation study I will write a program that does three jobs. It will (i) simulate the data, (ii) analyse the data (perhaps using different methods/models) and (iii) store the results. Once I have written the program I can use Stata&amp;rsquo;s &lt;code&gt;simulate&lt;/code&gt; command to run my program many times (e.g. 1000). In my program I will fit models with 4, 5 and 6 df (5, 6 and 7 knots) and use &lt;code&gt;stpm2&lt;/code&gt;&amp;rsquo;s default knot positions and the knot positions given by Harrell. I will then store the AIC and BIC so that these can then be compared. The full program is shown below and I will then explain some of the lines of code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;clear all
-program define enzosim, rclass
-  syntax [, OBS(integer 1000) lambda1(real 1) lambda2(real 1) ///
-      gamma1(real 1) gamma2(real 1) pi(real 0.5) maxt(real 5)]
-  clear
-  set obs `obs&#39;
-  survsim t d, mixture lambda(`lambda1&#39; `lambda2&#39;) gamma(`gamma1&#39; `gamma2&#39;) ///
-    pmix(`pi&#39;) maxt(`maxt&#39;)
-  replace t = ceil(t*365.24)/365.24
-  stset t, f(d==1)
-  local harrell4 27.5 50 72.5
-  local harrell4b 5 95
-  local harrell5 23 41 59 77
-  local harrell5b 5 95
-  local harrell6 18.33 34.17 50 65.83 81.67
-  local harrell6b 2.5 97.5
-  foreach i in 4 5 6  {
-    stpm2, df(`i&#39;) scale(hazard)
-    return scalar AIC1_df`i&#39; = e(AIC)
-    return scalar BIC1_df`i&#39; = e(BIC)
-    stpm2, knots(`harrell`i&#39;&#39;) knscale(centile) scale(hazard) bknots(`harrell`i&#39;b&#39;)
-    return scalar AIC2_df`i&#39; = e(AIC)
-    return scalar BIC2_df`i&#39; = e(BIC)
-  }
-  ereturn clear
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I first drop the program as I need to create a new version whilst I am editing it (fixing bugs etc). I name the program &lt;code&gt;enzosim&lt;/code&gt; and make it an &lt;code&gt;rclass&lt;/code&gt; program as I want it to return some results. I use the &lt;code&gt;syntax&lt;/code&gt; command to allow my program to take options. The options include the number of observations in each simulated data set, the parameters of the mixture Weibull distribution and length of follow-up. Each of these is given a default value.&lt;/p&gt;
-
-&lt;p&gt;The next five lines are as follows,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;clear
-set obs `obs&#39;
-survsim t d, mixture lambda(`lambda1&#39; `lambda2&#39;) gamma(`gamma1&#39; `gamma2&#39;) ///
-  pmix(`pi&#39;) maxt(`maxt&#39;)
-replace t = ceil(t*365.24)/365.24
-stset t, f(d==1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I first clear any data in memory and set the observations to whatever was specified in the &lt;code&gt;obs()&lt;/code&gt; option (or use the default of 1000 if not specified. I then use the &lt;code&gt;survsim&lt;/code&gt; command to simulate from the mixture Weibull model (Crowther and Lambert 2012). The will create two new variables &lt;code&gt;t&lt;/code&gt; (the survival time) and &lt;code&gt;d&lt;/code&gt; the event indicator. The &lt;code&gt;maxt()&lt;/code&gt; option means that any simulated time after 5 years will be censored at 5 years. Note that &lt;code&gt;survsim&lt;/code&gt; uses the parameters I pass to my program for the mixture Weibull distribution. After generating data in years, I transform to days and round up to the nearest integer and then transform back to years. The reason for this is that some very small survival times can lead to numerical problems. It also better reflects real data, where survival is often measured to the nearest day. I then &lt;code&gt;stset&lt;/code&gt; the data so I can now fit some models.&lt;/p&gt;
-
-&lt;p&gt;I then declare some local macros to define the knots positions given by Harrell,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;local harrell4 27.5 50 72.5
-local harrell4b 5 95
-local harrell5 23 41 59 77
-local harrell5b 5 95
-local harrell6 18.33 34.17 50 65.83 81.67
-local harrell6b 2.5 97.5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I have to give the internal knots and the boundary knots separately.&lt;/p&gt;
-
-&lt;p&gt;I then write a small loop that loops over different degrees of freedom (4, 5 and 6).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;foreach i in 4 5 6  {
-  stpm2, df(`i&#39;) scale(hazard)
-  return scalar AIC1_df`i&#39; = e(AIC)
-  return scalar BIC1_df`i&#39; = e(BIC)
-  stpm2, knots(`harrell`i&#39;&#39;) knscale(centile) scale(hazard) bknots(`harrell`i&#39;b&#39;)
-  return scalar AIC2_df`i&#39; = e(AIC)
-  return scalar BIC2_df`i&#39; = e(BIC)
- }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For each df an &lt;code&gt;stpm2&lt;/code&gt; model is fitted using the default knot placement and then using knot positions recommended by  Harrell. Note the use of the &lt;code&gt;knots()&lt;/code&gt; option for the internal knots, the &lt;code&gt;bknots()&lt;/code&gt; option for the boundary knots and the &lt;code&gt;knscale(centile)&lt;/code&gt; option so I can specify the knots as centiles rather than specific point in time (the default). After fitting each model I use &lt;code&gt;return&lt;/code&gt; to store both the AIC and BIC.&lt;/p&gt;
-
-&lt;p&gt;The final line of code,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;ereturn clear
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;is just a bit of laziness on my part as if you do not specify anything to monitor when using the &lt;code&gt;simulate&lt;/code&gt; command it will monitor the coefficients of the model in memory. If no model is stored in memory then it will monitor anything stored in &lt;code&gt;r()&lt;/code&gt;, which is what I want. Therefore, I use &lt;code&gt;ereturn clear&lt;/code&gt; to remove the last model from memory and now I do not have to give a long list of the things I want to monitor.&lt;/p&gt;
-
-&lt;h3 id=&#34;testing-the-simulation-program&#34;&gt;Testing the simulation program&lt;/h3&gt;
-
-&lt;p&gt;When I am developing a simulation program I will run it once. This allows me to check any variables that have been created, spot any potential bugs, make sure any analysis I am performing is correct and make sure the results I want to store are actually stored. If I just type &lt;code&gt;enzosim&lt;/code&gt; then it will run my program using the default values specified in the &lt;code&gt;syntax&lt;/code&gt; statement of the program. This give the following results,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. enzosim,
-number of observations (_N) was 0, now 1,000
-Warning: 8 survival times were above the upper limit of 5
-         They have been set to 5 and can be considered censored
-         You can identify them by _survsim_rc = 3
-
-     failure event:  d == 1
-obs. time interval:  (0, t]
- exit on or before:  failure
-
-------------------------------------------------------------------------------
-      1,000  total observations
-          0  exclusions
-------------------------------------------------------------------------------
-      1,000  observations remaining, representing
-        992  failures in single-record/single-failure data
-  1,006.047  total analysis time at risk and under observation
-                                                at risk from t =         0
-                                     earliest observed entry t =         0
-                                          last observed exit t =         5
-
-Iteration 0:   log likelihood = -1615.2795  
-Iteration 1:   log likelihood = -1615.0025  
-Iteration 2:   log likelihood = -1615.0024  
-
-Log likelihood = -1615.0024                     Number of obs     =      1,000
-
-------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-xb           |
-       _rcs1 |   1.275779   .0422624    30.19   0.000     1.192946    1.358612
-       _rcs2 |  -.0492945   .0335147    -1.47   0.141    -.1149821    .0163931
-       _rcs3 |   .0072627    .019518     0.37   0.710    -.0309919    .0455174
-       _rcs4 |   .0009645   .0117572     0.08   0.935    -.0220792    .0240082
-       _cons |  -.5789954   .0405764   -14.27   0.000    -.6585236   -.4994671
-------------------------------------------------------------------------------
-
-..... remaining output has been omitted.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The program runs without error and fit the models I intend. I can check that everything I want stored is actually stored using &lt;code&gt;return list&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. return list
-
-scalars:
-           r(BIC2_df6) =  3275.609609295175
-           r(AIC2_df6) =  3241.325674693275
-           r(BIC1_df6) =  3275.271719530712
-           r(AIC1_df6) =  3240.987784928811
-           r(BIC2_df5) =  3273.020999377406
-           r(AIC2_df5) =  3243.634769718634
-           r(BIC1_df5) =  3273.049041974547
-           r(AIC1_df5) =  3243.662812315775
-           r(BIC2_df4) =  3267.19499496639
-           r(AIC2_df4) =  3242.706470250746
-           r(BIC1_df4) =  3266.905797538291
-           r(AIC1_df4) =  3242.417272822648
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I can see that all the AIC and BIC values have been returned.&lt;/p&gt;
-
-&lt;h3 id=&#34;running-the-simulations&#34;&gt;Running the simulations&lt;/h3&gt;
-
-&lt;p&gt;Now I am ready to simulate 1000 data sets for each scenario using the &lt;code&gt;simulate&lt;/code&gt; command. I can loop over the 4 scenarios making use of the local macros already declared for each scenario.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;set seed 78126378
-forvalues i = 1/4 {
-  simulate , reps(1000) saving(sim_scenaro`i&#39;, replace double): enzosim, `scenario`i&#39;&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I pass the relevent local macro for the options for each scenario. The results are saved using the &lt;code&gt;saving&lt;/code&gt; option. Each of the created data sets will contain 1000 observations, one for each simulated data set. I then go and make a cup of coffee while I wait for the results&amp;hellip;&lt;/p&gt;
-
-&lt;h3 id=&#34;summarising-the-simulations&#34;&gt;Summarising the simulations&lt;/h3&gt;
-
-&lt;p&gt;Once the simulations have run I can start looking at the results. I will first plot the data comparing the AIC between the default knot placement with Harrell&amp;rsquo;s knot placement for each  of the 4, 5 ad 6 df models.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. forvalues s =1/4 {
-  2.   quietly {
-  3.     use sim_scenaro`s&#39;, replace
-  4.     forvalues df = 4/6 {
-  5.           gen AICdiff_df`df&#39; = AIC2_df`df&#39; - AIC1_df`df&#39;
-  6.           hist AICdiff_df`df&#39;, name(AIC`df&#39;, replace) ylabel(none) ///
-&amp;gt;                 ytitle(&amp;quot;&amp;quot;) xline(0) ///
-&amp;gt;                 xtitle(&amp;quot;Difference in AIC&amp;quot;) ///
-&amp;gt;                 title(&amp;quot;`df&#39; df&amp;quot;, ring(0) pos(1) size(*0.8))
-  7. 
-.     }
-  8.   }
-  9.   graph combine AIC4 AIC5 AIC6, cols(3) nocopies name(scenario`s&#39;, replace) ///
-&amp;gt;     ycommon xcommon title(&amp;quot;Scenario `s&#39;&amp;quot;, size(*0.8))
- 10. }
-
-. graph combine scenario1 scenario2 scenario3 scenario4, nocopies cols(1) imargin(0 0 0 0)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This code calculates the difference in the AIC between Harrell&amp;rsquo;s knot locations and &lt;code&gt;stpm2&lt;/code&gt;&amp;rsquo;s default knot locations. A positive value indicates a lower AIC for the default knot locations. Note there is no point calculating the difference in the BIC as well as this is identical to the difference in the AIC as the number of parameters is the same in the models we are comparing. The resulting plot can be seen below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/knot_position_sensitivity_AIC.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This plot shows that for all scenarios there tends to be a lower AIC for the default knot locations. This is particularly so for scenarios 2 and 3. The change in the AIC is much larger for these two scenarios.&lt;/p&gt;
-
-&lt;p&gt;I will next calculate the percentage of time the AIC is lower for the default knot locations.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. forvalues s =1/4 {
-  2.   quietly use sim_scenaro`s&#39;, replace
-  3.   display _newline &amp;quot;Scenario `s&#39;&amp;quot;
-  4.   display &amp;quot;------------&amp;quot;
-  5.   forvalues df = 4/6 {
-  6.     quietly count if AIC2_df`df&#39; &amp;gt; AIC1_df`df&#39;
-  7.     di &amp;quot;Default knot locations had lower AIC for `df&#39; df:&amp;quot; %4.1f 100*`r(N)&#39;/_N &amp;quot;%&amp;quot;
-  8.   }
-  9. }
-
-Scenario 1
-------------
-Default knot locations had lower AIC for 4 df:72.8%
-Default knot locations had lower AIC for 5 df:73.4%
-Default knot locations had lower AIC for 6 df:74.2%
-
-Scenario 2
-------------
-Default knot locations had lower AIC for 4 df:99.0%
-Default knot locations had lower AIC for 5 df:97.5%
-Default knot locations had lower AIC for 6 df:85.4%
-
-Scenario 3
-------------
-Default knot locations had lower AIC for 4 df:98.9%
-Default knot locations had lower AIC for 5 df:98.8%
-Default knot locations had lower AIC for 6 df:90.7%
-
-Scenario 4
-------------
-Default knot locations had lower AIC for 4 df:68.3%
-Default knot locations had lower AIC for 5 df:57.5%
-Default knot locations had lower AIC for 6 df:53.1%
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Again we can see the dominance of the default knot locations, particularly for scenarios 2 and 3.&lt;/p&gt;
-
-&lt;p&gt;Another question is to see which of the models fitted to each simulated data set gives the lowest AIC and whether this differs between the default knot locations and Harrell&amp;rsquo;s knot locations. I create some code to find the df with the lowest AIC and BIC.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. forvalues s =1/4 {
-  2.   quietly use sim_scenaro`s&#39;, replace
-  3.   egen double minAIC1 = rowmin(AIC1_df?)
-  4.   egen double minAIC2 = rowmin(AIC2_df?)
-  5.   gen AICmin1 = 4*(minAIC1==AIC1_df4) + 5*(minAIC1==AIC1_df5)+6*(minAIC1==AIC1_df6)
-  6.   gen AICmin2 = 4*(minAIC2==AIC2_df4) + 5*(minAIC2==AIC2_df5)+6*(minAIC2==AIC2_df6)
-  7.   egen double minBIC1 = rowmin(BIC1_df?)
-  8.   egen double minBIC2 = rowmin(BIC2_df?)
-  9.   gen BICmin1 = 4*(minBIC1==BIC1_df4) + 5*(minBIC1==BIC1_df5)+6*(minBIC1==BIC1_df6)
- 10.   gen BICmin2 = 4*(minBIC2==BIC2_df4) + 5*(minBIC2==BIC2_df5)+6*(minBIC2==BIC2_df6)
- 11.   di _newline &amp;quot;Scenario `s&#39;&amp;quot;
- 12.   di &amp;quot;AIC&amp;quot;
- 13.   tab AICmin1 AICmin2
- 14.   di &amp;quot;BIC&amp;quot;
- 15.   tab BICmin1 BICmin2
- 16. }
-
-Scenario 1
-AIC
-
-           |             AICmin2
-   AICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |       694         26          8 |       728 
-         5 |        23        106         25 |       154 
-         6 |        28          0         90 |       118 
------------+---------------------------------+----------
-     Total |       745        132        123 |     1,000 
-
-BIC
-
-           |        BICmin2
-   BICmin1 |         4          5 |     Total
------------+----------------------+----------
-         4 |       975          6 |       981 
-         5 |         7         10 |        17 
-         6 |         2          0 |         2 
------------+----------------------+----------
-     Total |       984         16 |     1,000 
-
-
-Scenario 2
-AIC
-
-           |             AICmin2
-   AICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |        59         20        379 |       458 
-         5 |         1         19        240 |       260 
-         6 |         2          0        280 |       282 
------------+---------------------------------+----------
-     Total |        62         39        899 |     1,000 
-
-BIC
-
-           |             BICmin2
-   BICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |       602         53        282 |       937 
-         5 |         1          5         40 |        46 
-         6 |         0          0         17 |        17 
------------+---------------------------------+----------
-     Total |       603         58        339 |     1,000 
-
-
-Scenario 3
-AIC
-
-           |             AICmin2
-   AICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |         8         10         52 |        70 
-         5 |         0         12        162 |       174 
-         6 |         2          0        754 |       756 
------------+---------------------------------+----------
-     Total |        10         22        968 |     1,000 
-
-BIC
-
-           |             BICmin2
-   BICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |       357         22        318 |       697 
-         5 |         4          8        119 |       131 
-         6 |         0          0        172 |       172 
------------+---------------------------------+----------
-     Total |       361         30        609 |     1,000 
-
-
-Scenario 4
-AIC
-
-           |             AICmin2
-   AICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |       528         83         14 |       625 
-         5 |        31        131         66 |       228 
-         6 |        20          4        123 |       147 
------------+---------------------------------+----------
-     Total |       579        218        203 |     1,000 
-
-BIC
-
-           |             BICmin2
-   BICmin1 |         4          5          6 |     Total
------------+---------------------------------+----------
-         4 |       935         24          5 |       964 
-         5 |         9         19          3 |        31 
-         6 |         1          0          4 |         5 
------------+---------------------------------+----------
-     Total |       945         43         12 |     1,000 
-
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What I find interesting is that there is a tendency for AIC to select fewer knots for the default knot locations. As above, this is especially so for scenarios 2 and 3. This is not the case for the more simple scenario 1. Here the truth is a Weibull distribution and so all models are overfitting when compared with the truth.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;rsquo;t think the differences we see here are that great and of course we are only looking at a few scenarios. However, it is reassuring to me that our default knot locations seem sensible. A more deatailed analysis would compare hazard and survival functions with the true function. When we use splines, I don&amp;rsquo;t really think that they represent the true model, but they should give a very good approximation to it. This is of crucial importance as with real data, we never know the true model.&lt;/p&gt;
-
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;Andersson, T.M.-L., Dickman, P.W., Eloranta, S., Lambert, P.C. Estimating and modelling cure in population-based cancer studies within the framework of flexible parametric survival models. &lt;em&gt;BMC Med Res Methodol&lt;/em&gt; 2011;&lt;strong&gt;11&lt;/strong&gt;:96&lt;/p&gt;
-
-&lt;p&gt;Crowther, M.J., Lambert, P.C. Simulating complex survival data. &lt;em&gt;The Stata Journal&lt;/em&gt; 2012;&lt;strong&gt;12&lt;/strong&gt;:674-687.&lt;/p&gt;
-
-&lt;p&gt;Harrell, F.E. &lt;em&gt;Regression modeling strategies with application to linear models, logistic regression and survival analysis&lt;/em&gt;. Springer, 2001&lt;/p&gt;
-
-&lt;p&gt;Rutherford, M.J., Crowther, M.J., Lambert, P.C. The use of restricted cubic splines to approximate complex hazard functions in the analysis of time-to-event data: a simulation study. &lt;em&gt;Journal of Statistical Computation and Simulation&lt;/em&gt; 2015;&lt;strong&gt;85&lt;/strong&gt;:777-793&lt;/p&gt;
-</description>
+      <description>Sensitivity analysis to the location of knots When using stpm2 with the df() option the location of the knots for the restricted cubic splines are selected using the defaults. These are the based at the centiles of $\ln(t)$ for the events (i.e. the non censored observations). The boundary knots are placed at the minimum and maximum log event times. For example, with 5 knots there will be knots placed at the $0^{th}$, $25^{th}$, $50^{th}$, $75^{th}$, and $100^{th}$ centiles of the log event times.</description>
+    </item>
+    
+    <item>
+      <title>Use of the timevar() option</title>
+      <link>/software/stpm2/stpm2_timevar/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2/stpm2_timevar/</guid>
+      <description>Background In this tutorial I will describe some simple use of the timevar() option when obtaining predictions after fitting a model using stpm2. When using Stata&amp;rsquo;s survival models, such as streg and stcox, predictions are made at the values of _t, which is each record&amp;rsquo;s event or censoring time. This is the default behaviour of stpm2.
+One of the advantages of parametric survival models is that we can predict various quantities (hazard, survival functions etc etc) at any value of time and for any covariate pattern as we have an equation which is a function of time and any covariates we have modelled.</description>
     </item>
     
     <item>
@@ -600,169 +98,8 @@ BIC
       <pubDate>Sun, 27 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/computational_benefits/</guid>
-      <description>&lt;p&gt;When using &lt;code&gt;stcrprep&lt;/code&gt; there are some computational benefits when compared to using Stata&amp;rsquo;s inbuilt &lt;code&gt;stcrreg&lt;/code&gt;. One reason for this is that everytime you fit a model using &lt;code&gt;stcrreg&lt;/code&gt; you the probability of censoring weights are calculated and the data must be expanded (in the background) when maximising the likelihood. When using &lt;code&gt;stcrprep&lt;/code&gt; you only need to do this once.&lt;/p&gt;
-
-&lt;p&gt;I have run some timings. If I fit a simple model to the embt1 data with risk score as the only covariate (2 dummy variables) then these are the timings no my current work laptop (Intel i5 - running Stata 15 MP2).&lt;/p&gt;
-
-&lt;p&gt;First I load and &lt;code&gt;stset&lt;/code&gt; the data.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/ebmt1_stata.dta, clear
-
-. stset time, failure(status==1) scale(365.25) id(patid) noshow
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, &lt;code&gt;stcrreg&lt;/code&gt; can be used&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer clear
-
-. timer on 1
-
-. stcrreg i.score, compete(status==2) nolog noshow
-
-Competing-risks regression                       No. of obs       =      1,977
-                                                 No. of subjects  =      1,977
-Failure event  : status == 1                     No. failed       =        456
-Competing event: status == 2                     No. competing    =        685
-                                                 No. censored     =        836
-
-                                                 Wald chi2(2)     =       9.87
-Log pseudolikelihood = -3333.3217                Prob &amp;gt; chi2      =     0.0072
-
-                              (Std. Err. adjusted for 1,977 clusters in patid)
-------------------------------------------------------------------------------
-             |               Robust
-          _t |        SHR   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       score |
-Medium risk  |   1.271221   .1554323     1.96   0.050     1.000333    1.615465
-  High risk  |   1.769853   .3238535     3.12   0.002     1.236465    2.533337
-------------------------------------------------------------------------------
-
-. timer off 1
-
-. timer list
-   1:     23.32 /        1 =      23.3150
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This takes 23.3 seconds to fit.&lt;/p&gt;
-
-&lt;p&gt;I now reload and &lt;code&gt;stset&lt;/code&gt; the data, but this time declaring both &lt;code&gt;status=1&lt;/code&gt; and &lt;code&gt;status=2&lt;/code&gt; as events.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/ebmt1_stata.dta, clear
-
-. stset time, failure(status==1,2) scale(365.25) id(patid)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can now run &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer on 2
-
-. stcrprep, events(status) keep(score) trans(1)   
-
-. timer off 2
-
-. timer list 2
-   2:      6.22 /        1 =       6.2240
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This takes  6.2 seconds to run. However, this only restructures the data and calculates the weights. To fit the model, we first generate the event indicator and  use &lt;code&gt;stset&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen      event = status == failcode
-
-. stset tstop [iw=weight_c], failure(event) enter(tstart) 
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We use &lt;code&gt;stcox&lt;/code&gt; to fit the model.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. timer on 3
-
-. stcox i.score
-
-         failure _d:  event
-   analysis time _t:  tstop
-  enter on or after:  time tstart
-             weight:  [iweight=weight_c]
-
-Iteration 0:   log likelihood = -3338.1244
-Iteration 1:   log likelihood = -3333.4173
-Iteration 2:   log likelihood = -3333.3113
-Iteration 3:   log likelihood = -3333.3112
-Refining estimates:
-Iteration 0:   log likelihood = -3333.3112
-
-Cox regression -- Breslow method for ties
-
-No. of subjects =       72,880                  Number of obs    =      72,880
-No. of failures =          456
-Time at risk    =   6026.27434
-                                                LR chi2(2)       =        9.63
-Log likelihood  =   -3333.3112                  Prob &amp;gt; chi2      =      0.0081
-
-------------------------------------------------------------------------------
-          _t | Haz. Ratio   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       score |
-Medium risk  |   1.271235   .1593392     1.91   0.056     .9943389    1.625238
-  High risk  |   1.769899   .3219273     3.14   0.002     1.239148     2.52798
-------------------------------------------------------------------------------
-
-. timer off 3
-
-. timer list
-   1:     23.32 /        1 =      23.3150
-   2:      6.22 /        1 =       6.2240
-   3:      1.41 /        1 =       1.4060
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This takes  1.4 seconds to run giving a combined total of  7.6 seconds. What is important is that if we want to fit other models (including other covariates etc), then we do not need to run &lt;code&gt;stcrprep&lt;/code&gt; again.&lt;/p&gt;
-
-&lt;p&gt;To assess the time on larger data I have expanded the data by 20 times and added a small random number to each time, so that there are no ties. I used the following code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;expand 20
-replace time = time + runiform()*0.0001
-replace patid = _n
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This leads to 19,770 indviduals in the analysis. The fact that there are no ties is perhaps a little unrealistic in a dataset this size, but this is still a usefull assessment of computational speed. The same analysis as above on this larger dataset gave the following times.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;command&lt;/th&gt;
-&lt;th&gt;Time&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;stcrreg&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;2066.3 seconds&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;stcrprep&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;890.2 seconds&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;stcox&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;46.1 seconds&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;I think this really highlights the benfits of restructuring the data and using &lt;code&gt;stcox&lt;/code&gt; in terms of computational time. Unless there is need to recalculate the probability of censoring weights, there is no need to do this every time you fit a model. Thus, in this case an &lt;code&gt;stcrreg&lt;/code&gt; model takes almost 35 minutes, whilst the same model using &lt;code&gt;stcox&lt;/code&gt; after using &lt;code&gt;stcrprep&lt;/code&gt; takes only 46 seconds.&lt;/p&gt;
-
-&lt;p&gt;It is worthwhile noting that Stata&amp;rsquo;s implementation of Fine and Grays proportional subhazards model using &lt;code&gt;stcrreg&lt;/code&gt; seems particularly slow. If I fit the model in R using &lt;code&gt;crr&lt;/code&gt; the model fitted to the expanded data it only takes 370 seconds compared to 2066 in Stata.&lt;/p&gt;
-
-&lt;p&gt;There are other benefits with using &lt;code&gt;stcox&lt;/code&gt; to fit the subhazards model, mainly because we can now use many of the other commands and extensions associated with &lt;code&gt;stcox&lt;/code&gt;. I will discuss these in other tutorials.&lt;/p&gt;
-</description>
+      <description>When using stcrprep there are some computational benefits when compared to using Stata&amp;rsquo;s inbuilt stcrreg. One reason for this is that everytime you fit a model using stcrreg you the probability of censoring weights are calculated and the data must be expanded (in the background) when maximising the likelihood. When using stcrprep you only need to do this once.
+I have run some timings. If I fit a simple model to the embt1 data with risk score as the only covariate (2 dummy variables) then these are the timings no my current work laptop (Intel i5 - running Stata 15 MP2).</description>
     </item>
     
     <item>
@@ -771,30 +108,7 @@ replace patid = _n
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/</guid>
-      <description>
-
-&lt;p&gt;stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using &lt;code&gt;stset&lt;/code&gt; it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using &lt;code&gt;sts graph&lt;/code&gt;.  In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using &lt;code&gt;stcox&lt;/code&gt;. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).&lt;/p&gt;
-
-&lt;p&gt;Below are some simple examples of using &lt;code&gt;stcrprep&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;h3 id=&#34;non-and-semi-parametric-methods&#34;&gt;Non and semi parametric methods&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stcrprep/nonparametriccif/&#34;&gt;Using sts graph for cause-specific CIFs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Using &lt;code&gt;stcox&lt;/code&gt; instead of &lt;code&gt;stcrreg&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stcrprep/computational_benefits/&#34;&gt;Computational benefits of using &lt;code&gt;stcrprep&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Schoenfeld residuals&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;parametric-models&#34;&gt;Parametric models&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Using &lt;code&gt;stpm2&lt;/code&gt; to model the cause-specific CIF&lt;/li&gt;
-&lt;li&gt;Alternative link functions.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>stcrprep prepares data for estimating and modelling cause-specific cumulative incidence functions using time-dependent weights. Once the data has been prepared and the weights incorporated using stset it is possible to obtain a graph of the non-parametric estimates of the cause-specific cumulative incidence function using sts graph. In addition a model that estimates subhazard ratios (equivalent to the Fine and Gray model) can be fitted using stcox. It is also possible to fit parametric models to directly estimate the cause-specific CIF (my main reason for developing the command).</description>
     </item>
     
     <item>
@@ -803,40 +117,9 @@ replace patid = _n
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stpm2/</guid>
-      <description>
-
-&lt;p&gt;&lt;code&gt;stpm2&lt;/code&gt; fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the  $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.&lt;/p&gt;
-
-&lt;p&gt;I have added some examples and aim to add to these.&lt;/p&gt;
-
-&lt;h2 id=&#34;proportional-hazards-models&#34;&gt;Proportional hazards models&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/comparewithcox/&#34;&gt;Comparison with a Cox model&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Simple simulation study to show agreement with Cox model.&lt;/li&gt;
-&lt;li&gt;Predicting hazard and survival functions (use of the &lt;code&gt;timevar()&lt;/code&gt; option)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/sensitivity_analysis/&#34;&gt;Sensitivity analysis for the number of knots&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/software/stpm2/knot_positions_sensitivity/&#34;&gt;The default knot positions - are they sensible?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;time-dependent-effects-non-proportional-hazards&#34;&gt;Time-dependent effects (non proportional hazards)&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Non-proportional hazards&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;relative-survival&#34;&gt;Relative survival&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A simple relative survival model&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;alternative-link-functions&#34;&gt;Alternative link functions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the logistic, probit and Aranda-Ordaz link functions.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>stpm2 fits flexible parametric survival models. These models use splines to model some transformation of the survial function. The most common is the $\log[-\log[S(t)]]$ link function, which fits proportional hazards models.
+I have added some examples and aim to add to these.
+Proportional hazards models  Comparison with a Cox model Simple simulation study to show agreement with Cox model. Predicting hazard and survival functions (use of the timevar() option) Sensitivity analysis for the number of knots.</description>
     </item>
     
     <item>
@@ -845,124 +128,8 @@ replace patid = _n
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stpm2/comparewithcox/</guid>
-      <description>
-
-&lt;h1 id=&#34;proportional-hazards-model&#34;&gt;Proportional hazards model&lt;/h1&gt;
-
-&lt;p&gt;We first load the example breast cancer data data using &lt;code&gt;webuse&lt;/code&gt; and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time and event indicator.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. webuse brcancer, clear
-(German breast cancer data)
-
-. stset rectime, f(censrec==1) scale(365.24)
-
-     failure event:  censrec == 1
-obs. time interval:  (0, rectime]
- exit on or before:  failure
-    t for analysis:  time/365.24
-
-------------------------------------------------------------------------------
-        686  total observations
-          0  exclusions
-------------------------------------------------------------------------------
-        686  observations remaining, representing
-        299  failures in single-record/single-failure data
-  2,112.036  total analysis time at risk and under observation
-                                                at risk from t =         0
-                                     earliest observed entry t =         0
-                                          last observed exit t =  7.280145
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;scale(365.25)&lt;/code&gt; option converts the times recorded in days to years.&lt;/p&gt;
-
-&lt;p&gt;A standard Cox proportional hazards model can be defined as follows,&lt;/p&gt;
-
-&lt;p&gt;$$
-h_i(t|\mathbf{x}_i)=h_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
-$$&lt;/p&gt;
-
-&lt;p&gt;A key point about the Cox model is that we do not estimate the baseline hazard, $h_0(t)$, as this cancels out in the partial likelihood, so we only estimate the relative effects, i.e. hazard ratios.&lt;/p&gt;
-
-&lt;p&gt;We can now fit a Cox model in Stata with &lt;code&gt;hormon&lt;/code&gt; as the only covariate.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcox hormon, 
-
-         failure _d:  censrec == 1
-   analysis time _t:  rectime/365.24
-
-Iteration 0:   log likelihood = -1788.1731
-Iteration 1:   log likelihood =  -1783.774
-Iteration 2:   log likelihood =  -1783.765
-Iteration 3:   log likelihood =  -1783.765
-Refining estimates:
-Iteration 0:   log likelihood =  -1783.765
-
-Cox regression -- Breslow method for ties
-
-No. of subjects =          686                  Number of obs    =         686
-No. of failures =          299
-Time at risk    =  2112.035922
-                                                LR chi2(1)       =        8.82
-Log likelihood  =    -1783.765                  Prob &amp;gt; chi2      =      0.0030
-
-------------------------------------------------------------------------------
-          _t | Haz. Ratio   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-      hormon |   .6949616   .0869009    -2.91   0.004      .543905    .8879705
-------------------------------------------------------------------------------
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We will now fit a flexible parametric survival model. Here are model is on the log &lt;em&gt;cumulative&lt;/em&gt; hazard scale, so our model is defined using uppercase H rather than lowercase h.&lt;/p&gt;
-
-&lt;p&gt;$$
-H_i(t|\mathbf{x}_i)=H_0(t)\exp\left(\mathbf{x}_i\boldsymbol{\beta}\right)
-$$&lt;/p&gt;
-
-&lt;p&gt;Do we have to worry about the switch from hazard function to cumulative hazard function? Well, the answer is &amp;ldquo;No&amp;rdquo; as if we have proportional hazards we also have proportional cumulative hazards.&lt;/p&gt;
-
-&lt;p&gt;In the flexible parametric survival model we estimate the baseline using restriced cubic splines. So we need additional parameters to estimate the baseline (the log cumulative hazard in this case).  The linear predictor is,&lt;/p&gt;
-
-&lt;p&gt;$$
-\ln[H(t|\mathbf{x}_i)] = \eta_i(t) = s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right) + \mathbf{x}_i \boldsymbol{\beta}
-$$&lt;/p&gt;
-
-&lt;p&gt;where $s\left(\ln(t)|\boldsymbol{\gamma}, \mathbf{k}_{0}\right)$ is a restriced cubic spline function of log(time).&lt;/p&gt;
-
-&lt;p&gt;We now fit this model in Stata using &lt;code&gt;stpm2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stpm2 hormon, df(3) scale(hazard) eform
-
-Iteration 0:   log likelihood = -671.75275  
-Iteration 1:   log likelihood = -670.39949  
-Iteration 2:   log likelihood = -670.39239  
-Iteration 3:   log likelihood = -670.39239  
-
-Log likelihood = -670.39239                     Number of obs     =        686
-
-------------------------------------------------------------------------------
-             |     exp(b)   Std. Err.      z    P&amp;gt;|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-xb           |
-      hormon |   .6966754   .0870015    -2.89   0.004     .5454206    .8898757
-       _rcs1 |   4.931928   .6329089    12.43   0.000     3.835156    6.342354
-       _rcs2 |   1.786812   .2092654     4.96   0.000     1.420329    2.247857
-       _rcs3 |   .9519031     .03275    -1.43   0.152     .8898306    1.018306
-       _cons |   .3032836   .0247012   -14.65   0.000     .2585366    .3557753
-------------------------------------------------------------------------------
-Note: Estimates are transformed only in the first equation.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I have used three options. The &lt;code&gt;df(3)&lt;/code&gt; option requests there to be 3 restricted cubic spline parameters (4 knots). These are at the default knot locations, which are at evenly spaced centiles of the uncensored event times. The &lt;code&gt;scale()&lt;/code&gt; option defines the link function and &lt;code&gt;scale(hazard)&lt;/code&gt; asks for a log(-log) link function, i.e. our linear predictor is on the log cumulative hazard scale. The &lt;code&gt;eform&lt;/code&gt; option means that the coefficients will be exponentiated.&lt;/p&gt;
-
-&lt;p&gt;The key point here is the similarity between the hazard ratios form the two models. This is nearly always the case. I will try to convince anyone who does not believe this in future posts.&lt;/p&gt;
-
-&lt;p&gt;A sensible question is, &lt;em&gt;if we get the same anwers, why not just fit a Cox model&lt;/em&gt;?  Well, if all you want is a single hazard ratio and proportional hazards is a reasonable assumption then I agree with you. However, as I will show in other examples, there are many advantages of the parametric approach.&lt;/p&gt;
-
-&lt;p&gt;There are a number of issues that people may raise. This include how many knots to use and where to put the knots. I will cover these in future tutorials.&lt;/p&gt;
-</description>
+      <description>Proportional hazards model We first load the example breast cancer data data using webuse and then use stset to declare the survival time and event indicator.
+. webuse brcancer, clear (German breast cancer data) . stset rectime, f(censrec==1) scale(365.24) failure event: censrec == 1 obs. time interval: (0, rectime] exit on or before: failure t for analysis: time/365.24 ------------------------------------------------------------------------------ 686 total observations 0 exclusions ------------------------------------------------------------------------------ 686 observations remaining, representing 299 failures in single-record/single-failure data 2,112.</description>
     </item>
     
     <item>
@@ -971,110 +138,18 @@ Note: Estimates are transformed only in the first equation.
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stpm2/sensitivity_analysis/</guid>
-      <description>
-
-&lt;h1 id=&#34;sensitivity-analysis&#34;&gt;Sensitivity Analysis&lt;/h1&gt;
-
-&lt;p&gt;We first load the example Rotterdam breast cancer data (rott2b.dta)  and then use &lt;code&gt;stset&lt;/code&gt; to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the &lt;code&gt;exit()&lt;/code&gt; option.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use https://www.pclambert.net/data/rott2b, clear
-(Rotterdam breast cancer data (augmented with cause of death))
-
-. stset rf, f(rfi==1) scale(12) exit(time 60)
-
-     failure event:  rfi == 1
-obs. time interval:  (0, rf]
- exit on or before:  time 60
-    t for analysis:  time/12
-
-------------------------------------------------------------------------------
-      2,982  total observations
-          0  exclusions
-------------------------------------------------------------------------------
-      2,982  observations remaining, representing
-      1,181  failures in single-record/single-failure data
- 11,130.825  total analysis time at risk and under observation
-                                                at risk from t =         0
-                                     earliest observed entry t =         0
-                                          last observed exit t =         5
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I will use different degrees of freedom for the baseline. The easiest way to do this is in a loop. The following code fits between 1 and 6 df, predicts the baseline hazard and survival functions and stores each model (using &lt;code&gt;estimates store&lt;/code&gt;).  I use &lt;code&gt;quietly&lt;/code&gt; to suppress the output. I also generate a new time variable (&lt;code&gt;temptime&lt;/code&gt;) for the predictions, rather than use the default of &lt;code&gt;_t&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. range temptime 0 5 200
-(2,782 missing values generated)
-
-. forvalues i = 1/6 {
-  2.         quietly stpm2 hormon, df(`i&#39;) scale(hazard) 
-  3.         predict h0_df`i&#39;, hazard timevar(temptime) per(1000) zeros
-  4.         predict s0_df`i&#39;, survival timevar(temptime) zeros
-  5.         estimates store df`i&#39;
-  6. }
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can now compare the results from fitting the 6 different models.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. estimates table df*, keep(hormon) b(%6.5f) se(%6.5f) stats(AIC BIC) stfmt(%6.2f)
-
---------------------------------------------------------------------------
-    Variable |   df1       df2       df3       df4       df5       df6    
--------------+------------------------------------------------------------
-      hormon | 0.23312   0.22044   0.22038   0.22023   0.22020   0.22007  
-             | 0.08642   0.08643   0.08643   0.08643   0.08643   0.08643  
--------------+------------------------------------------------------------
-         AIC | 6362.72   6210.98   6212.43   6213.72   6213.75   6215.98  
-         BIC | 6377.94   6231.28   6237.80   6244.17   6249.27   6256.57  
---------------------------------------------------------------------------
-                                                              legend: b/se
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The log hazard ratios are very similar between the different models, particularly from 2df and above (using 1 df is equivalent to fitting a Weibull model). The standard errors are also very similar.&lt;/p&gt;
-
-&lt;p&gt;The AIC and BIC can be used as an &lt;em&gt;informal&lt;/em&gt; guide (certainly not definitive) to the choice of model.  Both the AIC and BIC are lowest for the model with 2df.&lt;/p&gt;
-
-&lt;p&gt;One of the advantages of using parametric models is the simplicity in which we can predict hazard, survival and other useful functions. In the loop when the 6 different models were fitted the baseline hazard and survival functions were also obtained. We can now compare these by plotting them.&lt;/p&gt;
-
-&lt;p&gt;First, the baseline hazard functions. Note I used the &lt;code&gt;per(1000)&lt;/code&gt; option when I predicted the hazard functions to give the rate per 1000 person years.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. twoway  (line h0_df* temptime), ///
-&amp;gt;                 ytitle(&amp;quot;hazard rate (per 1000 py)&amp;quot;) ///
-&amp;gt;                 xtitle(&amp;quot;Years from surgery&amp;quot;) ///
-&amp;gt;                 ylabel(,format(%2.0f) angle(h)) ///
-&amp;gt;                 legend(order(1 &amp;quot;1 df&amp;quot; 2 &amp;quot;2 df&amp;quot; 3 &amp;quot;3df&amp;quot; 4 &amp;quot;4df&amp;quot; 5 &amp;quot;5df&amp;quot; 6 &amp;quot;6df&amp;quot;) ///
-&amp;gt;                         ring(0) cols(1) pos(5))
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The graph is shown below. The model with 1 df (equivalent to a Weibull model) stands out. The hazard function for the Weibull model is monotonic and so can&amp;rsquo;t pick up the turning point. There is fairly good agreement between the other models. Remember that the AIC and BIC indicate that models with 3df or more are over fitting.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/ph_sensitivity_hazard.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now, using similar code we can plot the six baseline survival functions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. twoway  (line s0_df* temptime), ///
-&amp;gt;                 ytitle(&amp;quot;Survival function - S(t)&amp;quot;) ///
-&amp;gt;                 xtitle(&amp;quot;Years from surgery&amp;quot;) ///
-&amp;gt;                 ylabel(,format(%3.1f) angle(h)) ///
-&amp;gt;                 legend(order(1 &amp;quot;1 df&amp;quot; 2 &amp;quot;2 df&amp;quot; 3 &amp;quot;3df&amp;quot; 4 &amp;quot;4df&amp;quot; 5 &amp;quot;5df&amp;quot; 6 &amp;quot;6df&amp;quot;) ///
-&amp;gt;                         ring(0) cols(1) pos(1))
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This graph is shown below and again the model with 1 df stands out, which is not surprising given the hazard function. However, there is excellent agreement between the remaining 5 models. In general, one sees better agreement when comparing survival functions as it is a cumulative measure the small differences seen the hazard functions cancel out.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/ph_sensitivity_survival.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This has been a simple sensitivity analysis where I have assumed proportional hazards and only fitted a single covariate, but I hope that it shows how simple it is to try these things.&lt;/p&gt;
-
-&lt;p&gt;What I see as the key point here is that even when selecting a too complex model (as indicated by the AIC and BIC) it makes little difference to the hazard ratio or the estimated hazard and survival functions. Of course one could argue that this is a single data set, but see Rutherord &lt;em&gt;et al.&lt;/em&gt; for a more detailed simulation study on the ability of these models to capture complex hazard functions.&lt;/p&gt;
-
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
-
-&lt;p&gt;Rutherford M.J., Crowther M.J., Lambert, P.C. The use of restricted cubic splines to approximate complex hazard functions in the analysis of time-to-event data: a simulation study. &lt;em&gt;Journal of Statistical Computation and Simulation&lt;/em&gt; 2015;&lt;strong&gt;4&lt;/strong&gt;:777–793&lt;/p&gt;
-</description>
+      <description>Sensitivity Analysis We first load the example Rotterdam breast cancer data (rott2b.dta) and then use stset to declare the survival time (relapse free survival) and event indicator. Follow-up is restricted to 5 years using the exit() option.
+. use https://www.pclambert.net/data/rott2b, clear (Rotterdam breast cancer data (augmented with cause of death)) . stset rf, f(rfi==1) scale(12) exit(time 60) failure event: rfi == 1 obs. time interval: (0, rf] exit on or before: time 60 t for analysis: time/12 ------------------------------------------------------------------------------ 2,982 total observations 0 exclusions ------------------------------------------------------------------------------ 2,982 observations remaining, representing 1,181 failures in single-record/single-failure data 11,130.</description>
+    </item>
+    
+    <item>
+      <title>Standardized survival functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival/</link>
+      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival/</guid>
+      <description>Background When we are performing data exploration on survival data we usually start with plotting Kaplan-Meier curves. In clinical trials with a survival outcome, one would nearly always expect to see a Kaplan-Meier curve plotted. They are simple to interpret (though there can be confusion when there are competing risks).
+In observational studies, we expect that there will be confounding and would usually adjust for these confounders in a Cox model.</description>
     </item>
     
     <item>
@@ -1083,244 +158,7 @@ obs. time interval:  (0, rf]
       <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>/software/stcrprep/nonparametriccif/</guid>
-      <description>
-
-&lt;p&gt;I will use the same data set I use in the &lt;em&gt;Stata Journal&lt;/em&gt; &lt;a href=&#34;http://www.stata-journal.com/article.html?article=st0471&#34;&gt;article&lt;/a&gt; on &lt;code&gt;stcrprep&lt;/code&gt;.
-This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone
-marrow transplantation. Time is measured in days from transplantation to either relapse
-or death. There is only one covariate of interest, the EBMT risk score, which has been
-categorized into 3 groups (low, medium and high risk). The data is available as part of
-the mstate R package (de Wreede et al. 2011).&lt;/p&gt;
-
-&lt;p&gt;First I load the data,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. use http://www.pclambert.net/data/ebmt1_stata.dta, clear
-(Written by R.              )
-
-. tab status
-
-     status |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   censored |        836       42.29       42.29
-    relapse |        456       23.07       65.35
-       died |        685       34.65      100.00
-------------+-----------------------------------
-      Total |      1,977      100.00
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The tabulation shows that of the 1,977 subjects, 836 were censored, 456 had a relapse and 686 had a death before relapse. Now we can &lt;code&gt;stset&lt;/code&gt; the data declaring both relapse and death as an event in the &lt;code&gt;failure()&lt;/code&gt; option.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stset time, failure(status==1,2) scale(365.25) id(patid)
-
-                id:  patid
-     failure event:  status == 1 2
-obs. time interval:  (time[_n-1], time]
- exit on or before:  failure
-    t for analysis:  time/365.25
-
-------------------------------------------------------------------------------
-      1,977  total observations
-          0  exclusions
-------------------------------------------------------------------------------
-      1,977  observations remaining, representing
-      1,977  subjects
-      1,141  failures in single-failure-per-subject data
-  3,796.057  total analysis time at risk and under observation
-                                                at risk from t =         0
-                                     earliest observed entry t =         0
-                                          last observed exit t =  8.454483
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In order to show how &lt;code&gt;stcrprep&lt;/code&gt; expands the data and calculates the probability of censoring weights for those with a competing event, I will list the data of a single individual before and after using &lt;code&gt;stcrprep&lt;/code&gt;. The listing is for subject 17 (&lt;code&gt;patid==17&lt;/code&gt;).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. list patid status _t0 _t _d if patid==17, noobs
-
-  +---------------------------------------+
-  | patid   status   _t0          _t   _d |
-  |---------------------------------------|
-  |    17     died     0   2.2888433    1 |
-  +---------------------------------------+
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This subject died after 2.29 years and  before using &lt;code&gt;stcrprep&lt;/code&gt; has just has one row of
-data.&lt;/p&gt;
-
-&lt;p&gt;Next I use &lt;code&gt;stcrprep&lt;/code&gt; to restructure the data. The &lt;code&gt;events()&lt;/code&gt; option requires the variable defining all possible events and the censored value. The &lt;code&gt;trans()&lt;/code&gt; option gives the transitions of the events of interest; here we
-are interested in the transitions to both relapse(&lt;code&gt;status=1&lt;/code&gt;) and death (&lt;code&gt;status=2&lt;/code&gt;); this is actually the default, but is shown here for clarity. The &lt;code&gt;keep()&lt;/code&gt; option is used to list variables to retain in the expanded data; usually any covariates that will be later analysed are included here. The &lt;code&gt;byg()&lt;/code&gt; option requests the censoring distribution to be estimated separately for the given groups. Since we are first going to obtain a separate
-non-parametric estimate of the cause-specific CIF in each group, the byg() option will estimate the censoring distribution separately in each group.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. stcrprep, events(status) keep(score) trans(1 2) byg(score)
-
-. di &amp;quot;There are &amp;quot; _N &amp;quot; observations&amp;quot;
-There are 70262 observations
-
-. format tstart %6.5f                                                                     
-
-. format tstop %6.5f
-
-. format weight_c %6.5f
-
-. list failcode patid status tstart tstop weight_c weight_t status if patid==17, ///
-&amp;gt;          sepby(failcode) noobs 
-
-  +------------------------------------------------------------------------------+
-  | failcode   patid   status    tstart     tstop   weight_c   weight_t   status |
-  |------------------------------------------------------------------------------|
-  |  relapse      17     died   0.00000   2.28884    1.00000          1     died |
-  |  relapse      17     died   2.28884   2.31622    0.99000          1     died |
-  |  relapse      17     died   2.31622   2.32717    0.98497          1     died |
-  |  relapse      17     died   2.32717   2.36003    0.97992          1     died |
-  |  relapse      17     died   2.36003   2.55441    0.91392          1     died |
-  |  relapse      17     died   2.55441   2.65845    0.89843          1     died |
-  |  relapse      17     died   2.65845   2.89938    0.85142          1     died |
-  |  relapse      17     died   2.89938   3.02806    0.80937          1     died |
-  |  relapse      17     died   3.02806   3.18960    0.76176          1     died |
-  |  relapse      17     died   3.18960   3.26626    0.74578          1     died |
-  |  relapse      17     died   3.26626   3.62765    0.63847          1     died |
-  |  relapse      17     died   3.62765   3.89870    0.59519          1     died |
-  |  relapse      17     died   3.89870   3.97536    0.57881          1     died |
-  |  relapse      17     died   3.97536   4.10951    0.55124          1     died |
-  |  relapse      17     died   4.10951   4.39425    0.51163          1     died |
-  |  relapse      17     died   4.39425   4.50103    0.47714          1     died |
-  |  relapse      17     died   4.50103   4.69815    0.45968          1     died |
-  |  relapse      17     died   4.69815   5.08419    0.37101          1     died |
-  |  relapse      17     died   5.08419   5.22656    0.32235          1     died |
-  |  relapse      17     died   5.22656   5.33607    0.30995          1     died |
-  |  relapse      17     died   5.33607   5.97673    0.22772          1     died |
-  |  relapse      17     died   5.97673   6.27515    0.20170          1     died |
-  |------------------------------------------------------------------------------|
-  |     died      17     died   0.00000   2.28884    1.00000          1     died |
-  +------------------------------------------------------------------------------+
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After using &lt;code&gt;stcrprep&lt;/code&gt; the number of rows has increased from 1977 to 70262. The rows have been divided based on the failure of the newly created variable &lt;code&gt;failcode&lt;/code&gt;. This variable will be used to fit different models depending on the event of interest. The variables &lt;code&gt;patid&lt;/code&gt; and &lt;code&gt;status&lt;/code&gt; are the same as in the non expanded data. The variables &lt;code&gt;tstart&lt;/code&gt; and &lt;code&gt;tstop&lt;/code&gt; give the times an individual starts and stops being at risk. They
-change within an individual when their weight, defined by variable &lt;code&gt;weight_c&lt;/code&gt;, changes value. The &lt;code&gt;weight_t&lt;/code&gt; gives the weights when there is left trunction. As there is no left truncation in this data, it takes the value 1 for all subjects at all times.&lt;/p&gt;
-
-&lt;p&gt;When &lt;code&gt;failcode==1&lt;/code&gt; this corresponds to when a relapse is the event of interest. As
-the subject with &lt;code&gt;patid==17&lt;/code&gt; died after 2.29 years (i.e. had a competing event), they
-are initially at risk until this time and they should receive a weight of 1 in the analysis.
-After their death they are still kept in the risk set, but their weight decreases. The
-decrease is based on the conditional probability of being censored which is estimated
-using a non-parametric (Kaplan-Meier) estimate of the censoring distribution. The
-weights only change at times when there is a failure for the event of interest and the
-value of censoring distribution has changed.&lt;/p&gt;
-
-&lt;p&gt;When &lt;code&gt;failcode==2&lt;/code&gt; this corresponds to when death is the event of interest. Since
-this patient experienced the event of interest (i.e. they died) rather than the competing event, they only require one row of data.&lt;/p&gt;
-
-&lt;p&gt;We can use &lt;code&gt;sts graph&lt;/code&gt; to give a plot of the cause-specific CIF. We first need to &lt;code&gt;stset&lt;/code&gt;
-the data utilizing the information on the weights contained in variable &lt;code&gt;weights_c&lt;/code&gt; by
-specifiying &lt;code&gt;iweights&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. gen event = status == failcode
-
-. stset tstop [iw=weight_c], failure(event) enter(tstart) noshow                                          // stset using weights
-
-     failure event:  event != 0 &amp;amp; event &amp;lt; .
-obs. time interval:  (0, tstop]
- enter on or after:  time tstart
- exit on or before:  failure
-            weight:  [iweight=weight_c]
-
-------------------------------------------------------------------------------
-     70,262  total observations
-          0  exclusions
-------------------------------------------------------------------------------
-     70,262  observations remaining, representing
-      1,141  failures in single-record/single-failure data
- 13,820.402  total analysis time at risk and under observation
-                                                at risk from t =         0
-                                     earliest observed entry t =         0
-                                          last observed exit t =  8.454483
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We first create the variable, &lt;code&gt;event&lt;/code&gt;. This is defined as 1 if the event of interest occurs
-and zero otherwise. As we have split time data, we need to give information on the start
-time (&lt;code&gt;tstart&lt;/code&gt;) and stop time (&lt;code&gt;tstop&lt;/code&gt;) of each row of data.
-We use &lt;code&gt;sts graph&lt;/code&gt; in the usual way, but use the failure option as we are interested
-in the probability of relapse as opposed to the probability of not having a relapse (which
-includes the probability of death). For example, the cause-specific CIF for relapse can
-be plotted as follows,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts graph if failcode==1, by(score) failure ///
-&amp;gt;         ytitle(&amp;quot;Probability of Relapse&amp;quot;) ///
-&amp;gt;         xtitle(&amp;quot;Years since transplanation&amp;quot;) ///
-&amp;gt;         ylabel(0(0.1)0.5, angle(h) format(%3.1f)) ///
-&amp;gt;         legend(order(1 &amp;quot;Low Risk&amp;quot; 2 &amp;quot;Medium Risk&amp;quot; 3 &amp;quot;High Risk&amp;quot;) ///
-&amp;gt;         cols(1) ring(0) pos(5)) ///
-&amp;gt;         scheme(sj) name(cif_relapse, replace)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;/statasvg/stcrprep_cif1.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Note that the lines are extended to the maximum censoring time in each group, rather than the maximum event time.
-Alternatively, &lt;code&gt;sts gen&lt;/code&gt; can be used to generate the cause-specific CIF and this can be
-plotted with appropriate if statements to control the maximum follow-up time for each line.&lt;/p&gt;
-
-&lt;p&gt;It is also possible to list the CIF at specific time points using &lt;code&gt;sts list&lt;/code&gt;. For example, the cause-specific CIF at 1 and 5 years by risk group and for each cause can be obtained as follows,&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts list, at(1 5) failure by(failcode score)    
-
-              Beg.                      Failure       Std.
-    Time     Total     Fail             Function     Error     [95% Conf. Int.]
--------------------------------------------------------------------------------
-relapse Low risk 
-       1   348.001       38              0.0959    0.0148     0.0707    0.1295
-       5   94.7875       36              0.2268    0.0250     0.1821    0.2805
-relapse Medium risk 
-       1   1125.93      225              0.1636    0.0100     0.1451    0.1843
-       5   268.081      100              0.2594    0.0131     0.2347    0.2861
-relapse High risk 
-       1   116.387       39              0.2417    0.0338     0.1827    0.3156
-       5         6       10              0.3306    0.0410     0.2574    0.4181
-died Low risk 
-       1   306.828       81              0.2032    0.0202     0.1669    0.2462
-       5   94.9111       10              0.2368    0.0223     0.1964    0.2839
-died Medium risk 
-       1   915.771      441              0.3189    0.0126     0.2950    0.3442
-       5   209.617       70              0.3829    0.0137     0.3566    0.4104
-died High risk 
-       1   84.7723       73              0.4494    0.0392     0.3764    0.5296
-       5         6        7              0.5160    0.0452     0.4310    0.6071
--------------------------------------------------------------------------------
-Note: Failure function is calculated over full data and evaluated at indicated
-      times; it is not calculated from aggregates shown at left.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, we can test for differences in the cause-specific CIF using &lt;code&gt;sts test&lt;/code&gt;. Note that is slightly different to the modified log rank test defined by Gray (1988).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;. sts test score if failcode==1
-
-
-Log-rank test for equality of survivor functions
-
-            |   Events         Events
-score       |  observed       expected
-------------+-------------------------
-Low risk    |        79          99.64
-Medium risk |       328         324.33
-High risk   |        49          32.04
-------------+-------------------------
-Total       |       456         456.00
-
-                  chi2(2) =      13.37
-                  Pr&amp;gt;chi2 =     0.0012
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;de Wreede, L.; Fiocco, M. &amp;amp; Putter, H. &lt;code&gt;mstate&lt;/code&gt;: An R package for the analysis of competing risks and multi-state models. &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 2011;&lt;strong&gt;38&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Gray, R. A class of K-sample tests for comparing the cumulative incidence of a competing risk. &lt;em&gt;The Annals of Statistics&lt;/em&gt; 1988;&lt;strong&gt;16&lt;/strong&gt;:1141-1154.&lt;/p&gt;
-</description>
+      <description>I will use the same data set I use in the Stata Journal article on stcrprep. This comprises of 1977 patients from the European Blood and Marrow Transplantation (EBMT) registry who received an allogeneic bone marrow transplantation. Time is measured in days from transplantation to either relapse or death. There is only one covariate of interest, the EBMT risk score, which has been categorized into 3 groups (low, medium and high risk).</description>
     </item>
     
   </channel>

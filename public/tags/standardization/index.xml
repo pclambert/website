@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Standardization on Paul C. Lambert</title>
+    <link>/tags/standardization/</link>
+    <description>Recent content in Standardization on Paul C. Lambert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Paul C Lambert</copyright>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/standardization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Attributable Fraction from Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_af/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_af/</guid>
+      <description>This example will demonstrate how the attributable fraction ($AF$) can be obtained for survival data. It will also demonstrate the flexibility to calculate various function of standardized estimates through use of the `userfunction()&amp;rsquo; option.
+The is defined in epidemiology as the proportion of preventable outcomes if all subjects had not been exposed to a particular exposure. i.e.
+$$ AF = \frac{P(D=1) - P(D=1|X=0)}{P(D=1)} $$
+where $P(D)$ is proportion diseased in the whole population, and $P(D|X=0)$ is the probability of being diseased in the exposed.</description>
+    </item>
+    
+    <item>
+      <title>RMST of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_rmst/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_rmst/</guid>
+      <description>Here I will show another useful measure from standardized survival functions. There have been several papers promoting the use of restricted mean survival time (RMST) in clinical trials. The arguments are (i) ease of interpretation (though I am not convinced a restricted mean is that easy to explain) and (ii) providing a simple summary in the presence of non-proportional hazards. See Royston and Parmar (2013) for a description of the use of the measure in RCTs.</description>
+    </item>
+    
+    <item>
+      <title>Hazard of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_hazard/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_hazard/</guid>
+      <description>This will be a short tutorial as the ideas are very simple. I have previously discussed standardized survival functions. In survival analysis we know that there is a simple mathematical transformation from hazard to survival function and vice versa. The idea here is to transform to a hazard function from the standardized survival function. Recall that a standardized survival funnction; $S_s(t|X=x,Z)$ is estimated by
+$$ S_s(t|X=x,Z) = \frac{1}{N}\sum_{i=1}^{N}S(t|X=x,Z=z_i) $$</description>
+    </item>
+    
+    <item>
+      <title>Centiles of Standardized Survival Functions</title>
+      <link>/software/stpm2_standsurv/standardized_survival_centiles/</link>
+      <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/software/stpm2_standsurv/standardized_survival_centiles/</guid>
+      <description>Background In the previous tutorial I used stpm2_standsurv to obtain standardized survival functions. In this tutorial I show the first of a number of different measures of the standardized survival function where I obtain centiles of the standardized survival function.
+As a reminder a centile of a survival function can be obtanined by solving $S(t) = \alpha$ for $t$. For example, for the median survival time we set $\alpha = 0.</description>
+    </item>
+    
+  </channel>
+</rss>
