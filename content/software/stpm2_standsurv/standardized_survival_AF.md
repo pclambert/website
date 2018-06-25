@@ -88,7 +88,7 @@ Note: Estimates are transformed only in the first equation.
 It is worthwhile commenting what we mean be "exposed" here. Those on hormal treatment will be consided unexposed and those **not** taking the treatment will be unexposed, i.e our unepxosed group is when `hormon=1`.
 
 
-I will first use the `failure` option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using `.` within an `at()' option, i.e. using `at3(.)` in the example below.
+I will first use the `failure` option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using `.` within an `at()` option, i.e. using `at3(.)` in the example below.
 
 ```stata
 . range timevar 0 10 101
@@ -110,7 +110,7 @@ I will first use the `failure` option to calculate the standardized failure prob
 
 ![](/statasvg/stpm2_standsurv_failure_stand.svg)
 
-These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the "No Treatment" function is closer to the combined function.The attributable fraction could be calculated using
+These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the "No Treatment" function is closer to the combined function. The attributable fraction could be calculated using
 
 ```stata
 . gen AF_tmp = 1 - F_hormon1/F_all
@@ -135,7 +135,7 @@ The user function needs to be written in Mata. The function should receive one a
 
 ```stata
 . mata
-------------------------------------------------- mata (type end to exit) ------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------- mata (type end to exit) ------------------------------------------------------------------------------------------------
 : function calcAF(at) {
 >     // at2 is F(t|unexposed,Z)
 >     // at1 is F(t,Z)
@@ -143,7 +143,7 @@ The user function needs to be written in Mata. The function should receive one a
 > }
 
 : end
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ```
 

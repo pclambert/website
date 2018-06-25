@@ -60,7 +60,7 @@ stpm2 hormon age enodes pr_1, scale(hazard) df(4) eform nolog
 It is worthwhile commenting what we mean be "exposed" here. Those on hormal treatment will be consided unexposed and those **not** taking the treatment will be unexposed, i.e our unepxosed group is when `hormon=1`.
 
 
-I will first use the `failure` option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using `.` within an `at()' option, i.e. using `at3(.)` in the example below.
+I will first use the `failure` option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using `.` within an `at()` option, i.e. using `at3(.)` in the example below.
 
 ```stata
 <<dd_do >>
@@ -83,7 +83,7 @@ graph export c:/website/static/statasvg/stpm2_standsurv_failure_stand.svg, repla
 
 ![](/statasvg/stpm2_standsurv_failure_stand.svg)
 
-These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the "No Treatment" function is closer to the combined function.The attributable fraction could be calculated using
+These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the "No Treatment" function is closer to the combined function. The attributable fraction could be calculated using
 
 ```stata
 <<dd_do >>

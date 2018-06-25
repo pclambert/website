@@ -358,7 +358,7 @@ Note: Estimates are transformed only in the first equation.
 
 <p>It is worthwhile commenting what we mean be &ldquo;exposed&rdquo; here. Those on hormal treatment will be consided unexposed and those <strong>not</strong> taking the treatment will be unexposed, i.e our unepxosed group is when <code>hormon=1</code>.</p>
 
-<p>I will first use the <code>failure</code> option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using <code>.</code> within an <code>at()' option, i.e. using</code>at3(.)` in the example below.</p>
+<p>I will first use the <code>failure</code> option to calculate the standardized failure probabilities in both groups. I also predict the failure probability in the population as a whole. I do this using <code>.</code> within an <code>at()</code> option, i.e. using <code>at3(.)</code> in the example below.</p>
 
 <pre><code class="language-stata">. range timevar 0 10 101
 (2,881 missing values generated)
@@ -378,7 +378,7 @@ Note: Estimates are transformed only in the first equation.
 
 <p><img src="/statasvg/stpm2_standsurv_failure_stand.svg" alt="" /></p>
 
-<p>These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the &ldquo;No Treatment&rdquo; function is closer to the combined function.The attributable fraction could be calculated using</p>
+<p>These are just 1 - the standardized survival functions. There are more untreated women (88.6%) which is why the &ldquo;No Treatment&rdquo; function is closer to the combined function. The attributable fraction could be calculated using</p>
 
 <pre><code class="language-stata">. gen AF_tmp = 1 - F_hormon1/F_all
 (2,882 missing values generated)
@@ -400,7 +400,7 @@ Note: Estimates are transformed only in the first equation.
 <p>The user function needs to be written in Mata. The function should receive one argument <code>at</code>, which refer to the various <code>at</code> options and can be indexed by <code>at[1]</code>, <code>at[2]</code> etc. The code below calculates the AF assuming that <code>at1</code> is the standardized failure function in the population as a whole and <code>at2</code> is the standardized failure function assuming everyone is unexposed (takes hormonal treatment). We need to be careful to specify the <code>at()</code> options is this order.</p>
 
 <pre><code class="language-stata">. mata
-------------------------------------------------- mata (type end to exit) ------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------- mata (type end to exit) ------------------------------------------------------------------------------------------------
 : function calcAF(at) {
 &gt;     // at2 is F(t|unexposed,Z)
 &gt;     // at1 is F(t,Z)
@@ -408,7 +408,7 @@ Note: Estimates are transformed only in the first equation.
 &gt; }
 
 : end
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 </code></pre>
 
