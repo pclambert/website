@@ -17,4 +17,6 @@ The `stpm2_standsurv` estimates standardized survival curves and related measure
 - [The hazard function of the standardized survival curve.]({{< ref "software/stpm2_standsurv/standardized_survival_hazard.md" >}})
 - [Estimating attributable fractions in cohort studies]({{< ref "software/stpm2_standsurv/standardized_survival_AF.md" >}})
 - Standardized cause-specific cumulative incidence functions.
+- Some comments on why I am not so keem on `stteffects`
+- Why just not use `margins`
 
