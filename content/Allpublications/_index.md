@@ -13,9 +13,11 @@ caption = ""
 
 **2018**
 
-Weibull C.E., Johansson A.L.V., Eloranta S., Smedby K.E., Björkholm M., Lambert P.C., Dickman P.W., Glimelius I. Contemporarily treated Hodgkin lymphoma patients have childbearing potential in line with matched comparators. _Journal of Clinical Oncology_ 2018 (in press)
+Mozumder S.I., Dickman P.W., Rutherford M.R., **Lambert P.C.** InterPreT cancer survival: A dynamic web interactive prediction cancer survival tool for health-care professionals and cancer epidemiologists. _Cancer Epidemiology_  2018 (in press)
 
-Plym A, Bower H., Fredriksson I., Holmberg L., **Lambert P.C.**, Lambe M. Loss in working years after a breast cancer diagnosis. _British Journal of Cancer_ 2018;118:738-743
+Weibull C.E., Johansson A.L.V., Eloranta S., Smedby K.E., Björkholm M., **Lambert P.C.**, Dickman P.W., Glimelius I. Contemporarily treated Hodgkin lymphoma patients have childbearing potential in line with matched comparators. _Journal of Clinical Oncology_  2018 (in press)
+
+Plym A, Bower H., Fredriksson I., Holmberg L., **Lambert P.C.**, Lambe M. Loss in working years after a breast cancer diagnosis. _British Journal of Cancer_ 2018;**118**:738-743
 
 Mozumder S.I., Rutherford M.J., **Lambert P.C.** Direct likelihood inference on the cause-specific cumulative incidence function: a flexible parametric regression modelling approach. _Statistics in Medicine_ 2018;**37**:82-97
 
